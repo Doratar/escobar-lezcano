@@ -1,7 +1,8 @@
 #carouselExample{
-    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #navbarSupportedContent{
-    justify-content: center;
+    align-items: center;
 }
