@@ -8,4 +8,8 @@ class Home extends BaseController
     {
         return view('principal.php');
     }
+
+    public function nosotros(): string {
+        return view('nosotros.php');
+    }
 }
