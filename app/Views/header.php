@@ -17,7 +17,7 @@
       <ul>
         <li><a href="<?php echo base_url('/') ?>">Home</a></li>
         <li><a href="<?php echo base_url('/comercializacion') ?>">Comercializacion</a></li>
-        <li><a href="<?php echo base_url('/nosotros') ?>">Nosotros</a></li>
+        <li><a href="<?php echo base_url('/nosotros') ?>">Quienes Somos</a></li>
         <li><a href="<?php echo base_url('/contacto') ?>">Contacto</a></li>
         <li><a href="<?php echo base_url('/terminos') ?>">Terminos y Uso</a></li>
       </ul>
