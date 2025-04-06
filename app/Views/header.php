@@ -16,9 +16,9 @@
     <nav>
       <ul>
         <li><a href="<?php echo base_url('/') ?>">Home</a></li>
-        <li><a href="tienda.php">Tienda</a></li>
+        <li><a href="<?php echo base_url('/comercializacion') ?>">Comercializacion</a></li>
         <li><a href="<?php echo base_url('/nosotros') ?>">Nosotros</a></li>
-        <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="https://www.instagram.com/">Instagram</a></li>
+        <li><a href="<?php echo base_url('/contacto') ?>">Contacto</a></li>
+        <li><a href="<?php echo base_url('/terminos') ?>">Terminos y Uso</a></li>
       </ul>
     </nav>

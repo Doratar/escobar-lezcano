@@ -1,5 +1,5 @@
 <?php include('app/Views/header.php'); ?>
 <body>
-    <p>Contacto</p>
+    <p>Terminos</p>
 </body>
 </html>
