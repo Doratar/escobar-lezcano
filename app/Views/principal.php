@@ -1,9 +1,9 @@
-<?php include('app/Views/header.php'); ?>
+<?php include('app/Views/front/header.php'); ?>
     <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
+  <!-- Carrousel -->
 
-
-
+    <!-- Categorias destacados, lo nuevo -->
     <div class="gallery">
       <a target="_blank" href="img_5terre.jpg">
         <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" alt="Cinque Terre" width="600" height="400">
@@ -47,7 +47,7 @@
     
 
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="column">
         <h2>Mision</h2>
         <p>Brindar a nuestros clientes calzado deportivo y urbano de alta calidad, combinando comodidad, estilo e innovación. Nos enfocamos en ofrecer una experiencia de compra única, con un servicio personalizado y productos de las mejores marcas.</p>
@@ -66,7 +66,5 @@
           
           Expandirnos geográficamente mediante la apertura de nuevas sucursales.</p>
       </div>
-    </div>
+    </div> -->
   
-  </body>
-</html>

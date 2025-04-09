@@ -1,4 +1,4 @@
-<?php include('app/Views/header.php'); ?>
+<?php include('app/Views/front/header.php'); ?>
 
 <!-- Consigna -->
 <p>La página con información de contacto, donde se publicará el nombre del titular
