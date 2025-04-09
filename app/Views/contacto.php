@@ -8,14 +8,17 @@
 
 
 <div class="row">
+    <!-- Datos -->
     <div class="col-md-6">
         <img src="assets/img/logo.png" alt="Logo Kicks UP" class="img-fluid" style="max-height: 150px;">
         <h2>Kicks Up</h2>
         <h4>CUIT: 30-20987623-2</h4>
         <h4>Domicilio: 9 de Julio 1449, W3400 AZB Corrientes</h4>
         <h4>Telefono: 03794473930</h4>
+        <h4>Correo: contacto@kicksup.com</h4>
     </div>
 
+    <!-- Mapa -->
     <div class="col-md-6">
         <h2>Ubicación</h2>
         <iframe
@@ -55,6 +58,7 @@
             <div class="form-text" id="basic-addon4">Ejemplo: fulano@dominio.com</div>
         </div>
 
+        <!-- Textarea de consulta  -->
         <div class="mb-3">
             <label for="consultainput">Ingrese su consulta</label>
             <div class="input-group">
@@ -63,7 +67,7 @@
             </div>
         </div>
 
-
+        <!-- Boton de enviar -->
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">Enviar consulta</button>
         </div>
