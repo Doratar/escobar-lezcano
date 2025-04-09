@@ -29,10 +29,10 @@
 
 <div>
     <!-- Formulario de consultas -->
+    <h1>Formulario para consultas</h1>
     <form>
 
         <!-- Input de mail -->
-        <h1>Formulario para consultas</h1>
         <div class="mb-3">
             <label for="basic-url" class="form-label">Ingrese su mail</label>
             <div class="input-group">
