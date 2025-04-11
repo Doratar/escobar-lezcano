@@ -1,16 +1,13 @@
-<!-- 
-    <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   -->
-  <!-- Carrousel -->
-
-    <!-- Categorias destacados, lo nuevo -->
-    <div class="gallery">
-      <a target="_blank" href="img_5terre.jpg">
-        <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" alt="Cinque Terre" width="600" height="400">
-      </a>
-      <div class="desc">Running Nike Downshifter 12 Ng Vt</div>
-    </div>
-    
+<div class="container">
+  
+  <!-- Categorias destacados, lo nuevo -->
+  <div class="gallery">
+    <a target="_blank" href="img_5terre.jpg">
+      <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">Running Nike Downshifter 12 Ng Vt</div>
+  </div>
+  
     <div class="gallery">
       <a target="_blank" href="img_forest.jpg">
         <img src="assets\img\img-poductos\Zapatillas Running Reebok Nano X4 Ng Hombre.png" alt="Forest" width="300" height="300">
@@ -44,9 +41,10 @@
       </a>
       <div class="desc">Running Reebok Nano X4 Ng</div>
     </div>
+  </div>
     
-
-
+    
+    
     <!-- <div class="row">
       <div class="column">
         <h2>Mision</h2>
@@ -61,7 +59,7 @@
       <div class="column">
         <h2>Objetivos</h2>
         <p>Ampliar nuestra oferta de productos incorporando nuevas marcas y modelos.
-
+          
           Mejorar continuamente la experiencia del cliente, tanto online como en tiendas físicas.
           
           Expandirnos geográficamente mediante la apertura de nuevas sucursales.</p>
