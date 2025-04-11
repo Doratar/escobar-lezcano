@@ -11,14 +11,4 @@
   <body>
     <div class="text-center my-4">
       <img src="assets/img/logo.png" alt="Logo Kicks UP" class="img-fluid" style="max-height: 150px;">
-    </div>  
-    
-    <nav>
-      <ul>
-        <li><a href="<?php echo base_url('/') ?>">Home</a></li>
-        <li><a href="<?php echo base_url('/comercializacion') ?>">Comercializacion</a></li>
-        <li><a href="<?php echo base_url('/nosotros') ?>">Quienes Somos</a></li>
-        <li><a href="<?php echo base_url('/contacto') ?>">Contacto</a></li>
-        <li><a href="<?php echo base_url('/terminos') ?>">Terminos y Uso</a></li>
-      </ul>
-    </nav>
+    </div>
