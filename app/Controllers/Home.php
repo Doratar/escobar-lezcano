@@ -6,8 +6,8 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('principal.php', ['titulo' => 'Home']); 
-        
+        return view('principal.php', ['titulo' => 'Home'])
+        .view('front/footer.php'); 
     }
 
     public function nosotros(): string {

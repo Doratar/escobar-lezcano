@@ -1,4 +1,4 @@
-<?php include('app/Views/header.php'); ?>
+<?php include('app/Views/front/header.php'); ?>
 <section id="quienes-somos" style="padding: 40px; font-family: Arial, sans-serif;">
   <h1>Quiénes Somos</h1>
 
