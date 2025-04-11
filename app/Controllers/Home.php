@@ -6,7 +6,10 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('principal.php', ['titulo' => 'Home'])
+        return 
+        view('front/header.php', ['titulo' => 'Home'])
+        .view('front/navbar.php')
+        .view('principal.php', ['titulo' => 'Home'])
         .view('front/footer.php'); 
     }
 
@@ -14,7 +17,10 @@ class Home extends BaseController
         return view('nosotros.php', ['titulo' => 'Nosotros']);
     }
     public function comercializacion(): string {
-        return view('comercializacion.php', ['titulo' => 'Comercalizacion']);
+        return 
+        view('front/header.php', ['titulo' => 'Comercializacion'])
+        .view('front/navbar.php')
+        .view('comercializacion.php');
     }
     public function contacto(): string {
         return view('contacto.php', ['titulo' => 'Contacto']);

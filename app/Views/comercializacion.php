@@ -1,4 +1,3 @@
-<?php include('app/Views/header.php'); ?>
 <section id="comercializacion" style="padding: 40px; font-family: Arial, sans-serif;">
   <h1>Comercialización</h1>
 
