@@ -25,8 +25,14 @@ class Home extends BaseController
     }
     public function contacto(): string {
         return view('contacto.php', ['titulo' => 'Contacto']);
+        .view('front/navbar.php')
+        .view('comercializacion.php')
+        .view('front/footer.php');
     }
     public function terminos(): string {
         return view('terminos.php', ['titulo' => 'Terminos y condiciones']);
+        .view('front/navbar.php')
+        .view('comercializacion.php')
+        .view('front/footer.php');
     }
 }
