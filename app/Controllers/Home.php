@@ -10,11 +10,15 @@ class Home extends BaseController
         view('front/header.php', ['titulo' => 'Home'])
         .view('front/navbar.php')
         .view('principal.php')
-        .view('front/footer.php'); 
+        .view('front/footer.php');
     }
 
     public function nosotros(): string {
-        return view('nosotros.php', ['titulo' => 'Nosotros']);
+        return 
+        view('front/header.php', ['titulo' => 'Nosotros'])
+        .view('front/navbar.php')
+        .view('comercializacion.php')
+        .view('front/footer.php');
     }
     public function comercializacion(): string {
         return 
@@ -24,13 +28,15 @@ class Home extends BaseController
         .view('front/footer.php');
     }
     public function contacto(): string {
-        return view('contacto.php', ['titulo' => 'Contacto']);
+        return 
+        view('front/header.php', ['titulo' => 'Contacto']) 
         .view('front/navbar.php')
         .view('comercializacion.php')
         .view('front/footer.php');
     }
     public function terminos(): string {
-        return view('terminos.php', ['titulo' => 'Terminos y condiciones']);
+        return 
+        view('front/header.php', ['titulo' => 'Terminos y condiciones'])
         .view('front/navbar.php')
         .view('comercializacion.php')
         .view('front/footer.php');
