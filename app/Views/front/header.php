@@ -6,7 +6,7 @@
     <title>Kicks Up <?php echo($titulo); ?></title>  
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" 
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="assets/css/MiEstilo.css" rel="stylesheet">
+    <link href="assets/css/mi-estilo.css" rel="stylesheet">
   </head>
   <body>
     <div class="text-center my-4">
