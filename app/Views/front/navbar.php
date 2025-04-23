@@ -13,6 +13,9 @@
                         <a class="nav-link active" aria-current="page" href="<?php echo base_url('/') ?>">Inicio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('/tienda') ?>">Productos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('/comercializacion') ?>">Comercializacion</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -22,16 +25,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<?php echo base_url('/nosotros') ?>">Quienes somos</a></li>
-                            <li><a class="dropdown-item" href="#">Nuetra misión</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Nuetra misión</a></li> -->
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contactanos</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Productos</a>
-                    </li>
+                    
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">

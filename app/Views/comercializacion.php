@@ -1,31 +1,44 @@
-<div class="container">
-  <section id="comercializacion" style="padding: 40px; font-family: Arial, sans-serif;">
-    <h1>Comercialización</h1>
-    
-    <h2>Tipos de Entregas</h2>
-    <p>Envíos a domicilio en todo el país.</p>
-    <p>Retiro en punto de entrega (consultar puntos disponibles).</p>
-    <p>Entregas express en Corrientes Capital y alrededores (en el día).</p>
-    
-    <h2>Formas de Envío</h2>
-    <p>Correo Argentino – Estándar (3 a 7 días hábiles).</p>
-    <p>Correo Argentino – Express (1 a 3 días hábiles).</p>
-    <p>Motomensajería para Corrientes Capital (entrega en el día si comprás antes de las 12 hs).</p>
-    <p>Transporte privado a coordinar para compras mayoristas.</p>
-    
-    
-    <h2>Formas de Pago</h2>
-    <p>Tarjetas de crédito y débito (Visa, Mastercard, Naranja, Amex).</p>
-    <p>MercadoPago (saldo, tarjetas, transferencias).</p>
-    <p>Transferencia bancaria directa.</p>
-    <p>Pago en efectivo (Rapipago/PagoFácil) mediante código de pago.</p>
-    
-    <h2>Información Útil</h2>
-    <p>Todos los envíos se despachan dentro de las 24 a 48 hs hábiles luego de la compra.</p>
-    <p>Una vez despachado, recibirás un código de seguimiento para rastrear tu pedido.</p>
-    <p>Todos nuestros productos son 100% originales y nuevos.</p>
-    <p>Si necesitás factura A, podés solicitarla al momento de la compra.</p>
-    
+<div class="container my-5">
+  <section id="comercializacion" class="p-4 rounded bg-light shadow-sm">
+    <h1 class="mb-4">Comercialización</h1>
+
+    <div class="mb-4">
+      <h2 class="h4">🚚 Tipos de Entregas</h2>
+      <ul class="list-unstyled ps-3">
+        <li>• Envíos a domicilio en todo el país.</li>
+        <li>• Retiro en punto de entrega (consultar puntos disponibles).</li>
+        <li>• Entregas express en Corrientes Capital y alrededores (en el día).</li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <h2 class="h4">📦 Formas de Envío</h2>
+      <ul class="list-unstyled ps-3">
+        <li>• Correo Argentino – Estándar (3 a 7 días hábiles).</li>
+        <li>• Correo Argentino – Express (1 a 3 días hábiles).</li>
+        <li>• Motomensajería para Corrientes Capital (mismo día si comprás antes de las 12 hs).</li>
+        <li>• Transporte privado a coordinar para compras mayoristas.</li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <h2 class="h4">💳 Formas de Pago</h2>
+      <ul class="list-unstyled ps-3">
+        <li>• Tarjetas de crédito y débito (Visa, Mastercard, Naranja, Amex).</li>
+        <li>• MercadoPago (saldo, tarjetas, transferencias).</li>
+        <li>• Transferencia bancaria directa.</li>
+        <li>• Pago en efectivo (Rapipago/PagoFácil mediante código).</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="h4">ℹ️ Información Útil</h2>
+      <ul class="list-unstyled ps-3">
+        <li>• Envíos se despachan dentro de las 24 a 48 hs hábiles luego de la compra.</li>
+        <li>• Recibirás un código de seguimiento al despachar tu pedido.</li>
+        <li>• Todos nuestros productos son 100% originales y nuevos.</li>
+        <li>• Si necesitás factura A, podés solicitarla al momento de la compra.</li>
+      </ul>
+    </div>
   </section>
-  
 </div>

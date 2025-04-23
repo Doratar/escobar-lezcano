@@ -1,39 +1,41 @@
-<?php include('app/Views/front/header.php'); ?>
-<section id="quienes-somos" style="padding: 40px; font-family: Arial, sans-serif;">
-  <h1>Quiénes Somos</h1>
+<section id="nosotros" class="py-5 bg-light">
+  <div class="container">
+    <h1 class="mb-4 display-5 fw-bold">¿Quiénes somos?</h1>
 
-  <p><strong>En Kicks UP, creemos que cada paso cuenta.</strong></p>
-  <p>
-    Nacimos con una misión clara: acercarte las zapatillas y productos de moda urbana que representan tu estilo, tu actitud y tu forma de vivir el día a día.
-    Somos mucho más que una tienda online. Somos una comunidad que vibra con cada nuevo drop, con cada edición limitada, con cada par de kicks que marca tendencia.
-  </p>
+    <p class="lead">
+      <strong>En Kicks UP, creemos que cada paso cuenta.</strong> Nacimos con una misión clara: acercarte las zapatillas y productos de moda urbana
+      que expresan tu estilo, actitud y forma de vivir el día a día.
+    </p>
 
-  <p>
-    Desde nuestros inicios en <strong>2025</strong>, trabajamos con pasión para ofrecer productos originales, de marcas reconocidas y también de nuevos talentos
-    que están rompiendo el juego del streetwear. Con una plataforma pensada para que tu experiencia de compra sea rápida, segura y cómoda, te acompañamos en cada decisión
-    para que elijas con confianza.
-  </p>
+    <p class="lead">
+      No somos solo una tienda online. Somos una comunidad que vibra con cada nuevo drop, con cada edición limitada, con cada par de kicks que marca tendencia.
+    </p>
 
-  <div class="row">
-      <div class="column">
-        <h2>Nuestra Vision</h2>
+    <p class="lead">
+      Desde nuestros inicios en <strong>2025</strong>, trabajamos con pasión para ofrecer productos originales de marcas reconocidas y también de nuevos talentos
+      del streetwear. Nuestra plataforma está pensada para que tu experiencia de compra sea rápida, segura y cómoda.
+    </p>
+
+    <div class="row mt-5 gy-4">
+      <div class="col-md-4">
+        <h3 class="h5 fw-bold">Nuestra Visión</h3>
         <p>Queremos ser la tienda de referencia para los amantes de las zapatillas y la moda urbana en toda Latinoamérica.
         No solo vendemos productos: ofrecemos cultura, estilo y autenticidad.</p>
       </div>
-      
-      <div class="column">
-        <h2>Nuestra Trayectoria</h2>
+
+      <div class="col-md-4">
+        <h3 class="h5 fw-bold">Nuestra Trayectoria</h3>
         <p>Comenzamos como un pequeño emprendimiento entre amigos fanáticos de las zapatillas.
-        Hoy, contamos con una tienda online con envíos a todo el país, alianzas con marcas líderes y una comunidad que no para de crecer en redes sociales.</p>
+        Hoy contamos con una tienda online con envíos a todo el país, alianzas con marcas líderes y una comunidad que crece día a día en redes sociales.</p>
       </div>
-      
-      <div class="column">
-        <h2>Nuestro Equipo</h2>
-        <p>
-            <li><strong>Fernando Lezcano</strong> – Desarrollo Web & UX.</li>
-            <li><strong>Juan Escobar</strong> – Desarrollo Web & UX.</li>
-        </p>
+
+      <div class="col-md-4">
+        <h3 class="h5 fw-bold">Nuestro Equipo</h3>
+        <ul class="list-unstyled">
+          <li><strong>Fernando Lezcano</strong> – Desarrollo Web & UX</li>
+          <li><strong>Juan Escobar</strong> – Desarrollo Web & UX</li>
+        </ul>
       </div>
     </div>
-  
+  </div>
 </section>
