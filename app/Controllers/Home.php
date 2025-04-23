@@ -17,7 +17,7 @@ class Home extends BaseController
         return 
         view('front/header.php', ['titulo' => 'Nosotros'])
         .view('front/navbar.php')
-        .view('comercializacion.php')
+        .view('nosotros.php')
         .view('front/footer.php');
     }
     public function comercializacion(): string {
@@ -31,14 +31,21 @@ class Home extends BaseController
         return 
         view('front/header.php', ['titulo' => 'Contacto']) 
         .view('front/navbar.php')
-        .view('comercializacion.php')
+        .view('contacto.php')
         .view('front/footer.php');
     }
     public function terminos(): string {
         return 
         view('front/header.php', ['titulo' => 'Terminos y condiciones'])
         .view('front/navbar.php')
-        .view('comercializacion.php')
+        .view('terminos.php')
+        .view('front/footer.php');
+    }
+    public function tienda(): string {
+        return 
+        view('front/header.php', ['titulo' => 'Productos'])
+        .view('front/navbar.php')
+        .view('tienda.php')
         .view('front/footer.php');
     }
 }
