@@ -2,14 +2,14 @@
 <div class="container-fluid">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets\img\img-poductos\carrousel1.png" class="img-fluid d-block w-75" alt="...">
+            <div class="carousel-item active ">
+                <img src="assets\img\img-poductos\carrousel1.png" class="img-fluid d-block w-75 mx-auto" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets\img\img-poductos\carrousel2.png" class="img-fluid d-block w-75" alt="...">
+                <img src="assets\img\img-poductos\carrousel2.png" class="img-fluid d-block w-75 mx-auto" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="assets\img\img-poductos\carrousel3.jpg" class="img-fluid d-block w-75" alt="...">
+                <img src="assets\img\img-poductos\carrousel3.jpg" class="img-fluid d-block w-75 mx-auto" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
