@@ -9,7 +9,7 @@
   <div class="row mb-5 align-items-center">
     <!-- Datos -->
     <div class="col-md-6 mb-4 mb-md-0">
-      <img src="assets/img/logo.png" alt="Logo de Kicks Up" class="img-fluid mb-3" style="max-height: 120px;">
+      <a href="<?php echo base_url("/")?>"><img src="assets/img/logo.png" alt="Logo de Kicks Up" class="img-fluid mb-3" style="max-height: 120px;"></a>
       <h2 class="fw-bold">Kicks Up</h2>
       <ul class="list-unstyled">
         <li><strong>CUIT:</strong> 30-20987623-2</li>
@@ -56,6 +56,7 @@
 
       <!-- Botón -->
       <button type="submit" class="btn btn-primary">Enviar consulta</button>
+      <button type="reset" class="btn btn-secondary">Limpiar</button>
     </form>
   </div>
 </div>

@@ -5,7 +5,7 @@
       <div class="col-md-4 mb-3">
         <h5>Seguinos</h5>
         <ul class="list-unstyled d-flex justify-content-center justify-content-md-start gap-3">
-          <li><a href="#" class="text-white text-decoration-none"><i class="bi bi-twitter"></i> Twitter</a></li>
+          <li><a href="#" class="text-white text-decoration-none"><i class="bi bi-twitter-x"></i> X/Ex-Twitter</a></li>
           <li><a href="https://www.instagram.com/" class="text-white text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a></li>
           <li><a href="#" class="text-white text-decoration-none"><i class="bi bi-facebook"></i> Facebook</a></li>
         </ul>
@@ -14,10 +14,11 @@
         <h5>Contacto</h5>
         <p>Email: contacto@Kicksup.com</p>
         <p>Tel: +54 9 1234 567890</p>
+        <a href="<?php base_url("contacto")?>">Contactanos</a>
       </div>
       <div class="col-md-4 mb-3">
         <h5>Ubicación</h5>
-        <p>Av. Siempre Viva 123<br>Corrientes, Argentina</p>
+        <p>9 de Julio 1449, W3400 AZB<br>Corrientes, Argentina</p>
       </div>
     </div>
     <div class="text-center mt-3">
