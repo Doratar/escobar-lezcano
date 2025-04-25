@@ -1,0 +1,24 @@
+ul {
+  margin: 15px auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 95%;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  background-color: #282828;
+}
+
+li:hover img {
+  opacity: 0.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
