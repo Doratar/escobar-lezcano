@@ -9,14 +9,15 @@
     <div class="col"><img src="assets\img\Componente-Gorra.jpg" alt="gorra" class="img-thumbnail" title="Gorras"></div>
     <div class="col"><img src="assets\img\Componente-Pantalon.jpg" alt="pantalon" class="img-thumbnail"></div>
     <div class="col"><img src="assets\img\Componente-Remera.jpg" alt="remera" class="img-thumbnail"></div>
-    <div class="col"><img src="assets\img\Componente-Buzo.jpg" alt="buzo" class="img-thumbnail"></div>
+    <div class="col"><img src="assets\img\Componente-Buzo.jpg" alt="buzo" class="img-thumbnail" title="buzo"></div>
   </div>
 
   <h2>Lo más vendido</h2>
   <div class="row">
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" class="card-img-top" alt="...">
+        <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" class="card-img-top"
+          alt="...">
         <div class="card-body">
           <h5 class="card-title">Zapatillas Running Nike Downshifter</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -50,3 +51,4 @@
       </div>
     </div>
   </div>
+</div>
