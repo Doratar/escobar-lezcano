@@ -1,5 +1,8 @@
 <!-- Inicio de carrousel -->
 <div class="container-fluid">
+<div class="text-center my-4">
+  <h2>Bienvenido a Kicks UP</h2>
+</div>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active ">

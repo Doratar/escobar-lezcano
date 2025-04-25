@@ -9,8 +9,8 @@ class Home extends BaseController
         return 
         view('front/header.php', ['titulo' => 'Home'])
         .view('front/navbar.php')
-        .view('principal.php')
         .view('front/carrousel.php')
+        .view('principal.php')
         .view('front/footer.php');
     }
 
