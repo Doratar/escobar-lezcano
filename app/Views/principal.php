@@ -21,7 +21,7 @@
         <div class="card-body">
           <h5 class="card-title">Zapatillas Running Nike Downshifter</h5>
           <p class="card-text">Ya sea que estés recién comenzando a correr o que ya tengas experiencia y ansíes cambiar tu ritmo, los Downshifter 13 están listos para acompañarte.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="card-body">
           <h5 class="card-title">Zapatillas Running Reebok Nano X4 Ng Hombre</h5>
           <p class="card-text">Las zapatillas Reebok Nano Classic son un modelo icónico que combina estilo y funcionalidad en un diseño unisex.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
           <h5 class="card-title">Zapatillas Tenis Adidas Defiant Speed</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
