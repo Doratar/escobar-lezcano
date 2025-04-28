@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row row-productos">
     <div class="col">
       <div class="card" style="width: 18rem;">
         <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" class="card-img-top"
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row row-productos">
     <div class="col">
       <div class="card" style="width: 18rem;">
         <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" class="card-img-top"
