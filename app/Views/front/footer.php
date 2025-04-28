@@ -23,6 +23,7 @@
     </div>
     <div class="text-center mt-3">
       <p class="mb-0">&copy; 2025 Kicks UP. Todos los derechos reservados.</p>
+      <a href="<?php echo base_url("terminos")?>">Terminos y condiciones</a>
     </div>
   </div>
 </footer>
