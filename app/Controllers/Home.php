@@ -44,9 +44,16 @@ class Home extends BaseController
     }
     public function tienda(): string {
         return 
-        view('front/header.php', ['titulo' => 'Productos'])
+        view('front/header.php', ['titulo' => 'Tienda'])
         .view('front/navbar.php')
         .view('tienda.php')
+        .view('front/footer.php');
+    }
+    public function producto(): string {
+        return 
+        view('front/header.php', ['titulo' => 'Productos'])
+        .view('front/navbar.php')
+        .view('producto.php')
         .view('front/footer.php');
     }
 }

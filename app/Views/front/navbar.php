@@ -29,7 +29,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contactanos</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contáctanos</a></li>
                         </ul>
                     </li>
                     

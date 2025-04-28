@@ -14,7 +14,8 @@
           <h5 class="card-title">Zapatillas Running Nike Downshifter</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
+          <!-- <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contactanos</a></li> -->
         </div>
       </div>
     </div>
@@ -27,7 +28,7 @@
           <h5 class="card-title">Zapatillas Running Reebok Nano X4 Ng Hombre</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -40,7 +41,7 @@
           <h5 class="card-title">Zapatillas Tenis Adidas Defiant Speed</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -55,7 +56,7 @@
           <h5 class="card-title">Zapatillas Running Nike Downshifter</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+            <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -67,7 +68,7 @@
           <h5 class="card-title">Zapatillas Tenis Topper Cover</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+            <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -80,7 +81,7 @@
           <h5 class="card-title">Zapatillas Running Reebok Nano X4</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn btn-primary">Ver</a>
+            <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
