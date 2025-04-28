@@ -33,7 +33,7 @@
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
     <h2 class="mb-4">Deja aquí tu Consulta</h2>
-    <form>
+    <form action="<?php echo base_url('/producto') ?>">
 
       <!-- Email -->
       <div class="mb-3">
