@@ -1,5 +1,6 @@
-<section id="nosotros" class="py-5 bg-light">
-  <div class="container">
+<div class="container my-5">
+<section id="nosotros" class="p-4 rounded bg-light shadow-sm">
+  
     <h1 class="mb-4 display-5 fw-bold">¿Quiénes somos?</h1>
 
     <p class="lead">
@@ -37,5 +38,6 @@
         </ul>
       </div>
     </div>
-  </div>
+  
 </section>
+</div>
