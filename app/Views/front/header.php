@@ -8,6 +8,7 @@
     <link href="assets/css/bootstrap.min.css"  rel="stylesheet" crossorigin="anonymous">
     <link href="assets/css/bootstrap-icons.css"  rel="stylesheet" crossorigin="anonymous">
     <link href="assets/css/mi-estilo.css">
+    <link rel="icon" type="image/png" href="assets/img/icons8-sneaker-60.png">
   </head>
   <body>
     <div class="text-center my-4">
