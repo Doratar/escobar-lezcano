@@ -4,7 +4,8 @@
     contacto que se consideren necesario. Deberá facilitar un cuestionario para que
     el potencial cliente se comunique con miembros de la empresa.</p> -->
     
-    <div class="container py-5">
+    <div class="container my-5">
+    <section id="contacto" class="p-4 rounded bg-light shadow-sm">
     <h1 class="mb-4">Contáctanos</h1>
   <div class="row mb-5 align-items-center">
     <!-- Datos -->
@@ -32,7 +33,7 @@
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
     <h2 class="mb-4">Deja aquí tu Consulta</h2>
-    <form>
+    <form action="<?php echo base_url('/producto') ?>">
 
       <!-- Email -->
       <div class="mb-3">
@@ -59,4 +60,5 @@
       <button type="reset" class="btn btn-secondary">Limpiar</button>
     </form>
   </div>
+  </section>
 </div>

@@ -3,7 +3,7 @@
     <h1 class="mb-4">Comercialización</h1>
 
     <div class="row">
-      <h2 class="h4">Tipos de Entregas</h2>
+      <h2 class="h4 mt-3">Tipos de Entregas</h2>
       <div class="col-md-3">
         <img src="assets\img\img-pagina\ENVIOS.jpg" class="img-comercializacion" alt="...">
       </div>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="row">
-      <h2 class="h4">Formas de Envío</h2>
+      <h2 class="h4 mt-3">Formas de Envío</h2>
       <div class="col-md-3">
         <img src="assets\img\img-pagina\CORREO ARGENTINO.png" class="img-comercializacion" alt="...">
       </div>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="row">
-      <h2 class="h4">Formas de Pago</h2>
+      <h2 class="h4 mt-3">Formas de Pago</h2>
       <div class="col-md-3">
         <img src="assets\img\img-pagina\MEDIOS DE PAGO.jpg" class="img-comercializacion" alt="...">
       </div>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="row">
-      <h2 class="h4">Información Útil</h2>
+      <h2 class="h4 mt-3">Información Útil</h2>
       <div class="col-md-3">
         <img src="assets\img\img-pagina\INFORMACION UTIL.png" class="img-comercializacion" alt="...">
       </div>
