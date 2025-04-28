@@ -5,11 +5,13 @@
     el potencial cliente se comunique con miembros de la empresa.</p> -->
     
     <div class="container py-5">
-    <h1 class="mb-4">Contactanos</h1>
+    <h1 class="mb-4">Contáctanos</h1>
   <div class="row mb-5 align-items-center">
     <!-- Datos -->
     <div class="col-md-6 mb-4 mb-md-0">
-      <img src="assets/img/logo.png" alt="Logo de Kicks Up" class="img-fluid mb-3" style="max-height: 120px;">
+      <a href="http://localhost/escobar-lezcano/">
+        <img src="assets/img/logo.png" alt="Logo de Kicks Up" class="logo mb-3">
+      </a>
       <h2 class="fw-bold">Kicks Up</h2>
       <ul class="list-unstyled">
         <li><strong>CUIT:</strong> 30-20987623-2</li>
@@ -31,7 +33,7 @@
 
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
-    <h2 class="mb-4">Formulario de Consultas</h2>
+    <h2 class="mb-4">Deja aquí tu Consulta</h2>
     <form>
 
       <!-- Email -->

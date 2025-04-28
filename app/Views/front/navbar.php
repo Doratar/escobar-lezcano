@@ -16,7 +16,7 @@
                         <a class="nav-link" href="<?php echo base_url('/tienda') ?>">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('/comercializacion') ?>">Comercializacion</a>
+                        <a class="nav-link" href="<?php echo base_url('/comercializacion') ?>">Comercialización</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -29,7 +29,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contactanos</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contáctanos</a></li>
                         </ul>
                     </li>
                     

@@ -25,12 +25,12 @@
     </div>
   </div>
 </footer>
-
+<!-- 
 <div class="row">
     <dov class="col">twitter</dov>
     <dov class="col">instagram</dov>
     <dov class="col">facebook</dov>
-</div>
+</div> -->
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Bootstrap & Iconos -->
