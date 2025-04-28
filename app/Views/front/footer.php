@@ -14,7 +14,7 @@
         <h5>Contacto</h5>
         <p>Email: contacto@Kicksup.com</p>
         <p>Tel: +54 9 1234 567890</p>
-        <a href="<?php base_url("contacto")?>">Contactanos</a>
+        <a href="<?php echo base_url('/contacto') ?>">Contáctanos</a>
       </div>
       <div class="col-md-4 mb-3">
         <h5>Ubicación</h5>
