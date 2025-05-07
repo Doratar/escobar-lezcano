@@ -21,3 +21,13 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+#accordionExample{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.texto-justifiado{
+    text-align: justify;
+    text-justify: inter-word;
+}

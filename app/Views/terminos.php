@@ -2,7 +2,7 @@
     <h2 class="text-center">TÉRMINOS Y CONDICIONES — Kicks Up</h2>
     <h4 class="text-center">Esta política de condiciones de uso es válida a partir del abril 2025.</h4>
 
-    <p>Kicks Up, persona jurídica de derecho privado describe, a través de este documento, las normas de uso del sitio www.kicksup.com y de cualquier otro sitio web, tienda o aplicación operada por el titular.
+    <p class="texto-justifiado">Kicks Up, persona jurídica de derecho privado describe, a través de este documento, las normas de uso del sitio www.kicksup.com y de cualquier otro sitio web, tienda o aplicación operada por el titular.
     Al navegar por este sitio web, consideramos que está de acuerdo con las condiciones de uso que figuran a continuación.
     Si no está de acuerdo con los términos de este acuerdo, le pedimos que no haga ningún otro uso de este sitio web, mucho menos que se registre o envíe sus datos personales.
     Si cambiamos nuestras condiciones de uso, publicaremos el nuevo texto en este sitio web, con una fecha de revisión actualizada. Podemos modificar este documento en cualquier momento.Si hay un cambio significativo en los términos de este acuerdo, podemos informarle utilizando la información de contacto que tenemos en nuestra base de datos o mediante una notificación.
