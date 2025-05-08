@@ -24,7 +24,7 @@
                             Nosotros
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('/nosotros') ?>">Quienes somos</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('/nosotros') ?>">Quiénes somos</a></li>
                             <!-- <li><a class="dropdown-item" href="#">Nuetra misión</a></li> -->
                             <li>
                                 <hr class="dropdown-divider">
