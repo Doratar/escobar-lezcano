@@ -1,5 +1,5 @@
 <div class="container my-5">
-<section id="nosotros" class="p-4 rounded bg-light shadow-sm">
+<section id="nosotros" class="p-4 rounded bg-light shadow-sm texto-justificado">
   
     <h1 class="mb-4 display-5 fw-bold">¿Quiénes somos?</h1>
 
