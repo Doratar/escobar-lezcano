@@ -13,3 +13,4 @@ $routes->get('contacto', 'Home::contacto');
 $routes->get('terminos', 'Home::terminos');
 
 $routes->get('producto', 'Home::producto');
+$routes->get('registro', 'Home::registro');

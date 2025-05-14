@@ -56,4 +56,12 @@ class Home extends BaseController
         .view('producto.php')
         .view('front/footer.php');
     }
+
+    public function registro() : string {
+        return
+        view('front/header.php', ['titulo' => 'Registro'])
+        .view('front/navbar.php')
+        .view('usuario/registro.php')
+        .view('front/footer.php');
+    }
 }
