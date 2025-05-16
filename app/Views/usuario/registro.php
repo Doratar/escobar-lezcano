@@ -9,14 +9,12 @@
         <?php if(!empty (session()->getFlashdata('sucess'))):?>
         <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
-        <div class="mb-3">    
-            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
-            <label for="UsuarioNombre" class="form-label">Ingresa tu nombre de usuario: </label>
-            <input id="UsuarioNombre" type="text" class="form-control" placeholder="Ingresa tu sobrenombre" aria-label="UsuarioDesc">
-        </div>
+
+        <!-- MAIL -->
 
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Tu mail wacho" aria-label="UsuarioMail" aria-describedby="basic-addon2">
+            <label for="UsuarioMail" class="form-label">Ingresa tu usuario</label>
+            <input id="UsuarioMail" type="text" class="form-control" placeholder="Tu mail wacho" aria-label="UsuarioMail" aria-describedby="basic-addon2">
             <span class="input-group-text" id="basic-addon2">@dominio.com</span>
         </div>
 
