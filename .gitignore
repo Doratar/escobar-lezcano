@@ -1,3 +1,5 @@
 */cache/*
 */cache/!index.html
 writable/debugbar/*
+writable/session/*
+writable/uploads/*

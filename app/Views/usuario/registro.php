@@ -9,39 +9,43 @@
         <?php if(!empty (session()->getFlashdata('sucess'))):?>
         <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
+        
+        <div class="mb-3">
+            <label for="Nombre">Ingrese nombre: </label>
+            <input type="text" class="form-control" id="Nombre" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        
+        <div class="mb-3">
+            <label for="Apellido">Ingrese apellido: </label>
+            <input type="text" class="form-control" id="Apellido" placeholder="Apellido" aria-label="Apellido">
+        </div>
+        
+        <div class="mb-3">
+            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+            <label for="UsuarioMail" class="form-label">Ingresa su mail: </label>
+            <input id="UsuarioMail" type="mail" class="form-control" placeholder="Ingrese mail" aria-label="UsuarioDesc">
+        </div>
 
-        <!-- MAIL -->
+        <div class="m-3">
+            <label for="UsuarioPass">Ingrese contraseña: </label>
+            <input type="password" class="form-control" id="UsuarioPass" placeholder="Contraseña" aria-label="UsuarioPass">
+        </div>
 
         <div class="mb-3">
-            <label for="UsuarioMail" class="form-label">Ingresa tu usuario</label>
-            <input id="UsuarioMail" type="text" class="form-control" placeholder="Tu mail wacho" aria-label="UsuarioMail" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2">@dominio.com</span>
+            <label for="UsuarioConfirmarPass">Confirmar contraseña: </label>
+            <input type="password" class="form-control" id="UsuarioConfirmarPass" placeholder="Contraseña" aria-label="UsuarioConfirmarPass">
         </div>
 
         <div class="mb-3">
-            <label for="basic-url" class="form-label">Your vanity URL</label>
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-            </div>
-            <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
+            <label for="UsuarioFechaNac">Ingrese Fecha de nacimiento: </label>
+            <input type="date" class="form-control" id="UsuarioFechaNac" placeholder="Fecha de nacimiento" aria-label="Fecha de nacimiento">
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">$</span>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-            <span class="input-group-text">.00</span>
+        <div class="mb-3">
+            <input type="checkbox" class="form-check-input" id="Acepto" aria-label="Acepto">
+            <label for="Acepto">Leí y acepto los terminos y condiciones</label>
         </div>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-            <span class="input-group-text">@</span>
-            <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-        </div>
-
-        <div class="input-group">
-            <span class="input-group-text">With textarea</span>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div>
+        <input type="submit" class="btn btn-primary" value="Registrar">
     </form>
 </div>
