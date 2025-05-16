@@ -13,24 +13,24 @@
         <?php validation_list_errors() ?>
 
         <div class="mb-3">
-            <label for="Nombre">Ingrese nombre: </label>
-            <input type="text" class="form-control" id="UsuarioNombre" placeholder="Nombre" aria-label="Nombre">
+            <label for="UsuarioNombre">Ingrese nombre: </label>
+            <input type="text" class="form-control" name="UsuarioNombre" id="UsuarioNombre" placeholder="Nombre" aria-label="Nombre">
         </div>
         
         <div class="mb-3">
             <label for="Apellido">Ingrese apellido: </label>
-            <input type="text" class="form-control" id="UsuarioApellido" placeholder="Apellido" aria-label="Apellido">
+            <input type="text" class="form-control" name="UsuarioApellido" id="UsuarioApellido" placeholder="Apellido" aria-label="Apellido">
         </div>
         
         <div class="mb-3">
             <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
             <label for="UsuarioMail" class="form-label">Ingresa su mail: </label>
-            <input id="UsuarioMail" type="mail" class="form-control" placeholder="Ingrese mail" aria-label="UsuarioDesc">
+            <input id="UsuarioMail" type="mail" class="form-control" placeholder="Ingrese mail" aria-label="UsuarioMail" name="UsuarioMail">
         </div>
 
         <div class="m-3">
             <label for="UsuarioPass">Ingrese contraseña: </label>
-            <input type="password" class="form-control" id="UsuarioPass" placeholder="Contraseña" aria-label="UsuarioPass">
+            <input type="password" class="form-control" id="UsuarioPass" name="UsuarioPass" placeholder="Contraseña" aria-label="UsuarioPass">
         </div>
 
         <div class="mb-3">
@@ -40,7 +40,7 @@
 
         <div class="mb-3">
             <label for="UsuarioFechaNac">Ingrese Fecha de nacimiento: </label>
-            <input type="date" class="form-control" id="UsuarioFechaNac" placeholder="Fecha de nacimiento" aria-label="Fecha de nacimiento">
+            <input type="date" class="form-control" id="UsuarioFechaNac" name="UsuarioFechaNac" placeholder="Fecha de nacimiento" aria-label="Fecha de nacimiento">
         </div>
 
         <div class="mb-3">

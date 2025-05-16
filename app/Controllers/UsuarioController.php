@@ -17,16 +17,17 @@ class UsuarioController extends Controller{
         echo view('front/footer');
     }
     public function formValidation(){
-        $input=$this->validate([
+        $input =$this->validate([
             'UsuarioNombre'=>'required|min_length[3]',
             'UsuarioApellido'=>'required|min_length[3]|max_lengh[25]',
             'UsuarioMail'=>'required|min_length[4]|max_lengh[100]|valid_email|is_unique[usuario.email]',
-            'UsuarioPass'=>'required|min_length[3]|max_lengh[10]'
+            'UsuarioPass'=>'required|min_length[3]|max_lengh[10]',
+            'UsuarioFechaNac'=>'required',
         ]);
 
         $formModel = new UsuarioModel();
         
-        if(!$input){
+        if($input){
             $data['titulo'] = 'Registro';
             echo view('front/header', $data);
             echo view('front/navbar');
@@ -34,10 +35,11 @@ class UsuarioController extends Controller{
             echo view('front/footer');
         } else {
             $formModel -> save([
-                'nombre' => $this->request->getVar('UsuarioNombre'),
-                'apellido' => $this->request->getVar('UsuarioApellido'),
-                'mail' => $this->request->getVar('UsuarioMail'),
-                'pass' => password_hash($this->request->getVar('UsuarioPass'), PASSWORD_DEFAULT),
+                'UsuarioNombre' => $this->request->getVar('UsuarioNombre'),
+                'UsuarioApellido' => $this->request->getVar('UsuarioApellido'),
+                'UsuarioMail' => $this->request->getVar('UsuarioMail'),
+                'UsuarioPass' => password_hash($this->request->getVar('UsuarioPass'), PASSWORD_DEFAULT),
+                'UsuarioFechaNac' => $this->request->getVar('UsuarioFechaNac'),
             ]);
 
             session()->setFlashdata('success', 'Usuario registrado con exito');
