@@ -10,14 +10,16 @@
         <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
         
+        <?php validation_list_errors() ?>
+
         <div class="mb-3">
             <label for="Nombre">Ingrese nombre: </label>
-            <input type="text" class="form-control" id="Nombre" placeholder="Nombre" aria-label="Nombre">
+            <input type="text" class="form-control" id="UsuarioNombre" placeholder="Nombre" aria-label="Nombre">
         </div>
         
         <div class="mb-3">
             <label for="Apellido">Ingrese apellido: </label>
-            <input type="text" class="form-control" id="Apellido" placeholder="Apellido" aria-label="Apellido">
+            <input type="text" class="form-control" id="UsuarioApellido" placeholder="Apellido" aria-label="Apellido">
         </div>
         
         <div class="mb-3">

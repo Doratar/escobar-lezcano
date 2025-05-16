@@ -11,25 +11,24 @@ class UsuarioController extends Controller{
     public function create()
     {
         $dato['titulo']='Registro';
-        echo view('front/head_view',$dato);
-        echo view('front/nav');
-        echo view('back/usuraio/registro');
+        echo view('front/header',$dato);
+        echo view('front/navbar');
+        echo view('usuario/registro');
         echo view('front/footer');
     }
     public function formValidation(){
         $input=$this->validate([
-            'nombre'=>'required|min_length[3]',
-            'apellido'=>'required|min_length[3]|max_lengh[25]',
-            'usuario'=>'required|min_length[3]',
-            'email'=>'required|min_length[4]|max_lengh[100]|valid_email|is_unique[usuario.email]',
-            'pass'=>'required|min_length[3]|max_lengh[10]'
+            'UsuarioNombre'=>'required|min_length[3]',
+            'UsuarioApellido'=>'required|min_length[3]|max_lengh[25]',
+            'UsuarioMail'=>'required|min_length[4]|max_lengh[100]|valid_email|is_unique[usuario.email]',
+            'UsuarioPass'=>'required|min_length[3]|max_lengh[10]'
         ]);
 
         $formModel = new UsuarioModel();
         
         if(!$input){
             $data['titulo'] = 'Registro';
-            echo view('front/head', $data);
+            echo view('front/header', $data);
             echo view('front/navbar');
             echo view('usuario/registro', ['validation' => $this->validator]);
             echo view('front/footer');

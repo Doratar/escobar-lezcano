@@ -68,4 +68,5 @@ class Home extends BaseController
     public function registrarUsuario() {
         
     }
+    
 }
