@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
+        'hostname'     => 'srv1183.hstgr.io',
+        'username'     => 'u119340966_root',
+        'password'     => 'Base001$$',
+        'database'     => 'u119340966_escobarlezcano',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
