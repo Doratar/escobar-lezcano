@@ -1,16 +1,23 @@
 <div class="container p-4">
     <h1>Resgitro de usuario</h1>
-    <form action="post">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                aria-describedby="basic-addon1">
+    <?php $validation = \Config\Services::validation(); ?>
+    <form method="post" action="<?php echo base_url('/registrarUsuario')?>">
+        <?=csrf_field();?> <!-- Token de seguridad -->
+        <?php if(!empty (session()->getFlashdata('fail'))):?>
+        <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+        <?php endif?>
+        <?php if(!empty (session()->getFlashdata('sucess'))):?>
+        <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+        <?php endif?>
+        <div class="mb-3">    
+            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+            <label for="UsuarioNombre" class="form-label">Ingresa tu nombre de usuario: </label>
+            <input id="UsuarioNombre" type="text" class="form-control" placeholder="Ingresa tu sobrenombre" aria-label="UsuarioDesc">
         </div>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient’s username" aria-label="Recipient’s username"
-                aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2">@example.com</span>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Tu mail wacho" aria-label="UsuarioMail" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">@dominio.com</span>
         </div>
 
         <div class="mb-3">
