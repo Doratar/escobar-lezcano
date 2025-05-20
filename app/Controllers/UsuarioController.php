@@ -17,13 +17,7 @@ class UsuarioController extends Controller{
         echo view('front/footer');
     }
     public function formValidation(){
-        $input =$this->validate([
-            'UsuarioNombre'=>'required|min_length[3]',
-            'UsuarioApellido'=>'required|min_length[3]|max_lengh[25]',
-            'UsuarioMail'=>'required|min_length[4]|max_lengh[100]|valid_email|is_unique[usuario.email]',
-            'UsuarioPass'=>'required|min_length[3]|max_lengh[10]',
-            'UsuarioFechaNac'=>'required',
-        ]);
+        $input =$this->validate([]);
 
         $formModel = new UsuarioModel();
         

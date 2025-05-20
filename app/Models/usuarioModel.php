@@ -16,7 +16,6 @@ class UsuarioModel extends Model
         'UsuarioEmail',
         'UsuarioPass',
         'UsuarioFechaNac',
-        'PerfiId',
         'UsuarioActivo'
     ];
 }
