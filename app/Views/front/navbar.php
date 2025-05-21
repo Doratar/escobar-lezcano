@@ -32,7 +32,9 @@
                             <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contáctanos</a></li>
                         </ul>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('/registro') ?>">Registrarse</a>
+                    </li>
                 </ul>
                 <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">

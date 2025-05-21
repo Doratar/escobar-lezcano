@@ -10,7 +10,7 @@
         <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
         
-        <?php validation_list_errors() ?>
+        <?php echo $validation->listErrors() ?>
 
         <div class="mb-3">
             <label for="UsuarioNombre">Ingrese nombre: </label>
@@ -28,7 +28,7 @@
             <input id="UsuarioMail" type="mail" class="form-control" placeholder="Ingrese mail" aria-label="UsuarioMail" name="UsuarioMail">
         </div>
 
-        <div class="m-3">
+        <div class="mb-3">
             <label for="UsuarioPass">Ingrese contraseña: </label>
             <input type="password" class="form-control" id="UsuarioPass" name="UsuarioPass" placeholder="Contraseña" aria-label="UsuarioPass">
         </div>
