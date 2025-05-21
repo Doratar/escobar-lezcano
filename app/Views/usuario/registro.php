@@ -1,5 +1,5 @@
 <div class="container p-4">
-    <h1>Resgitro de usuario</h1>
+    <h1>Registro de usuario</h1>
     <?php $validation = \Config\Services::validation(); ?>
     <form method="post" action="<?php echo base_url('/registrar')?>">
         <?=csrf_field();?> <!-- Token de seguridad -->

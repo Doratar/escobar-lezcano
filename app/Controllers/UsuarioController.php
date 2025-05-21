@@ -22,7 +22,7 @@ class UsuarioController extends Controller{
             'UsuarioApellido' => 'required|min_length[3]|max_length[25]',
             'UsuarioMail' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usuarios.UsuarioMail]',
             'UsuarioPass' => 'required|min_length[3]|max_length[10]',
-            'UsuarioConfirmarPass'=> 'matches[UsuarioPass]', //TODO tira error cuando no es
+            // TODO 'UsuarioConfirmarPass'=> 'matches[UsuarioPass]', // tira error cuando no es error
             'UsuarioFechaNac' => 'required'
         ], 
         [
@@ -66,6 +66,15 @@ class UsuarioController extends Controller{
             session()->setFlashdata('success', 'Usuario registrado con exito');
             return redirect('registro');
         }
+    }
+
+    public function login()
+    {
+        $data['titulo'] = 'Login';
+        echo view('front/header', $data);
+        echo view('front/navbar');
+        echo view('usuario/login');
+        echo view('front/footer');
     }
 
 }
