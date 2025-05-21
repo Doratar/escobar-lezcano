@@ -13,7 +13,7 @@ class UsuarioModel extends Model
     protected $allowedFields = [
         'UsuarioNombre',
         'UsuarioApellido',
-        'UsuarioEmail',
+        'UsuarioMail',
         'UsuarioPass',
         'UsuarioFechaNac',
         'UsuarioActivo'

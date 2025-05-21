@@ -70,6 +70,9 @@ class UsuarioController extends Controller{
 
     public function login()
     {
+        if(session()->get('loggedUser')){
+            return redirect()->to('/'); // Redirigir a la página de inicio
+        }
         $data['titulo'] = 'Login';
         echo view('front/header', $data);
         echo view('front/navbar');
@@ -77,4 +80,45 @@ class UsuarioController extends Controller{
         echo view('front/footer');
     }
 
+    public function loginValidation()
+    {
+        //Crea el objeto que necesita validar
+        $input = $this->validate([
+            'UsuarioMail' => 'required|valid_email',
+            'UsuarioPass' => 'required'
+        ], 
+        [
+            'UsuarioMail' => [
+                'required' => 'El mail es obligatorio',
+            ],
+            'UsuarioPass' => [
+                'required' => 'La contraseña es obligatoria',
+            ]
+        ]);
+
+        if(!$input){
+            $data['titulo'] = 'Login';
+            echo view('front/header', $data);
+            echo view('front/navbar');
+            echo view('usuario/login', ['validation' => $this->validator]);
+            echo view('front/footer');
+        } else {
+            $model = new UsuarioModel();
+            $user = $model->where('UsuarioMail', $this->request->getVar('UsuarioMail'))->first();
+
+            if($user){
+                if(password_verify($this->request->getVar('UsuarioPass'), $user['UsuarioPass'])){
+                    session()->set('loggedUser', $user['UsuarioId']);
+                    return redirect()->to('/'); // Redirigir a la página de inicio
+                } else {
+                    session()->setFlashdata('fail', 'Contraseña incorrecta');
+                    return redirect()->to('/login');
+                }
+            } else {
+                session()->setFlashdata('fail', 'El usuario no existe');
+                return redirect()->to('/login');
+            }
+        }
+        
+    }
 }

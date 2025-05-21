@@ -17,3 +17,5 @@ $routes->get('producto', 'Home::producto');
 // Registro de un nuevo usuario
 $routes->get('registro', 'UsuarioController::create');
 $routes->post('registrar', 'UsuarioController::formValidation');
+$routes->get('login', 'UsuarioController::login');
+$routes->post('login', 'UsuarioController::loginValidation');
