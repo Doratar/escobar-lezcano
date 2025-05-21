@@ -70,6 +70,7 @@ class UsuarioController extends Controller{
 
     public function login()
     {
+        // TODO haceer el filtro de que si esta logueado no pueda volver a la pagina de login
         if(session()->get('loggedUser')){
             return redirect()->to('/'); // Redirigir a la página de inicio
         }
