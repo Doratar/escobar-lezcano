@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+use Modules\Authentication\Models\UserAuthModel;
+
+class ProductoModel extends Model
+{
+    protected $table = 'productos';
+
+    protected $primaryKey = 'prodId';
+    protected $allowedFields = [
+        'prodNombre',
+        'prodDescripcion',
+        'prodPrecio',
+        'cateId',
+        'prodImagenUrl',
+        'prodMarca'
+    ];
+
+    public function getProductos()
+    {
+        return $this->findAll();
+    }
+
+    public function getProductosActivos()
+    {
+        return $this->where('prodActivo', 1)->findAll();
+    }
+
+    public function getProductoById($id)
+    {
+        return $this->find($id);
+    }
+
+    public function createProducto($data)
+    {
+        return $this->insert($data);
+    }
+}

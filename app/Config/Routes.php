@@ -11,11 +11,26 @@ $routes->get('tienda', 'Home::tienda');
 $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('terminos', 'Home::terminos');
-
 $routes->get('producto', 'Home::producto');
 
 // Registro de un nuevo usuario
-$routes->get('registro', 'UsuarioController::create');
+$routes->get('registro', 'UsuarioController::create' , ['filter' => 'auth']);
 $routes->post('registrar', 'UsuarioController::formValidation');
+
+// Login de un usuario
 $routes->get('login', 'UsuarioController::login');
 $routes->post('login', 'UsuarioController::loginValidation');
+$routes->get('logout', 'UsuarioController::logout');
+
+// Cliente
+$routes->get('cliente', 'ClienteController::index', ['filter'=>'auth']);
+
+// Admin
+$routes->get('admin', 'AdminController::index', ['filter' => 'auth']);
+$routes->get('admin/productos', 'AdminController::productos');
+
+// CRUD de productos
+$routes->get('admin/productos/crear', 'ProductoController::create', ['filter' => 'auth']);
+$routes->post('admin/productos/crear', 'ProductoController::formValidation');
+$routes->get('admin/productos/editar/(:num)', 'ProductoController::edit/$1', ['filter' => 'auth']);
+$routes->post('admin/productos/editar/(:num)', 'ProductoController::update/$1', ['filter' => 'auth']);

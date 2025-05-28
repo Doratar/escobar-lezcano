@@ -32,23 +32,9 @@
                             <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contáctanos</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('/registro') ?>">Registrarse</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Nuetra misión</a></li> -->
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('/login') ?>">Iniciar sesión</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('/logout') ?>">Cerrar session</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('/registro') ?>">Registrarse</a>
-                    </li> -->
                 </ul>
                 <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">

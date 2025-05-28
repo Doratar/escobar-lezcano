@@ -16,13 +16,13 @@ class UsuarioController extends Controller{
         echo view('usuario/registro', ['validation' => $this->validator]);
         echo view('front/footer');
     }
+    
     public function formValidation(){
         $input =$this->validate([
             'UsuarioNombre' => 'required|min_length[3]',
             'UsuarioApellido' => 'required|min_length[3]|max_length[25]',
             'UsuarioMail' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usuarios.UsuarioMail]',
             'UsuarioPass' => 'required|min_length[3]|max_length[10]',
-            // TODO 'UsuarioConfirmarPass'=> 'matches[UsuarioPass]', // tira error cuando no es error
             'UsuarioFechaNac' => 'required'
         ], 
         [
@@ -42,7 +42,12 @@ class UsuarioController extends Controller{
                 'valid_email' => 'El formato del mail es incorrecto',
                 'is_unique' => 'El mail ya está registrado'
             ],
-            // TODO HACER EL RESTO DE MENSAJES
+            'UsuarioPass' => [
+                'required' =>'La Contraseña es obligatoria',
+                'min_length'=>'La Contraseñaa debe tener al menos 3 caracteres',
+                'max_length'=>'La Contraseña no puede tener más de 10 caracteres'
+            ],
+            'UsuarioFechaNac' => ['required'=>'La fecha de nacimiento es obligatoria']
         ]);
         
 
@@ -70,10 +75,6 @@ class UsuarioController extends Controller{
 
     public function login()
     {
-        // TODO haceer el filtro de que si esta logueado no pueda volver a la pagina de login
-        if(session()->get('loggedUser')){
-            return redirect()->to('/'); // Redirigir a la página de inicio
-        }
         $data['titulo'] = 'Login';
         echo view('front/header', $data);
         echo view('front/navbar');
@@ -83,7 +84,7 @@ class UsuarioController extends Controller{
 
     public function loginValidation()
     {
-        //Crea el objeto que necesita validar
+        //Crea el objeto validate que tiene las reglas a validar
         $input = $this->validate([
             'UsuarioMail' => 'required|valid_email',
             'UsuarioPass' => 'required'
@@ -97,6 +98,7 @@ class UsuarioController extends Controller{
             ]
         ]);
 
+        // Si la validacion falla, muestra el formulario de login con los errores
         if(!$input){
             $data['titulo'] = 'Login';
             echo view('front/header', $data);
@@ -104,14 +106,38 @@ class UsuarioController extends Controller{
             echo view('usuario/login', ['validation' => $this->validator]);
             echo view('front/footer');
         } else {
+            // Si la validación es exitosa, crea un objeto del modelo UsuarioModel
             $model = new UsuarioModel();
+            // Busca el usuario por el mail ingresado
             $user = $model->where('UsuarioMail', $this->request->getVar('UsuarioMail'))->first();
 
             if($user){
+                // Si exite verifica la contraseña
                 if(password_verify($this->request->getVar('UsuarioPass'), $user['UsuarioPass'])){
-                    session()->set('loggedUser', $user['UsuarioId']);
-                    return redirect()->to('/'); // Redirigir a la página de inicio
+                    $ses_data = [
+                        'UsuarioId' => $user['UsuarioId'],
+                        'UsuarioNombre' => $user['UsuarioNombre'],
+                        'UsuarioMail' => $user['UsuarioMail'],
+                        'UsuarioFechaNac' => $user['UsuarioFechaNac'],
+                        'PerfilId' => $user['PerfilId'],
+                        'logged_in' => TRUE
+                    ];
+
+                    // Guarda los datos del usuario en la sesión
+                    $session = session();
+                    $session->set($ses_data);
+                    $session->setFlashdata('success', 'Bienvenido ' . $user['UsuarioNombre']);
+
+                    if ($user['PerfilId'] == 1) {
+                        // Si el usuario es administrador, redirige al panel de administración
+                        return redirect()->to('admin');
+                    } elseif ($user['PerfilId'] == 2) {
+                        // Si el usuario es cliente, redirige al panel del cliente
+                        return redirect()->to('cliente');
+                    }
+                    // return redirect()->to('/'); // Redirigir a la página de inicio
                 } else {
+                    // Si la contraseña es incorrecta, muestra un mensaje de error
                     session()->setFlashdata('fail', 'Contraseña incorrecta');
                     return redirect()->to('/login');
                 }
@@ -119,7 +145,12 @@ class UsuarioController extends Controller{
                 session()->setFlashdata('fail', 'El usuario no existe');
                 return redirect()->to('/login');
             }
-        }
-        
+        } 
+    }
+
+    public function logout() {
+        $session = session();
+        $session->destroy();
+        return redirect()->to(base_url('/login'));
     }
 }

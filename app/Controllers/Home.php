@@ -64,9 +64,4 @@ class Home extends BaseController
         .view('usuario/registro.php')
         .view('front/footer.php');
     }
-
-    public function registrarUsuario() {
-        
-    }
-    
 }

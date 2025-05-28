@@ -16,6 +16,22 @@ class UsuarioModel extends Model
         'UsuarioMail',
         'UsuarioPass',
         'UsuarioFechaNac',
-        'UsuarioActivo'
+        'UsuarioActivo',
+        'PerfilId' // Asegúrate de que este campo exista en tu tabla
     ];
+
+    public function getUsuarios()
+    {
+        return $this->findAll();
+    }
+
+    public function getUsuarioById($id)
+    {
+        return $this->find($id);
+    }
+
+    public function createUsuario($data)
+    {
+        return $this->insert($data);
+    }
 }

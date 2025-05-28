@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Login de usuario</h1>
+    <h1>Iniciar sesión</h1>
     <?php $validation = \Config\Services::validation(); ?>
     <form method="post" action="<?php echo base_url('/login')?>">
         <?=csrf_field();?> <!-- Token de seguridad -->
