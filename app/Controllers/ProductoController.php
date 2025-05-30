@@ -13,8 +13,8 @@ class ProductoController extends Controller{
      public function create(){
         return
         view('front/header.php', ['titulo' => 'productoAlta'])
-        .view('front/navbar.php')
-        .view('usuario/productoAlta.php')
+        .view('admin/navbar.php')
+        .view('productos/productoAlta.php')
         .view('front/footer.php');
     }
 

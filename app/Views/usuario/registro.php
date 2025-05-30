@@ -3,6 +3,7 @@
     <?php $validation = \Config\Services::validation(); ?>
     <form method="post" action="<?php echo base_url('/registrar')?>">
         <?=csrf_field();?> <!-- Token de seguridad -->
+        
         <?php if(!empty (session()->getFlashdata('fail'))):?>
         <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>

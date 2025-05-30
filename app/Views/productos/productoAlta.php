@@ -1,7 +1,9 @@
 <div class="container">
-  <?php $validation-> ?>
+  <?php $validation = \Config\Services::validation() ?>
+  <?php $validation->listErrors() ?>
   <form action="/alta-producto" method="post">
     <h2>Alta de Producto</h2>
+    <?php echo gettype(session()->get('PerfilId'))?>
     
     <label for="nombre">Nombre del Producto:</label><br>
     <input type="text" id="nombre" name="nombre" required><br><br>

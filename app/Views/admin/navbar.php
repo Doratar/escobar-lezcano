@@ -10,13 +10,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo base_url('/') ?>">Dashboard</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin') ?>">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('productos') ?>">Productos</a>
+                        <a class="nav-link" href="<?php echo base_url('admin/productos') ?>">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('/usuarios') ?>">Usuarios</a>
+                        <a class="nav-link" href="<?php echo base_url('admin/usuarios') ?>">Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('/categorias') ?>">Categorias</a>
