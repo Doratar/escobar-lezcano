@@ -1,38 +1,75 @@
 <?php
 namespace App\Controllers;
 Use App\Models\UsuarioModel;
+Use App\Models\CategoriaModel;
 Use CodeIgniter\Controller;
 
 class ProductoController extends Controller{
+
+    protected $ProductoModel;
+    protected $CategoriaModel;
     public function __construct()
     {
         helper(['form','url']);
         $this->ProductoModel = new \App\Models\ProductoModel();
+        $this ->categorias = new CategoriaModel();
     }
 
      public function create(){
+        $data[] = [];
+        $categorias = new CategoriaModel();
+        $data['categorias'] = $categorias->getCategorias();
         return
         view('front/header.php', ['titulo' => 'productoAlta'])
         .view('admin/navbar.php')
-        .view('productos/productoAlta.php')
+        .view('productos/productoAlta.php', $data)
         .view('front/footer.php');
     }
 
     public function formValidation() {
+        $data[] = [];
+        $categorias = new CategoriaModel();
+        $data['categorias'] = $categorias->getCategorias();
+
         $input = $this->validate([
             'prodNombre' => 'required|min_length[3]',
             'prodDescripcion' => 'required|min_length[10]',
             'prodPrecio' => 'required|numeric',
             'cateId' => 'required|integer',
-            'prodImagenUrl' => 'required',
+            'prodImagenUrl' => 'uploaded[prodImagenUrl]',
             'prodMarca' => 'required|min_length[2]'
         ]);
 
         if(!$input) {
+            $data['validation'] = $this->validator;
+
             return view('front/header.php', ['titulo' => 'productoAlta'])
-            .view('front/navbar.php')
-            .view('usuario/productoAlta.php', ['validation' => $this->validator])
+            .view('admin/navbar.php')
+            .view('productos/productoAlta.php', $data)
             .view('front/footer.php');
+        } else {
+            // Procesar la imagen y guardar el producto
+            $imagen = $this->request->getFile('prodImagenUrl');
+            $nombreAleatorio = $imagen->getRandomName();
+            $imagen->move(ROOTPATH . 'assets/uploads', $nombreAleatorio);
+
+            // Guardar los datos del producto
+            $data = [
+                'prodNombre' => $this->request->getPost('prodNombre'),
+                'prodDescripcion' => $this->request->getPost('prodDescripcion'),
+                'prodPrecio' => $this->request->getPost('prodPrecio'),
+                'cateId' => $this->request->getPost('cateId'),
+                'prodImagenUrl' => $imagen->getName(),
+                'prodMarca' => $this->request->getPost('prodMarca'),
+                'prodColor' => $this->request->getPost('prodColor'),
+                'prodStock' => $this->request->getPost('prodStock')
+            ];
+
+            if($this->ProductoModel->insert($data)) {
+                return redirect()->to('admin/productos');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Error al crear el producto');
+            }
         }
 
     }
