@@ -25,7 +25,7 @@ class AdminController extends Controller{
         // TODO aca va la tabla de productos
         $data['titulo'] = 'Productos';
         $productoModel = new ProductoModel();
-        $data['productos'] = $productoModel->findAll();
+        $data['productos'] = $productoModel->getProductos();
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('productos/tabla-productos', $data);

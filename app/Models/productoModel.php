@@ -38,4 +38,9 @@ class ProductoModel extends Model
     {
         return $this->insert($data);
     }
+
+    public function updateProducto($id, $data)
+    {
+        return $this->update($id, $data);
+    }
 }

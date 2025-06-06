@@ -15,6 +15,16 @@ class ProductoController extends Controller{
         $this ->categorias = new CategoriaModel();
     }
 
+    public function catalogo(){
+        $data['titulo'] = 'Catalogo de Productos';
+        $data['productos'] = $this->ProductoModel->getProductos();
+        return
+        view('front/header.php', $data)
+        .view('front/navbar.php')
+        .view('productos/productoCatalogo.php', $data)
+        .view('front/footer.php');
+    }
+
      public function create(){
         $data[] = [];
         $categorias = new CategoriaModel();

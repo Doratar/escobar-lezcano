@@ -36,11 +36,19 @@
     <form action="<?php echo base_url('/producto') ?>">
 
       <!-- Email -->
+       <?php if(!isset($usuario)): ?>
       <div class="mb-3">
         <label for="email" class="form-label">Correo electrónico</label>
         <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com" required>
         <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
       </div>
+      <?php else: ?>
+        <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" value="<?php echo($usuario) ?>" required>
+        <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+      </div>
+      <?php endif; ?>
 
       <!-- Teléfono -->
       <div class="mb-3">
