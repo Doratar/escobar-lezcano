@@ -42,34 +42,34 @@
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
     <h2 class="mb-4">Deja aquí tu Consulta</h2>
-    <form action="<?php echo base_url('consultas') ?>" method="post">
+    <form action="<?php echo base_url('admin/consultas/crear') ?>" method="post">
 
 <!-- Email -->
 <?php if(!isset($usuario)): ?>
   <div class="mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
-    <input type="email" class="form-control" id="email" name="consultasMail" placeholder="ejemplo@dominio.com" required>
+    <label for="consultasMail" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="consultasMail" name="consultasMail" placeholder="ejemplo@dominio.com" required>
     <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
   </div>
 <?php else: ?>
   <div class="mb-3">
     <label for="email" class="form-label">Correo electrónico</label>
-    <input type="email" class="form-control" id="email" name="consultasMail" value="<?php echo($usuario) ?>" required>
+    <input type="email" class="form-control" id="consultasMail" name="consultasMail" value="<?php echo($usuario) ?>" required>
     <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
   </div>
 <?php endif; ?>
 
 <!-- Teléfono -->
 <div class="mb-3">
-  <label for="telefono" class="form-label">Teléfono</label>
-  <input type="tel" class="form-control" id="telefono" name="consultasTelefono" placeholder="Ej: 3794123456" pattern="[0-9]{10}" required>
+  <label for="consultasTelefono" class="form-label">Teléfono</label>
+  <input type="tel" class="form-control" id="consultasTelefono" name="consultasTelefono" placeholder="Ej: 3794123456" pattern="[0-9]{10}" required>
   <div class="form-text">Ingresá el número sin espacios ni guiones (10 dígitos).</div>
 </div>
 
 <!-- Consulta -->
 <div class="mb-3">
-  <label for="consulta" class="form-label">Tu consulta</label>
-  <textarea class="form-control" id="consulta" name="consultasDetalle" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+  <label for="consultasDetalle" class="form-label">Tu consulta</label>
+  <textarea class="form-control" id="consultasDetalle" name="consultasDetalle" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
 </div>
 
 

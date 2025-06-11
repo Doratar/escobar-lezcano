@@ -24,8 +24,16 @@
                 <td><?php echo $consulta['consultasMail']; ?></td>
                 <td><?php echo $consulta['consultasTelefono']; ?></td>
                 <td><?php echo $consulta['consultasDetalle']; ?></td>
+                <?php if ($consulta['consultasAtendido'] == 'NO'): ?>
+                    <td>
+                        <button class="btn btn-sucess" type="submit" formmethod="<?php base_url('admin/consultas/marcarLeido/', $consulta['consultasId']) ?>">Marcar Leido</button>
+                    </td>
+                <?php else: ?>
                 <td>
-                    <a href="<?php echo base_url('productos/editar/' . $consulta['consultasId']); ?>" class="btn btn-warning">Leído</a>
+                    <button class="btn btn-secondary">Leido</button>
+                </td>
+                    
+                <?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

@@ -34,8 +34,9 @@ $routes->get('admin/productos/editar/(:num)', 'ProductoController::edit/$1');
 $routes->post('admin/productos/editar/(:num)', 'ProductoController::update/$1');
 
 
-$routes->get('/consultas', 'ConsultasController::consultas', ['filter' => 'auth']);
-$routes->post('consultas', 'ConsultasController::formValidation');
+$routes->get('admin/consultas', 'ConsultasController::consultas');
+$routes->post('admin/consultas/crear', 'ConsultasController::formValidation');
+$routes->post('admin/consultas/marcarLeido/(:num)', 'ConsultasController::marcarLeido/$1');
 
 //Usuario
 $routes->get('admin/usuarios', 'UsuarioController::usuarios', ['filter' => 'auth']);

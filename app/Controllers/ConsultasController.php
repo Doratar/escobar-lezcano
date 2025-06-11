@@ -20,7 +20,7 @@ class ConsultasController extends Controller{
     public function consultas()
     {
         // TODO aca va la tabla de productos
-        $data['titulo'] = 'Productos';
+        $data['titulo'] = 'Consultas';
         $consultasModel = new ConsultasModel();
         $data['consultas'] = $consultasModel->getConsultas();
         echo view('front/header', $data);
@@ -61,9 +61,9 @@ class ConsultasController extends Controller{
             $model = new ConsultasModel();
             $data = [
                 'consultasFecha' => date('Y-m-d H:i:s'),
-                'consultasMail' => $this->request->getPost('consultasMail'),
-                'consultasTelefono' => $this->request->getPost('consultasTelefono'),
-                'consultasDetalle' => $this->request->getPost('consultasDetalle')
+                'consultasMail' => $this->request->getVar('consultasMail'),
+                'consultasTelefono' => $this->request->getVar('consultasTelefono'),
+                'consultasDetalle' => $this->request->getVar('consultasDetalle')
             ];
             
             if($model->createConsulta($data)){
@@ -71,6 +71,16 @@ class ConsultasController extends Controller{
             } else {
                 return redirect()->back()->withInput()->with('error', 'Error al enviar la consulta.');
             }
+        }
+    }
+
+    public function marcarLeido($id)
+    {
+        $model = new ConsultasModel();
+        if($model->marcarLeido($id)){
+            return redirect()->to(base_url('/admin/consultas'))->with('success', 'Consulta marcada como leída.');
+        } else {
+            return redirect()->back()->with('error', 'Error al marcar la consulta como leída.');
         }
     }
 

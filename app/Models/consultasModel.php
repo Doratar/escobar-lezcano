@@ -14,7 +14,8 @@ class ConsultasModel extends Model
         'consultasFecha',
         'consultasMail',
         'consultasTelefono',
-        'consultasDetalle'
+        'consultasDetalle',
+        'consultasAtendido'
     ];
     public function createConsulta($data)
     {
@@ -28,6 +29,12 @@ class ConsultasModel extends Model
 
     public function updateConsulta($id, $data)
     {
+        return $this->update($id, $data);
+    }
+
+    public function marcarLeido($id)
+    {
+        $data = ['consultasAtendido' => 'SI'];
         return $this->update($id, $data);
     }
 }
