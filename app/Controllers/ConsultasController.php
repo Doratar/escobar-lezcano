@@ -17,16 +17,25 @@ class ConsultasController extends Controller{
         echo view('contacto', $data);
         echo view('front/footer');
     }
+    public function consultas()
+    {
+        // TODO aca va la tabla de productos
+        $data['titulo'] = 'Productos';
+        $consultasModel = new ConsultasModel();
+        $data['consultas'] = $consultasModel->getConsultas();
+        echo view('front/header', $data);
+        echo view('admin/navbar');
+        echo view('consultas', $data);
+        echo view('front/footer');
+    }
 
     public function formValidation(){
         $input = $this->validate([
-            'consultasFecha' => 'required',
             'consultasMail' => 'required|valid_email',
             'consultasTelefono' => 'required|min_length[10]|max_length[15]',
             'consultasDetalle' => 'required|min_length[10]'
         ], 
         [
-            'consultasFecha' => ['required' => 'La fecha es obligatoria'],
             'consultasMail' => [
                 'required' => 'El correo es obligatorio',
                 'valid_email' => 'El formato del correo es incorrecto'

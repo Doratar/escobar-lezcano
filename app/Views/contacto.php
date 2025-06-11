@@ -3,7 +3,16 @@
     de la empresa, la razón social, el domicilio legal, teléfonos, y otros medios de
     contacto que se consideren necesario. Deberá facilitar un cuestionario para que
     el potencial cliente se comunique con miembros de la empresa.</p> -->
-    
+
+<!-- PRUEBA PARA MOSTRAR MENSAJES -->
+    <?php if(session()->getFlashdata('success')): ?>
+    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+<?php endif; ?>
+
+<?php if(session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+<?php endif; ?>
+
     <div class="container my-5">
     <section id="contacto" class="p-4 rounded bg-light shadow-sm">
     <h1 class="mb-4">Contáctanos</h1>
@@ -33,35 +42,36 @@
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
     <h2 class="mb-4">Deja aquí tu Consulta</h2>
-    <form action="<?php echo base_url('/producto') ?>">
+    <form action="<?php echo base_url('consultas') ?>" method="post">
 
-      <!-- Email -->
-       <?php if(!isset($usuario)): ?>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com" required>
-        <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
-      </div>
-      <?php else: ?>
-        <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" value="<?php echo($usuario) ?>" required>
-        <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
-      </div>
-      <?php endif; ?>
+<!-- Email -->
+<?php if(!isset($usuario)): ?>
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" name="consultasMail" placeholder="ejemplo@dominio.com" required>
+    <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+  </div>
+<?php else: ?>
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" name="consultasMail" value="<?php echo($usuario) ?>" required>
+    <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+  </div>
+<?php endif; ?>
 
-      <!-- Teléfono -->
-      <div class="mb-3">
-        <label for="telefono" class="form-label">Teléfono</label>
-        <input type="tel" class="form-control" id="telefono" placeholder="Ej: 3794123456" pattern="[0-9]{10}" required>
-        <div class="form-text">Ingresá el número sin espacios ni guiones (10 dígitos).</div>
-      </div>
+<!-- Teléfono -->
+<div class="mb-3">
+  <label for="telefono" class="form-label">Teléfono</label>
+  <input type="tel" class="form-control" id="telefono" name="consultasTelefono" placeholder="Ej: 3794123456" pattern="[0-9]{10}" required>
+  <div class="form-text">Ingresá el número sin espacios ni guiones (10 dígitos).</div>
+</div>
 
-      <!-- Consulta -->
-      <div class="mb-3">
-        <label for="consulta" class="form-label">Tu consulta</label>
-        <textarea class="form-control" id="consulta" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
-      </div>
+<!-- Consulta -->
+<div class="mb-3">
+  <label for="consulta" class="form-label">Tu consulta</label>
+  <textarea class="form-control" id="consulta" name="consultasDetalle" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+</div>
+
 
       <!-- Botón -->
       <button type="submit" class="btn btn-primary">Enviar consulta</button>

@@ -20,4 +20,14 @@ class ConsultasModel extends Model
     {
         return $this->insert($data);
     }
+
+    public function getConsultas()
+    {
+        return $this->findAll();
+    }
+
+    public function updateConsulta($id, $data)
+    {
+        return $this->update($id, $data);
+    }
 }
