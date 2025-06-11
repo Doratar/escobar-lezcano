@@ -9,6 +9,7 @@ class AdminController extends Controller{
     public function __construct()
     {
         helper(['form','url']);
+        $this->session = session();
     }
 
     public function index(){

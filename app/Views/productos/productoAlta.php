@@ -7,25 +7,37 @@
     <div class="mb-3">
       <label for="prodNombre">Nombre del producto: </label>
       <input type="text" class="form-control" name="prodNombre" id="prodNombre" placeholder="Nombre"
-        aria-label="Nombre">
+        aria-label="Nombre"
+        value="<?php echo $producto['prodNombre'] ?>" required>
+      <?php if ($validation->hasError('prodNombre')): ?>
+        <div class="alert alert-danger mt-2">
+          <?php echo $validation->getError('prodNombre'); ?>
+        </div>
+      <?php endif; ?>
     </div>
 
     <div class="mb-3">
       <label for="pordMarca">Marca del producto: </label>
       <input type="text" class="form-control" name="prodMarca" id="prodMarca" placeholder="Marca"
-        aria-label="Marca">
+        aria-label="Marca"
+        value="<?php echo $producto['prodMarca'] ?>" required>
+        <?php if ($validation->hasError('prodMarca')): ?>
+        <div class="alert alert-danger mt-2">
+          <?php echo $validation->getError('prodMarca'); ?>
+        </div>
+      <?php endif; ?>
     </div>
 
     <div class="mb-3">
       <label class="form-label" for="prodDescripcion">Descripción:</label>
-      <textarea class="form-control" name="prodDescripcion" id="prodDescripcion"></textarea>
+      <textarea class="form-control" name="prodDescripcion" id="prodDescripcion"><?php echo $producto['prodDescripcion'] ?></textarea>
     </div>
 
     <div class="row">
       <div class="col-md-3 mb-3">
         <label for="prodPrecio">Precio </label>
         <input type="number" class="form-control" name="prodPrecio" id="prodPrecio" placeholder="Precio"
-          aria-label="Nombre">
+          aria-label="Precio">
       </div>
 
       <div class="col-md-3 mb-3">

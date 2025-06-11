@@ -83,4 +83,17 @@ class ProductoController extends Controller{
         }
 
     }
+
+    public function edit($id) {
+        $data['titulo'] = 'Editar Producto';
+        $data['producto'] = $this->ProductoModel->find($id);
+        $categorias = new CategoriaModel();
+        $data['categorias'] = $categorias->getCategorias();
+
+        return
+        view('front/header.php', $data)
+        .view('admin/navbar.php')
+        .view('productos/productoAlta.php', $data)
+        .view('front/footer.php');
+    }
 }

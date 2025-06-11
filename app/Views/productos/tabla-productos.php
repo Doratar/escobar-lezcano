@@ -27,8 +27,8 @@
                 <td><?php echo $producto['prodPrecio']; ?></td>
                 <td><?php echo $producto['prodMarca']; ?></td>
                 <td>
-                    <a href="<?php echo base_url('productos/editar/' . $producto['prodId']); ?>" class="btn btn-warning">Editar</a>
-                    <a href="<?php echo base_url('productos/eliminar/' . $producto['prodId']); ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="<?php echo base_url('admin/productos/editar/' . $producto['prodId']); ?>" class="btn btn-warning">Editar</a>
+                    <a href="<?php echo base_url('admin/productos/eliminar/' . $producto['prodId']); ?>" class="btn btn-danger">Eliminar</a>
             </tr>
             <?php endforeach; ?>
         </tbody>
