@@ -4,6 +4,7 @@ Use App\Models\UsuarioModel;
 //use \App\Models\CategoriaModel();
 Use CodeIgniter\Controller;
 Use App\Models\ProductoModel;
+Use App\Models\VentasModel;
 
 class AdminController extends Controller{
     public function __construct()
@@ -30,6 +31,17 @@ class AdminController extends Controller{
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('productos/tabla-productos', $data);
+        echo view('front/footer');
+    }
+    public function ventas()
+    {
+        // TODO aca va la tabla de productos
+        $data['titulo'] = 'Ventas';
+        $ventasModel = new VentasModel();
+        $data['ventas'] = $ventasModel->getVentas();
+        echo view('front/header', $data);
+        echo view('admin/navbar');
+        echo view('ventas', $data);
         echo view('front/footer');
     }
 

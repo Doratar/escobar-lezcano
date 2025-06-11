@@ -24,7 +24,7 @@ class ConsultasModel extends Model
 
     public function getConsultas()
     {
-        return $this->findAll();
+        return $this->orderBy('consultasFecha', 'desc')->findAll();
     }
 
     public function updateConsulta($id, $data)

@@ -63,7 +63,8 @@ class ConsultasController extends Controller{
                 'consultasFecha' => date('Y-m-d H:i:s'),
                 'consultasMail' => $this->request->getVar('consultasMail'),
                 'consultasTelefono' => $this->request->getVar('consultasTelefono'),
-                'consultasDetalle' => $this->request->getVar('consultasDetalle')
+                'consultasDetalle' => $this->request->getVar('consultasDetalle'),
+                'consultasAtendido' => 'NO'
             ];
             
             if($model->createConsulta($data)){

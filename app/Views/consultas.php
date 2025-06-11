@@ -26,7 +26,8 @@
                 <td><?php echo $consulta['consultasDetalle']; ?></td>
                 <?php if ($consulta['consultasAtendido'] == 'NO'): ?>
                     <td>
-                        <button class="btn btn-sucess" type="submit" formmethod="<?php base_url('admin/consultas/marcarLeido/', $consulta['consultasId']) ?>">Marcar Leido</button>
+                        <!-- <button class="btn btn-success">Marcar Leido</button> -->
+                         <a href="<?php echo base_url('admin/consultas/marcarLeido/'), $consulta['consultasId'] ?>" class="btn btn-success">Marcar Leido</a>
                     </td>
                 <?php else: ?>
                 <td>
