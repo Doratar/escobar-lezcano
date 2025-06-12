@@ -67,9 +67,14 @@
 </div>
 
 <!-- Consulta -->
-<div class="mb-3">
+<if class="mb-3">
   <label for="consultasDetalle" class="form-label">Tu consulta</label>
   <textarea class="form-control" id="consultasDetalle" name="consultasDetalle" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+  <?php if (isset($validation) && $validation->hasError('consultasDetalle')): ?>
+    <div class="alert alert-danger mt-2">
+      <?php echo $validation->getError('consultasDetalle'); ?>
+    </div>
+  <?php endif; ?>
 </div>
 
 

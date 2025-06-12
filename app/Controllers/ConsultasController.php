@@ -47,7 +47,7 @@ class ConsultasController extends Controller{
             ],
             'consultasDetalle' => [
                 'required' => 'El detalle es obligatorio',
-                'min_length' => 'El detalle debe tener al menos 10 caracteres'
+                'min_length' => 'La consulta debe tener al menos 10 caracteres'
             ]
         ]);
 
