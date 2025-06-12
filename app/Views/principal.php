@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="principal.css">
-
 <!-- Contenido específico de la página -->
 <!-- Categorias -->
 <!-- Calzado -->
