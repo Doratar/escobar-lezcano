@@ -19,7 +19,7 @@
                         <a class="nav-link" href="<?php echo base_url('admin/usuarios') ?>">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('/categorias') ?>">Categorias</a>
+                        <a class="nav-link" href="<?php echo base_url('admin/categorias') ?>">Categorias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('/marcas') ?>">Marcas</a>

@@ -39,5 +39,6 @@ $routes->post('admin/consultas/crear', 'ConsultasController::formValidation');
 $routes->get('admin/consultas/marcarLeido/(:num)', 'ConsultasController::marcarLeido/$1');
 
 $routes->get('admin/ventas', 'AdminController::ventas');
+$routes->get('admin/categorias', 'AdminController::categorias');
 //Usuario
-$routes->get('admin/usuarios', 'UsuarioController::usuarios', ['filter' => 'auth']);
+$routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'auth']);
