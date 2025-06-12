@@ -1,4 +1,3 @@
-<!-- Contenido específico de la página -->
 <div class="text-center my-4">
     <h2>Bienvenido a la Tienda</h2>
     <p>Aquí encontrarás todos nuestros productos.</p>
@@ -7,21 +6,16 @@
 <div class="container">
     <div class="row row-productos">
         <?php foreach ($productos as $producto): ?>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="<?php echo base_url('assets/uploads/'), $producto['prodImagenURL'] ?>" class="card-img-top"
-                        alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $producto['prodNombre'] ?></h5>
-                        <p class="card-text"><?php echo $producto['prodDescripcion'] ?>
-                            content.</p>
-                        <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
-                        <!-- <li><a class="dropdown-item" href="<?php echo base_url('/contacto') ?>">Contactanos</a></li> -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100" style="width: 100%;">
+                    <img src="<?php echo base_url('assets/uploads/') . $producto['prodImagenURL']; ?>" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><?php echo $producto['prodNombre']; ?></h5>
+                        <p class="card-text"><?php echo $producto['prodDescripcion']; ?></p>
+                        <a href="<?php echo base_url('/producto'); ?>" class="btn btn-primary mt-auto">Ver</a>
                     </div>
                 </div>
-
-            <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>

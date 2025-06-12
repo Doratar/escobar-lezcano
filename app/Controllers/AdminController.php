@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 Use App\Models\UsuarioModel;
-//use \App\Models\CategoriaModel();
+use \App\Models\CategoriaModel;
 Use CodeIgniter\Controller;
 Use App\Models\ProductoModel;
 Use App\Models\VentasModel;
@@ -48,11 +48,22 @@ class AdminController extends Controller{
     public function categorias(){
         // TODO aca va la tabla de categorias
         $data['titulo'] = 'Categorias';
-        //$categoriaModel = new \App\Models\CategoriaModel();
-        //$data['categorias'] = $categoriaModel->findAll();
+        $categoriaModel = new CategoriaModel();
+        $data['categorias'] = $categoriaModel->findAll();
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('categorias/tabla-categorias', $data);
+        echo view('tabla-categorias', $data);
+        echo view('front/footer');
+    }
+
+    public function usuarios(){
+        // TODO aca va la tabla de usuarios
+        $data['titulo'] = 'Usuarios';
+        $usuarioModel = new usuarioModel();
+        $data['usuarios'] = $usuarioModel->findAll();
+        echo view('front/header', $data);
+        echo view('admin/navbar');
+        echo view('tabla-usuarios', $data);
         echo view('front/footer');
     }
 
