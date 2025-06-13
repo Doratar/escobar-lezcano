@@ -15,7 +15,7 @@ class ProductoModel extends Model
         'prodDescripcion',
         'prodPrecio',
         'cateId',
-        'prodImagenUrl',
+        'prodImagenURL',
         'prodMarca'
     ];
 
