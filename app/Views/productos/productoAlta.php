@@ -7,8 +7,12 @@
     <div class="mb-3">
       <label for="prodNombre">Nombre del producto: </label>
       <input type="text" class="form-control" name="prodNombre" id="prodNombre" placeholder="Nombre"
+        aria-label="Nombre" required>
+      <?php if(isset($producto)): ?>
+        <input type="text" class="form-control" name="prodNombre" id="prodNombre" placeholder="Nombre"
         aria-label="Nombre"
         value="<?php echo $producto['prodNombre'] ?>" required>
+      <?php endif; ?>
       <?php if ($validation->hasError('prodNombre')): ?>
         <div class="alert alert-danger mt-2">
           <?php echo $validation->getError('prodNombre'); ?>
@@ -18,9 +22,10 @@
 
     <div class="mb-3">
       <label for="pordMarca">Marca del producto: </label>
-      <input type="text" class="form-control" name="prodMarca" id="prodMarca" placeholder="Marca"
-        aria-label="Marca"
-        value="<?php echo $producto['prodMarca'] ?>" required>
+      <?php if(isset($producto)): ?>
+        <input type="text" class="form-control" name="prodMarca" id="prodMarca" placeholder="Marca" aria-label="Marca" value="<?php echo $producto['prodMarca'] ?>" required>
+      <?php else ?>
+      <input type="text" class="form-control" name="prodMarca" id="prodMarca" placeholder="Marca" aria-label="Marca" required>
         <?php if ($validation->hasError('prodMarca')): ?>
         <div class="alert alert-danger mt-2">
           <?php echo $validation->getError('prodMarca'); ?>
@@ -30,7 +35,11 @@
 
     <div class="mb-3">
       <label class="form-label" for="prodDescripcion">Descripción:</label>
-      <textarea class="form-control" name="prodDescripcion" id="prodDescripcion"><?php echo $producto['prodDescripcion'] ?></textarea>
+      <?php if(isset($producto)): ?>
+        <textarea class="form-control" name="prodDescripcion" id="prodDescripcion"><?php echo $producto['prodDescripcion'] ?></textarea>
+      <?php else: ?>
+        <textarea class="form-control" name="prodDescripcion" id="prodDescripcion" placeholder="Descripción del producto" aria-label="Descripción"></textarea>
+      <?php endif; ?>
     </div>
 
     <div class="row">

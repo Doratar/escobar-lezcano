@@ -30,9 +30,9 @@ class ProductoController extends Controller{
         $categorias = new CategoriaModel();
         $data['categorias'] = $categorias->getCategorias();
         return
-        view('front/header.php', ['titulo' => 'productoAlta'])
+        view('front/header.php', ['titulo' => 'Alta producto'])
         .view('admin/navbar.php')
-        .view('productos/productoAlta.php', $data)
+        .view('productos/productoAlta.php', data: $data)
         .view('front/footer.php');
     }
 
@@ -110,17 +110,17 @@ class ProductoController extends Controller{
         .view('front/footer.php');
     }
 
-    public function verProducto($id) {
-        $data['titulo'] = 'Ver Producto';
-        $data['producto'] = $this->ProductoModel->getProductosActivos($id);
-        $data['productoVariantes'] = $this->ProductoModel->getProductoVariantes($id);
-        $categorias = new CategoriaModel(); 
-        $data['categorias'] = $categorias->getCategorias();
+    // public function verProducto($id) {
+    //     $data['titulo'] = 'Ver Producto';
+    //     $data['producto'] = $this->ProductoModel->getProductosActivos($id);
+    //     $data['productoVariantes'] = $this->ProductoModel->getProductoVariantes($id);
+    //     $categorias = new CategoriaModel(); 
+    //     $data['categorias'] = $categorias->getCategorias();
 
-        return
-        view('front/header.php', $data)
-        .view('admin/navbar.php')
-        .view('productos/productoVer.php', $data)
-        .view('front/footer.php');
-    }   
+    //     return
+    //     view('front/header.php', $data)
+    //     .view('admin/navbar.php')
+    //     .view('productos/productoVer.php', $data)
+    //     .view('front/footer.php');
+    // }   
 }
