@@ -12,6 +12,7 @@ $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('contacto', 'ConsultasController::index');
 $routes->get('terminos', 'Home::terminos');
 $routes->get('producto', 'Home::producto');
+$routes->get('producto/(:num)', 'ProductoController::verProducto/$1');
 
 // Registro de un nuevo usuario
 $routes->get('registro', 'UsuarioController::create');

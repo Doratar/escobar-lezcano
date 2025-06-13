@@ -34,6 +34,17 @@ class ProductoModel extends Model
         return $this->find($id);
     }
 
+    public function getProductoVariante($id)
+    {
+        return $this->where('prodId', $id)->first();
+    }
+
+    public function getProductosByCategoria($categoriaId)
+    {
+        return $this->where('cateId', $categoriaId)->findAll();
+    }
+
+
     public function createProducto($data)
     {
         return $this->insert($data);

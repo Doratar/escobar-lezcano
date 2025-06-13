@@ -84,6 +84,19 @@ class ProductoController extends Controller{
 
     }
 
+    public function insertarVariante($id) {
+        $data['titulo'] = 'Alta de Variante';
+        $data['producto'] = $this->ProductoModel->find($id);
+        $categorias = new CategoriaModel();
+        $data['categorias'] = $categorias->getCategorias();
+
+        return
+        view('front/header.php', $data)
+        .view('admin/navbar.php')
+        .view('productos/varianteAlta.php', $data)
+        .view('front/footer.php');
+    }
+
     public function edit($id) {
         $data['titulo'] = 'Editar Producto';
         $data['producto'] = $this->ProductoModel->find($id);
@@ -96,4 +109,18 @@ class ProductoController extends Controller{
         .view('productos/productoAlta.php', $data)
         .view('front/footer.php');
     }
+
+    public function verProducto($id) {
+        $data['titulo'] = 'Ver Producto';
+        $data['producto'] = $this->ProductoModel->getProductosActivos($id);
+        $data['productoVariantes'] = $this->ProductoModel->getProductoVariantes($id);
+        $categorias = new CategoriaModel(); 
+        $data['categorias'] = $categorias->getCategorias();
+
+        return
+        view('front/header.php', $data)
+        .view('admin/navbar.php')
+        .view('productos/productoVer.php', $data)
+        .view('front/footer.php');
+    }   
 }
