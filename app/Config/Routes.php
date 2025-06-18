@@ -12,7 +12,7 @@ $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('contacto', 'ConsultasController::index');
 $routes->get('terminos', 'Home::terminos');
 $routes->get('producto', 'Home::producto');
-$routes->get('producto/(:num)', 'ProductoController::verProducto/$1');
+$routes->get('verProducto/(:num)', 'ProductoController::verProducto/$1');
 
 // Registro de un nuevo usuario
 $routes->get('registro', 'UsuarioController::create');
@@ -32,7 +32,7 @@ $routes->get('/admin/productos', 'AdminController::productos');
 $routes->get('/admin/productos/crear', 'ProductoController::create', ['filter' => 'auth']);
 $routes->post('admin/productos/crear', 'ProductoController::formValidation');
 $routes->get('admin/productos/editar/(:num)', 'ProductoController::edit/$1');
-$routes->post('admin/productos/editar/(:num)', 'ProductoController::update/$1');
+$routes->post('admin/productos/editar', 'ProductoController::formValidationEditar');
 
 
 $routes->get('admin/consultas', 'ConsultasController::consultas');

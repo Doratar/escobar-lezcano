@@ -1,8 +1,11 @@
 <?php
 namespace App\Controllers;
+use App\Models\ColorModel;
+use App\Models\TallesModel;
 Use App\Models\UsuarioModel;
 Use App\Models\CategoriaModel;
 Use CodeIgniter\Controller;
+use CodeIgniter\View\Table;
 
 class ProductoController extends Controller{
 
@@ -69,10 +72,12 @@ class ProductoController extends Controller{
                 'prodDescripcion' => $this->request->getPost('prodDescripcion'),
                 'prodPrecio' => $this->request->getPost('prodPrecio'),
                 'cateId' => $this->request->getPost('cateId'),
-                'prodImagenUrl' => $imagen->getName(),
+                'prodImagenUrl' => $nombreAleatorio,
                 'prodMarca' => $this->request->getPost('prodMarca'),
                 'prodColor' => $this->request->getPost('prodColor'),
-                'prodStock' => $this->request->getPost('prodStock')
+                'prodStock' => $this->request->getPost('prodStock'),
+                'prodStockMinimo' => $this->request->getPost('prodStockMinimo'),
+                'prodActivo' => TRUE
             ];
 
             if($this->ProductoModel->insert($data)) {
@@ -81,7 +86,56 @@ class ProductoController extends Controller{
                 return redirect()->back()->withInput()->with('error', 'Error al crear el producto');
             }
         }
+    }
 
+    public function formValidationEditar(){
+        $data[] = [];
+        $categorias = new CategoriaModel();
+        $data['categorias'] = $categorias->getCategorias();
+
+        $input = $this->validate([
+            'prodNombre' => 'required|min_length[3]',
+            'prodDescripcion' => 'required|min_length[10]',
+            'prodPrecio' => 'required|numeric',
+            'cateId' => 'required|integer',
+            'prodImagenUrl' => 'uploaded[prodImagenUrl]',
+            'prodMarca' => 'required|min_length[2]'
+        ]);
+
+        if(!$input) {
+            $data['validation'] = $this->validator;
+
+            return view('front/header.php', ['titulo' => 'productoAlta'])
+            .view('admin/navbar.php')
+            .view('productos/productoAlta.php', $data)
+            .view('front/footer.php');
+        } else {
+            // Procesar la imagen y guardar el producto
+            $imagen = $this->request->getFile('prodImagenUrl');
+            $nombreAleatorio = $imagen->getRandomName();
+            $imagen->move(ROOTPATH . 'assets/uploads', $nombreAleatorio);
+
+            // Guardar los datos del producto
+            $data = [
+                'prodId' => $this->request->getPost('prodId'),
+                'prodNombre' => $this->request->getPost('prodNombre'),
+                'prodDescripcion' => $this->request->getPost('prodDescripcion'),
+                'prodPrecio' => $this->request->getPost('prodPrecio'),
+                'cateId' => $this->request->getPost('cateId'),
+                'prodImagenUrl' => $nombreAleatorio,
+                'prodMarca' => $this->request->getPost('prodMarca'),
+                'prodColor' => $this->request->getPost('prodColor'),
+                'prodStock' => $this->request->getPost('prodStock'),
+                'prodStockMinimo' => $this->request->getPost('prodStockMinimo'),
+                'prodActivo' => TRUE
+            ];
+
+            if($this->ProductoModel->update($data['prodId'], $data)) {
+                return redirect()->to('admin/productos');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Error al crear el producto');
+            }
+        }
     }
 
     public function insertarVariante($id) {
@@ -106,21 +160,24 @@ class ProductoController extends Controller{
         return
         view('front/header.php', $data)
         .view('admin/navbar.php')
-        .view('productos/productoAlta.php', $data)
+        .view('productos/productoEditar.php', $data)
         .view('front/footer.php');
     }
 
-    // public function verProducto($id) {
-    //     $data['titulo'] = 'Ver Producto';
-    //     $data['producto'] = $this->ProductoModel->getProductosActivos($id);
-    //     $data['productoVariantes'] = $this->ProductoModel->getProductoVariantes($id);
-    //     $categorias = new CategoriaModel(); 
-    //     $data['categorias'] = $categorias->getCategorias();
+    public function verProducto($id) {
+        $data['titulo'] = 'Ver Producto';
+        $data['producto'] = $this->ProductoModel->getProductoById($id);
+        $TalleModel = new TallesModel();
+        $data['talles'] = $TalleModel->findAll();
+        $ColorModel = new ColorModel();
+        $data['colores'] = $ColorModel->findAll();
+        $categorias = new CategoriaModel(); 
+        $data['categorias'] = $categorias->getCategorias();
 
-    //     return
-    //     view('front/header.php', $data)
-    //     .view('admin/navbar.php')
-    //     .view('productos/productoVer.php', $data)
-    //     .view('front/footer.php');
-    // }   
+        return
+        view('front/header.php', $data)
+        .view('admin/navbar.php')
+        .view('productos/productoVer.php', $data)
+        .view('front/footer.php');
+    }   
 }

@@ -28,7 +28,7 @@
                 <td><?php echo $producto['prodDescripcion']; ?></td>
                 <td><?php echo $producto['prodPrecio']; ?></td>
                 <td><?php echo $producto['prodMarca']; ?></td>
-                <td><?php echo '0' ?></td>
+                <td><?php echo $producto['prodStock']; ?></td>
                 <td>
                     <img src="<?php echo base_url('assets/uploads/' . $producto['prodImagenURL']); ?>" alt="Imagen del producto" width="60" height="60">
                 </td>

@@ -15,8 +15,11 @@ class ProductoModel extends Model
         'prodDescripcion',
         'prodPrecio',
         'cateId',
-        'prodImagenURL',
-        'prodMarca'
+        'prodImagenUrl',
+        'prodMarca',
+        'prodStock',
+        'prodStockMinimo',
+        'prodActivo'
     ];
 
     public function getProductos()
