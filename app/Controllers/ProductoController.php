@@ -12,7 +12,7 @@ class ProductoController extends Controller{
     {
         helper(['form','url']);
         $this->ProductoModel = new \App\Models\ProductoModel();
-        $this ->categorias = new CategoriaModel();
+        $this->CategoriaModel = new CategoriaModel();
     }
 
     public function catalogo(){
@@ -21,7 +21,7 @@ class ProductoController extends Controller{
         return
         view('front/header.php', $data)
         .view('front/navbar.php')
-        .view('productos/productoCatalogo.php', $data)
+        .view('productos/productoCatalogo', $data)
         .view('front/footer.php');
     }
 

@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+Use App\Models\ProductoModel;
 Use App\Models\UsuarioModel;
 Use CodeIgniter\Controller;
 
@@ -9,6 +10,30 @@ class CarritoController extends BaseController{
         helper(['form', 'url', 'cart']);
         $cart = \Config\Services::cart();
         $session = session();
+    }
+        public function catalogo()
+    {
+        $productoModel = new productoModel();
+        $data['producto'] = $productoModel->orderBy('prodId', 'DESC')->findAll();
+
+        $dato = ['titulo' => 'Todos los Productos'];
+        echo view('front/head_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/carrito/productos_catalogo_view', $data);
+        echo view('front/footer_view');
+    }
+
+    public function muestra() //carrito que se muestra
+    {
+        $cart = \Config\Services::cart();
+        $cart = $cart->contents();
+        $data['cart'] = $cart;
+
+        $dato['titulo'] = 'Confirmar compra';
+        echo view('front/head_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/carrito/carrito_parte_view', $data);
+        echo view('front/footer_view');
     }
 public function add() // Agregar productos al carrito
 {
@@ -20,7 +45,7 @@ public function add() // Agregar productos al carrito
         'qty'    => 1,
         'name'   => $request->getPost('nombre_prod'),
         'price'  => $request->getPost('precio_vta'),
-        'imagen' => $request->getPost('imagen'),
+        //'imagen' => $request->getPost('imagen'),
     ]);
 
     return redirect()->back()->withInput();
@@ -39,7 +64,6 @@ public function borrar_carrito()
     $cart->destroy();
     return redirect()->to(base_url('muestro'));
 }
-
 
     //Actualiza el carrito que se muestra
     public function actualiza_carrito()
