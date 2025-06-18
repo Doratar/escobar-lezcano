@@ -14,6 +14,25 @@
                         <p class="card-text"><?= $producto['prodDescripcion']; ?></p>
 
                        <a href="<?php echo base_url('verProducto/'),  $producto['prodId']; ?>" class="btn btn-primary mt-auto">Ver</a>
+                            <?= form_open('carrito_agrega') ?>
+                                <?= form_hidden('id', $producto['prodId']) ?>
+                                <?= form_hidden('nombre_prod', $producto['prodNombre']) ?>
+                                <?= form_hidden('precio_vta', $producto['prodPrecio']) ?>
+                                
+
+                                <!-- <?= form_hidden('qty', 1) ?> -->
+
+                                <div>
+                                    <?php
+                                    $btn = array(
+                                        'class' => 'btn btn-secondary fuenteBotones',
+                                        'value' => 'Agregar al Carrito',
+                                        'name'  => 'action'
+                                    );
+                                    echo form_submit($btn);
+                                    ?>
+                                </div>
+                            <?= form_close() ?>
                     </div>
                 </div>
             </div>
