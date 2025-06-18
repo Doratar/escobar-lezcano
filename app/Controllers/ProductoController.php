@@ -20,7 +20,7 @@ class ProductoController extends Controller{
 
     public function catalogo(){
         $data['titulo'] = 'Catalogo de Productos';
-        $data['productos'] = $this->ProductoModel->getProductos();
+        $data['productos'] = $this->ProductoModel->getProductosActivos();
         return
         view('front/header.php', $data)
         .view('front/navbar.php')
@@ -167,10 +167,6 @@ class ProductoController extends Controller{
     public function verProducto($id) {
         $data['titulo'] = 'Ver Producto';
         $data['producto'] = $this->ProductoModel->getProductoById($id);
-        $TalleModel = new TallesModel();
-        $data['talles'] = $TalleModel->findAll();
-        $ColorModel = new ColorModel();
-        $data['colores'] = $ColorModel->findAll();
         $categorias = new CategoriaModel(); 
         $data['categorias'] = $categorias->getCategorias();
 
@@ -179,5 +175,15 @@ class ProductoController extends Controller{
         .view('admin/navbar.php')
         .view('productos/productoVer.php', $data)
         .view('front/footer.php');
-    }   
+    }
+
+    public function eliminarProducto($id) {
+        $this->ProductoModel->eliminarProducto($id);
+        return redirect()->to('admin/productos');
+    }
+
+    public function activarProducto($id) {
+        $this->ProductoModel->update($id, ['prodActivo'=> TRUE]);
+        return redirect()->to('admin/productos');
+    }
 }

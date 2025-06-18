@@ -33,6 +33,8 @@ $routes->get('/admin/productos/crear', 'ProductoController::create', ['filter' =
 $routes->post('admin/productos/crear', 'ProductoController::formValidation');
 $routes->get('admin/productos/editar/(:num)', 'ProductoController::edit/$1');
 $routes->post('admin/productos/editar', 'ProductoController::formValidationEditar');
+$routes->get('admin/productos/eliminar/(:num)', 'ProductoController::eliminarProducto/$1');
+$routes->get('admin/productos/activar/(:num)', 'ProductoController::activarProducto/$1');
 
 
 $routes->get('admin/consultas', 'ConsultasController::consultas');

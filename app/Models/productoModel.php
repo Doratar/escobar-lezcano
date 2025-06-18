@@ -29,7 +29,7 @@ class ProductoModel extends Model
 
     public function getProductosActivos()
     {
-        return $this->where('prodActivo', 1)->findAll();
+        return $this->where('prodActivo', 1)->where('prodStock >', 0)->findAll();
     }
 
     public function getProductoById($id)
@@ -56,5 +56,9 @@ class ProductoModel extends Model
     public function updateProducto($id, $data)
     {
         return $this->update($id, $data);
+    }
+
+    public function eliminarProducto($id) {
+        return $this->update($id, ['prodActivo'=> FALSE]);
     }
 }
