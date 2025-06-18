@@ -9,7 +9,13 @@
             <p><?php echo $producto['prodDescripcion']?></p>
             <h3>Precio: $ <?php echo $producto['prodPrecio']?></h3>
             <h4>Categoria <?php print_r($categorias[$producto['cateId']]['cateNombre']) ?></h4>
-            <button class="btn btn-secondary">Agregar al carrito</button>
+            <form action="<?php echo base_url('carrito_agrega') ?>" method="post">
+                <input type="hidden" id="prodId" name="prodId" value="<?php $producto['prodId'] ?>">
+                <input type="hidden" id="prodNombre" name="prodNombre" value="<?php $producto['prodNombre'] ?>">
+                <input type="hidden" id="prodPrecio" name="prodPrecio" value="<?php $producto['prodPrecio'] ?>">
+                
+                <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
+            </form>
             <button class="btn btn-success">Comprar Ahora</button>
         </div>
     </div>
