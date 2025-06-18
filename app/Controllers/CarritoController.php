@@ -5,31 +5,34 @@ Use App\Models\UsuarioModel;
 Use CodeIgniter\Controller;
 
 class CarritoController extends BaseController{
+
+    protected $ProductoModel;
     public function __construct()
     {
         helper(['form', 'url', 'cart']);
         $cart = \Config\Services::cart();
         $session = session();
+
+        $this->ProductoModel = new ProductoModel();
     }
         public function catalogo()
     {
-        $productoModel = new productoModel();
-        $data['producto'] = $productoModel->orderBy('prodId', 'DESC')->findAll();
-
-        $dato = ['titulo' => 'Todos los Productos'];
-        echo view('front/head_view', $dato);
-        echo view('front/nav_view');
-        echo view('back/carrito/productos_catalogo_view', $data);
-        echo view('front/footer_view');
+        $data['titulo'] = 'Catalogo de Productos';
+        $data['productos'] = $this->ProductoModel->getProductosActivos();
+        return
+        view('front/header.php', $data)
+        .view('front/navbar.php')
+        .view('productos/productoCatalogo', $data)
+        .view('front/footer.php');
     }
 
-    public function muestra() //carrito que se muestra
+    public function mostrarCarrito() //carrito que se muestra
     {
         $cart = \Config\Services::cart();
         $cart = $cart->contents();
         $data['cart'] = $cart;
 
-        $dato['titulo'] = 'Confirmar compra';
+        $dato['titulo'] = 'Tu carrito';
         echo view('front/head_view', $dato);
         echo view('front/nav_view');
         echo view('back/carrito/carrito_parte_view', $data);
@@ -41,10 +44,10 @@ public function add() // Agregar productos al carrito
     $cart = \Config\Services::Cart(); // Devuelve una instancia del carrito activa
 
     $cart->insert([
-        'id'     => $request->getPost('id'),
+        'prodId'     => $request->getPost('prodId'),
         'qty'    => 1,
-        'name'   => $request->getPost('nombre_prod'),
-        'price'  => $request->getPost('precio_vta'),
+        'prodNombre'   => $request->getPost('prodNombre'),
+        'prodPrecio'  => $request->getPost('prodPrecio'),
         //'imagen' => $request->getPost('imagen'),
     ]);
 

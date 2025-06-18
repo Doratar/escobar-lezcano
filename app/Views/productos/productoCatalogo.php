@@ -12,6 +12,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><?= $producto['prodNombre']; ?></h5>
                         <p class="card-text"><?= $producto['prodDescripcion']; ?></p>
+                        <a href="<?php echo base_url('verProducto/'),  $producto['prodId']; ?>" class="btn btn-primary mt-auto">Ver</a>
 
 <<<<<<< HEAD
                             <?= form_open('carrito_agrega') ?>

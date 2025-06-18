@@ -54,10 +54,16 @@
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit" href="<?php echo base_url('/producto') ?>">Buscar</button>
                 </form> -->
-                <form class="d-flex" role="search" action="<?php echo base_url('/producto') ?>" method="get">
+                <!-- <form class="d-flex" role="search" action="<?php echo base_url('/producto') ?>" method="get">
                     <input class="form-control me-2" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                </form> -->
+                <span><i class="bi bi-cart" style="color: white;"></i></span>
+                <?php if(isset($cart)): ?>
+                    <?php echo $cart->total_items(); ?>
+                <?php else: ?>
+
+                <?php endif;?>
             </div>
         </div>
     </nav>
