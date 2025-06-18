@@ -15,8 +15,11 @@ class ProductoModel extends Model
         'prodDescripcion',
         'prodPrecio',
         'cateId',
-        'prodImagenURL',
-        'prodMarca'
+        'prodImagenUrl',
+        'prodMarca',
+        'prodStock',
+        'prodStockMinimo',
+        'prodActivo'
     ];
 
     public function getProductos()
@@ -26,13 +29,24 @@ class ProductoModel extends Model
 
     public function getProductosActivos()
     {
-        return $this->where('prodActivo', 1)->findAll();
+        return $this->where('prodActivo', 1)->where('prodStock >', 0)->findAll();
     }
 
     public function getProductoById($id)
     {
         return $this->find($id);
     }
+
+    public function getProductoVariante($id)
+    {
+        return $this->where('prodId', $id)->first();
+    }
+
+    public function getProductosByCategoria($categoriaId)
+    {
+        return $this->where('cateId', $categoriaId)->findAll();
+    }
+
 
     public function createProducto($data)
     {
@@ -42,5 +56,9 @@ class ProductoModel extends Model
     public function updateProducto($id, $data)
     {
         return $this->update($id, $data);
+    }
+
+    public function eliminarProducto($id) {
+        return $this->update($id, ['prodActivo'=> FALSE]);
     }
 }

@@ -1,8 +1,10 @@
 <div class="container">
   <?php $validation = \Config\Services::validation() ?>
   <?php echo $validation->listErrors() ?>
-  <form action="<?php echo base_url('/admin/productos/crear') ?>" method="post" enctype="multipart/form-data">
-    <h2>Alta de Producto</h2>
+  <form action="<?php echo base_url('/admin/productos/editar') ?>" method="post" enctype="multipart/form-data">
+    <h2>Editar de Producto</h2>
+
+    <input name="prodId" id="prodId" type="hidden" value="<?php echo $producto['prodId'] ?>">
 
     <div class="mb-3">
       <label for="prodNombre">Nombre del producto: </label>
@@ -102,7 +104,7 @@
       <div class="col-md-6">
         <label for="prodImagenUrl">Imagen del producto: </label>
         <?php if (isset($producto)): ?>
-          <input type="file" class="form-control" name="prodImagenUrl" value="<?php echo $producto['prodImagenUrl'] ?>"
+          <input type="file" class="form-control" name="prodImagenUrl" value="<?php echo $producto['prodImagenURL'] ?>"
             id="prodImagenUrl" placeholder="Archivo imagen" aria-label="URL de la imagen" accept="image/*">
         <?php else: ?>
           <input type="file" class="form-control" name="prodImagenUrl" id="prodImagenUrl" placeholder="Archivo imagen"

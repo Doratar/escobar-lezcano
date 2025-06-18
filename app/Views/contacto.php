@@ -53,9 +53,14 @@
   </div>
 <?php else: ?>
   <div class="mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
+    <label for="consultasMail" class="form-label">Correo electrónico</label>
     <input type="email" class="form-control" id="consultasMail" name="consultasMail" value="<?php echo($usuario) ?>" required>
     <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+    <?php if (isset($validation) && $validation->hasError('consultasMail')): ?>
+    <div class="alert alert-danger mt-2">
+      <?php echo $validation->getError('consultasMail'); ?>
+    </div>
+  <?php endif; ?>
   </div>
 <?php endif; ?>
 
