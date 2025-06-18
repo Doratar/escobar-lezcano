@@ -171,17 +171,19 @@ class ProductoController extends Controller{
         $data['categorias'] = $categorias->getCategorias();
 
         return
-        view('front/header.php', $data)
-        .view('admin/navbar.php')
-        .view('productos/productoVer.php', $data)
-        .view('front/footer.php');
+        view('front/header', $data)
+        .view('front/navbar')
+        .view('productos/productoVer', $data)
+        .view('front/footer');
     }
 
+    // Funcion para dar de baja logica de los productos
     public function eliminarProducto($id) {
         $this->ProductoModel->eliminarProducto($id);
         return redirect()->to('admin/productos');
     }
 
+    // Funcion para dar de alta logica los productos
     public function activarProducto($id) {
         $this->ProductoModel->update($id, ['prodActivo'=> TRUE]);
         return redirect()->to('admin/productos');
