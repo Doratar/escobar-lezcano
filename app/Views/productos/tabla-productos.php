@@ -22,7 +22,11 @@
         </thead>
         <tbody>
             <?php foreach ($productos as $producto): ?>
+            <?php if(!$producto['prodActivo']): ?>
+            <tr class="table-danger">
+            <?php else: ?>
             <tr>
+            <?php endif;?>
                 <td><?php echo $producto['prodId']; ?></td>
                 <td><?php echo $producto['prodNombre']; ?></td>
                 <td><?php echo $producto['prodDescripcion']; ?></td>
@@ -34,7 +38,12 @@
                 </td>
                 <td>
                     <a href="<?php echo base_url('admin/productos/editar/' . $producto['prodId']); ?>" class="btn btn-warning">Editar</a>
-                    <a href="<?php echo base_url('admin/productos/eliminar/' . $producto['prodId']); ?>" class="btn btn-danger">Eliminar</a>
+                    <?php if($producto['prodActivo']): ?>
+                        <a href="<?php echo base_url('admin/productos/eliminar/' . $producto['prodId']); ?>" class="btn btn-danger">Eliminar</a>
+                    <?php else: ?>
+                        <a href="<?php echo base_url('admin/productos/activar/' . $producto['prodId']); ?>" class="btn btn-success">Activar</a>
+                    <?php endif?>
+
             </tr>
             <?php endforeach; ?>
         </tbody>

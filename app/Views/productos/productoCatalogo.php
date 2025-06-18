@@ -13,6 +13,7 @@
                         <h5 class="card-title"><?= $producto['prodNombre']; ?></h5>
                         <p class="card-text"><?= $producto['prodDescripcion']; ?></p>
 
+<<<<<<< HEAD
                             <?= form_open('carrito_agrega') ?>
                                 <?= form_hidden('id', $producto['prodId']) ?>
                                 <?= form_hidden('nombre_prod', $producto['prodNombre']) ?>
@@ -32,6 +33,9 @@
                                     ?>
                                 </div>
                             <?= form_close() ?>
+=======
+                       <a href="<?php echo base_url('verProducto/'),  $producto['prodId']; ?>" class="btn btn-primary mt-auto">Ver</a>
+>>>>>>> home
                     </div>
                 </div>
             </div>
