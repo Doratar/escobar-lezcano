@@ -87,6 +87,7 @@
         <label for="cateId">Categoria </label>
         <select id="cateId" name="cateId" class="form-select" aria-label="Default select example">
           <?php if (isset($producto)): ?>
+            <option selected id="cateId" name="cateId" value="<?php echo $producto['cateId'] ?>"><?php print_r($categorias[$producto['cateId']]['cateNombre']) ?></option>
               <?php foreach ($categorias as $categoria): ?>
                 <option id="cateId" name="cateId" value="<?php echo $categoria['cateId'] ?>"><?= $categoria['cateNombre'] ?></option>
               <?php endforeach; ?>

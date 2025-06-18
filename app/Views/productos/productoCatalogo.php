@@ -13,28 +13,7 @@
                         <h5 class="card-title"><?= $producto['prodNombre']; ?></h5>
                         <p class="card-text"><?= $producto['prodDescripcion']; ?></p>
 
-                        <?php if (1 > 0): ?>
-                            <?= form_open('carrito_agrega') ?>
-                                <?= form_hidden('id', (string)$producto['prodId']) ?>
-                                <?= form_hidden('precio_vta', (string)$producto['prodPrecio']) ?>
-                                <?= form_hidden('nombre_prod', (string)$producto['prodNombre']) ?>
-
-                                <!-- <?= form_hidden('qty', 1) ?> -->
-
-                                <div>
-                                    <?php
-                                    $btn = array(
-                                        'class' => 'btn btn-secondary fuenteBotones',
-                                        'value' => 'Agregar al Carrito',
-                                        'name'  => 'action'
-                                    );
-                                    echo form_submit($btn);
-                                    ?>
-                                </div>
-                            <?= form_close() ?>
-                        <?php else: ?>
-                            <span class="badge bg-danger mt-auto">Sin stock</span>
-                        <?php endif; ?>
+                       <a href="<?php echo base_url('verProducto/'),  $producto['prodId']; ?>" class="btn btn-primary mt-auto">Ver</a>
                     </div>
                 </div>
             </div>
