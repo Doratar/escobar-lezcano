@@ -1,11 +1,7 @@
 <?php
 namespace App\Controllers;
-use App\Models\ColorModel;
-use App\Models\TallesModel;
-Use App\Models\UsuarioModel;
-Use App\Models\CategoriaModel;
-Use CodeIgniter\Controller;
-use CodeIgniter\View\Table;
+use CodeIgniter\Controller;
+use App\Models\{ProductoModel, CategoriaModel};
 
 class ProductoController extends Controller{
 
@@ -14,7 +10,7 @@ class ProductoController extends Controller{
     public function __construct()
     {
         helper(['form','url']);
-        $this->ProductoModel = new \App\Models\ProductoModel();
+        $this->ProductoModel = new ProductoModel();
         $this->CategoriaModel = new CategoriaModel();
     }
 
@@ -22,10 +18,10 @@ class ProductoController extends Controller{
         $data['titulo'] = 'Catalogo de Productos';
         $data['productos'] = $this->ProductoModel->getProductosActivos();
         return
-        view('front/header.php', $data)
-        .view('front/navbar.php')
+        view('front/header', $data)
+        .view('front/navbar')
         .view('productos/productoCatalogo', $data)
-        .view('front/footer.php');
+        .view('front/footer');
     }
 
      public function create(){
@@ -158,10 +154,10 @@ class ProductoController extends Controller{
         $data['categorias'] = $categorias->getCategorias();
 
         return
-        view('front/header.php', $data)
-        .view('admin/navbar.php')
-        .view('productos/productoEditar.php', $data)
-        .view('front/footer.php');
+        view('front/header', $data)
+        .view('admin/navbar')
+        .view('productos/productoEditar', $data)
+        .view('front/footer');
     }
 
     public function verProducto($id) {
