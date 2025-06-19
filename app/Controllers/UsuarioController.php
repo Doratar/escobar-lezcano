@@ -4,9 +4,11 @@ Use App\Models\UsuarioModel;
 Use CodeIgniter\Controller;
 
 class UsuarioController extends Controller{
+    protected $UsuarioModel;
     public function __construct()
     {
         helper(['form','url']);
+        $this->UsuarioModel= new UsuarioModel();
     }
     public function create()
     {
@@ -146,6 +148,17 @@ class UsuarioController extends Controller{
                 return redirect()->to('/login');
             }
         } 
+    }
+// Funcion para dar de baja logica de los productos
+    public function eliminarUsuario($id) {
+        $this->UsuarioModel->eliminarUsuario($id);
+        return redirect()->to('admin/usuarios');
+    }
+
+    // Funcion para dar de alta logica los productos
+    public function activarUsuario($id) {
+        $this->UsuarioModel->update($id, ['UsuarioActivo'=> TRUE]);
+        return redirect()->to('admin/usuarios');
     }
 
     public function logout() {

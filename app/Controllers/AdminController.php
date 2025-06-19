@@ -60,7 +60,7 @@ class AdminController extends Controller{
         // TODO aca va la tabla de usuarios
         $data['titulo'] = 'Usuarios';
         $usuarioModel = new usuarioModel();
-        $data['usuarios'] = $usuarioModel->findAll();
+        $data['usuarios'] = $usuarioModel->getUsuariosConPerfil();
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('admin/tabla-usuarios', $data);
