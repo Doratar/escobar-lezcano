@@ -15,7 +15,7 @@ $routes->get('producto', 'Home::producto');
 $routes->get('verProducto/(:num)', 'ProductoController::verProducto/$1');
 
 // Registro de un nuevo usuario
-$routes->get('registro', 'UsuarioController::create');
+$routes->get('registro', 'UsuarioController::create', ['filter'=>'auth']);
 $routes->post('registrar', 'UsuarioController::formValidation');
 
 // Login de un usuario
@@ -27,9 +27,9 @@ $routes->get('logout', 'UsuarioController::logout');
 $routes->get('cliente', 'ClienteController::index', ['filter'=>'auth']);
 
 // Admin
-$routes->get('admin', 'AdminController::index', ['filter' => 'admin']);
+$routes->get('admin', 'AdminController::index', ['filter'=>'admin']);
 $routes->get('/admin/productos', 'AdminController::productos');
-$routes->get('/admin/productos/crear', 'ProductoController::create', ['filter' => 'auth']);
+$routes->get('/admin/productos/crear', 'ProductoController::create');
 $routes->post('admin/productos/crear', 'ProductoController::formValidation');
 $routes->get('admin/productos/editar/(:num)', 'ProductoController::edit/$1');
 $routes->post('admin/productos/editar', 'ProductoController::formValidationEditar');

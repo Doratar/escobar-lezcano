@@ -13,7 +13,7 @@
             <?php if (isset($carrito) && is_array($carrito)): ?>
                 <?php foreach ($carrito as $item): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($item['id']); ?></td>
+                        <td><?php echo ($item['id']); ?></td>
                         <td><?php echo htmlspecialchars($item['precio']); ?></td>
                         <td><?php echo htmlspecialchars($item['cantidad']); ?></td>
                     </tr>

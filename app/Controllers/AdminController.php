@@ -18,7 +18,7 @@ class AdminController extends Controller{
         $data['titulo'] = 'Dashboard';
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('producto');
+        echo view('front/producto');
         echo view('front/footer');
     }
 
@@ -41,7 +41,7 @@ class AdminController extends Controller{
         $data['ventas'] = $ventasModel->getVentas();
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('ventas', $data);
+        echo view('admin/tabla-ventas', $data);
         echo view('front/footer');
     }
 
@@ -52,7 +52,7 @@ class AdminController extends Controller{
         $data['categorias'] = $categoriaModel->findAll();
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('tabla-categorias', $data);
+        echo view('admin/tabla-categorias', $data);
         echo view('front/footer');
     }
 
@@ -63,7 +63,7 @@ class AdminController extends Controller{
         $data['usuarios'] = $usuarioModel->findAll();
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('tabla-usuarios', $data);
+        echo view('admin/tabla-usuarios', $data);
         echo view('front/footer');
     }
 
