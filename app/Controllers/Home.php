@@ -10,7 +10,7 @@ class Home extends BaseController
         view('front/header.php', ['titulo' => 'Home'])
         .view('front/navbar.php')
         .view('front/carrousel.php')
-        .view('principal.php')
+        .view('front/principal.php')
         .view('front/footer.php');
     }
 
@@ -18,21 +18,21 @@ class Home extends BaseController
         return 
         view('front/header.php', ['titulo' => 'Nosotros'])
         .view('front/navbar.php')
-        .view('nosotros.php')
+        .view('front/nosotros.php')
         .view('front/footer.php');
     }
     public function comercializacion(): string {
         return 
         view('front/header.php', ['titulo' => 'Comercializacion'])
         .view('front/navbar.php')
-        .view('comercializacion.php')
+        .view('front/comercializacion.php')
         .view('front/footer.php');
     }
     public function contacto(): string {
         return 
         view('front/header.php', ['titulo' => 'Contacto']) 
         .view('front/navbar.php')
-        .view('contacto.php')
+        .view('front/contacto.php')
         .view('front/footer.php');
     }
     public function terminos(): string {
@@ -40,13 +40,6 @@ class Home extends BaseController
         view('front/header.php', ['titulo' => 'Terminos y condiciones'])
         .view('front/navbar.php')
         .view('terminos.php')
-        .view('front/footer.php');
-    }
-    public function tienda(): string {
-        return 
-        view('front/header.php', ['titulo' => 'Tienda'])
-        .view('front/navbar.php')
-        .view('tienda.php')
         .view('front/footer.php');
     }
     public function producto(): string {

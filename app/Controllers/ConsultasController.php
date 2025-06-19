@@ -14,7 +14,7 @@ class ConsultasController extends Controller{
         $data['usuario'] = session()->get('UsuarioMail');
         echo view('front/header', $data);
         echo view('front/navbar');
-        echo view('contacto', $data);
+        echo view('front/contacto', $data);
         echo view('front/footer');
     }
     public function consultas()
@@ -25,7 +25,7 @@ class ConsultasController extends Controller{
         $data['consultas'] = $consultasModel->getConsultas();
         echo view('front/header', $data);
         echo view('admin/navbar');
-        echo view('consultas', $data);
+        echo view('admin/tabla-consultas', $data);
         echo view('front/footer');
     }
 
@@ -53,9 +53,11 @@ class ConsultasController extends Controller{
 
         if(!$input){
             $data['titulo'] = 'Consultas';
+            $data['usuario'] = session()->get('UsuarioMail');
+            $data['validation'] = $this->validator;
             echo view('front/header', $data);
             echo view('front/navbar');
-            echo view('contacto', ['validation' => $this->validator]);
+            echo view('front/contacto', $data);
             echo view('front/footer');
         } else {
             $model = new ConsultasModel();
