@@ -114,16 +114,14 @@
 
     <input type="file" class="form-control" name="prodImagenUrl" id="prodImagenUrl" accept="image/*">
   </div>
+  
+  <div class="col-md-1">
+    <label for="prodColor">Color</label>
+    <input type="color" name="prodColor" id="prodColor" class="form-control"
+    placeholder="Ingrese el color del producto" aria-label="Color">
+  </div>
 </div>
-
-      <div class="col-md-1">
-        <label for="prodColor">Color</label>
-        <input type="color" name="prodColor" id="prodColor" class="form-control"
-          placeholder="Ingrese el color del producto" aria-label="Color">
-      </div>
-    </div>
-
-    <button id="agregar-producto" class="btn btn-success" type="submit">Guardar Producto</button>
-  </form>
-
+  
+  <button id="agregar-producto" class="btn btn-success" type="submit">Guardar Producto</button>
+</form>
 </div>
