@@ -58,14 +58,14 @@ public function eliminar_item($rowid)
 {
     $cart = \Config\Services::Cart();
     $cart->remove($rowid);
-    return redirect()->to(base_url('muestro'));
+    return redirect()->to(base_url('carrito'));
 }
 
 public function borrar_carrito()
 {
     $cart = \Config\Services::Cart();
     $cart->destroy();
-    return redirect()->to(base_url('muestro'));
+    return redirect()->to(base_url('carrito'));
 }
 
     //Actualiza el carrito que se muestra

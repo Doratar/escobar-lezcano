@@ -61,7 +61,7 @@ $routes->post('carrito_agrega', 'CarritoController::add');
 // Agregar los ítems seleccionados
     //$routes->post('carrito/add', 'Carrito_controller::add', ['filter' => 'auth']);
 // Elimina un ítem del carrito
-    //$routes->get('carrito_elimina/(:any)', 'carrito_controller::remove/$1', ['filter' => 'auth']);
+    $routes->get('carrito_eliminar/(:any)', 'CarritoController::eliminar_item/$1');
 // Eliminar todo el carrito
     //$routes->get('/borrar', 'carrito_controller::borrar_carrito', ['filter' => 'auth']);
 // Registrar la venta en las tablas
