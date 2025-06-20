@@ -46,7 +46,7 @@ class Home extends BaseController
         return 
         view('front/header.php', ['titulo' => 'Productos'])
         .view('front/navbar.php')
-        .view('producto.php')
+        .view('front/producto')
         .view('front/footer.php');
     }
 

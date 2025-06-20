@@ -102,16 +102,20 @@
     </div>
 
     <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="prodImagenUrl">Imagen del producto: </label>
-        <?php if (isset($producto)): ?>
-          <input type="file" class="form-control" name="prodImagenUrl" value="<?php echo $producto['prodImagenURL'] ?>"
-            id="prodImagenUrl" placeholder="Archivo imagen" aria-label="URL de la imagen" accept="image/*">
-        <?php else: ?>
-          <input type="file" class="form-control" name="prodImagenUrl" id="prodImagenUrl" placeholder="Archivo imagen"
-            aria-label="URL de la imagen" accept="image/*">
-        <?php endif; ?>
+  <div class="col-md-6">
+    <label for="prodImagenUrl">Imagen del producto:</label>
+
+    <?php if (isset($producto) && !empty($producto['prodImagenURL'])): ?>
+      <div class="mb-2">
+        <img src="<?= base_url('assets/uploads/' . $producto['prodImagenURL']) ?>" alt="Imagen actual" style="max-height: 150px;">
+        <input type="hidden" name="imagenActual" value="<?= $producto['prodImagenURL'] ?>">
       </div>
+    <?php endif; ?>
+
+    <input type="file" class="form-control" name="prodImagenUrl" id="prodImagenUrl" accept="image/*">
+  </div>
+</div>
+
       <div class="col-md-1">
         <label for="prodColor">Color</label>
         <input type="color" name="prodColor" id="prodColor" class="form-control"

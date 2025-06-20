@@ -40,9 +40,13 @@ $routes->post('admin/consultas/crear', 'ConsultasController::formValidation');
 $routes->get('admin/consultas/marcarLeido/(:num)', 'ConsultasController::marcarLeido/$1');
 $routes->get('admin/ventas', 'AdminController::ventas');
 $routes->get('admin/categorias', 'AdminController::categorias');
+$routes->get('/admin/categorias/crear', 'CategoriaController::create');
+$routes->post('admin/categorias/crear', 'CategoriaController::formValidation');
+$routes->get('admin/categorias/editar/(:num)', 'CategoriaController::edit/$1');
+$routes->post('admin/categorias/editar', 'CategoriaController::formValidationEditar');
 
 //Usuario
-$routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'auth']);
+$routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'admin']);
 $routes->get('admin/usuarios/eliminar/(:num)', 'UsuarioController::eliminarUsuario/$1');
 $routes->get('admin/usuarios/activar/(:num)', 'UsuarioController::activarUsuario/$1');
 
