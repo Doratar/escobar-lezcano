@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 justify-content-center align-items-center">
-             <img class="img-fluid" src="<?= base_url('assets/uploads/') . $producto['prodImagenURL']; ?>" alt="imagen-del-producto" alt="imagen-del-producto" style="max-width: 100px; height: auto;">
+             <img class="img-fluid" src="<?= base_url('assets/uploads/') . $producto['prodImagenURL']; ?>" alt="imagen-del-producto">
         </div>
         <div class="col-md-6">
             <h1><?php echo $producto['prodNombre']?></h1>
