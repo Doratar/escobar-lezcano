@@ -94,7 +94,8 @@ class ProductoController extends Controller{
             'prodDescripcion' => 'required|min_length[10]',
             'prodPrecio' => 'required|numeric',
             'cateId' => 'required|integer',
-            'prodImagenUrl' => 'uploaded[prodImagenUrl]',
+            //'prodImagenUrl' => 'uploaded[prodImagenUrl]',
+            'prodImagenUrl' => 'permit_empty|uploaded[prodImagenUrl]|is_image[prodImagenUrl]',
             'prodMarca' => 'required|min_length[2]'
         ]);
 
@@ -107,9 +108,29 @@ class ProductoController extends Controller{
             .view('front/footer.php');
         } else {
             // Procesar la imagen y guardar el producto
+            //$imagen = $this->request->getFile('prodImagenUrl');
+            //$nombreAleatorio = $imagen->getRandomName();
+            //$imagen->move(ROOTPATH . 'assets/uploads', $nombreAleatorio);
             $imagen = $this->request->getFile('prodImagenUrl');
-            $nombreAleatorio = $imagen->getRandomName();
-            $imagen->move(ROOTPATH . 'assets/uploads', $nombreAleatorio);
+
+            if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+                $prodId = $this->request->getPost('prodId');
+                $extension = $imagen->getClientExtension();
+                $nombreArchivo = $prodId . '.' . $extension;
+                $rutaDestino = ROOTPATH . 'assets/uploads/' . $nombreArchivo;
+
+                // Eliminar la imagen anterior si existe
+                if (file_exists($rutaDestino)) {
+                    unlink($rutaDestino);
+                }
+
+                // Mover la nueva imagen
+                $imagen->move(ROOTPATH . 'assets/uploads', $nombreArchivo);
+                $nombreFinal = $nombreArchivo;
+            } else {
+                $nombreFinal = $this->request->getPost('imagenActual');
+            }
+
 
             // Guardar los datos del producto
             $data = [
@@ -118,7 +139,7 @@ class ProductoController extends Controller{
                 'prodDescripcion' => $this->request->getPost('prodDescripcion'),
                 'prodPrecio' => $this->request->getPost('prodPrecio'),
                 'cateId' => $this->request->getPost('cateId'),
-                'prodImagenUrl' => $nombreAleatorio,
+                'prodImagenUrl' => $nombreFinal,
                 'prodMarca' => $this->request->getPost('prodMarca'),
                 'prodColor' => $this->request->getPost('prodColor'),
                 'prodStock' => $this->request->getPost('prodStock'),

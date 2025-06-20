@@ -14,35 +14,35 @@
   <div class="row">
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="assets\img\img-poductos\Zapatillas Running Nike Downshifter 12 Ng Vt Hombre.png" class="card-img-top"
+        <img src="assets\img\img-poductos\Short Puma Training.jpg" class="card-img-top"
           alt="...">
         <div class="card-body">
-          <h5 class="card-title">Zapatillas Running Nike Downshifter</h5>
-          <p class="card-text">Ya sea que estés recién comenzando a correr o que ya tengas experiencia y ansíes cambiar tu ritmo, los Downshifter 13 están listos para acompañarte.</p>
-          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
+          <h5 class="card-title">Short Puma Training</h5>
+          <p class="card-text">Short cómodo para entrenamiento..</p>
+          
+          <a href="<?php echo base_url('verProducto/'), 3; ?>" class="btn btn-primary mt-auto">Ver</a>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="assets\img\img-poductos\Zapatillas Running Reebok Nano X4 Ng Hombre.png" class="card-img-top"
+        <img src="assets\img\img-poductos\Remera Adidas Climalite.jpg" class="card-img-top"
           alt="...">
         <div class="card-body">
-          <h5 class="card-title">Zapatillas Running Reebok Nano X4 Ng Hombre</h5>
-          <p class="card-text">Las zapatillas Reebok Nano Classic son un modelo icónico que combina estilo y funcionalidad en un diseño unisex.</p>
-          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
+          <h5 class="card-title">Remera Adidas Climalite</h5>
+          <p class="card-text">Remera de entrenamiento transpirable..</p>
+          <a href="<?php echo base_url('verProducto/'), 2; ?>" class="btn btn-primary mt-auto">Ver</a>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <img src="assets\img\img-poductos\Zapatillas Tenis Adidas Defiant Speed Fl Vd Ng.png" class="card-img-top"
+        <img src="assets\img\img-poductos\1749073306_036b9e48e897c9f36cff.png" class="card-img-top"
           alt="...">
         <div class="card-body">
-          <h5 class="card-title">Zapatillas Tenis Adidas Defiant Speed</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="<?php echo base_url('/producto') ?>" class="btn btn-primary">Ver</a>
+          <h5 class="card-title">Zapatillas Asphalt</h5>
+          <p class="card-text">El modelo ASPHALT está diseñado para corredores exigentes que busquen maximizar cada momento de su entrenamiento.</p>
+          <a href="<?php echo base_url('verProducto/'), 4; ?>" class="btn btn-primary mt-auto">Ver</a>
         </div>
       </div>
     </div>

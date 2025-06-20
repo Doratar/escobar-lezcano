@@ -21,4 +21,8 @@ class  CategoriaModel extends Model
     {
         return $this->find($id);
     }
+    public function updateCategoria($id, $data)
+    {
+        return $this->update($id, $data);
+    }
 }
