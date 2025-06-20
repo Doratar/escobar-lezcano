@@ -48,7 +48,7 @@ $routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'auth']
 
 
 //Carrito
-$routes->get('carrito', 'CarritoController::index');
+$routes->get('carrito', 'CarritoController::mostrarCarrito');
 $routes->post('carrito_agrega', 'CarritoController::add');
 
 // Rutas para el carrito

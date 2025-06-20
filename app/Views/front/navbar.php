@@ -67,7 +67,7 @@
                     <input class="form-control me-2" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form> -->
-            <span><i class="bi bi-cart" style="color: white;"></i></span>
+            <a href="<?php echo base_url('carrito')?>" class="btn"><i class="bi bi-cart" style="color: white;"></i></a>
             <?php if (isset($cart)): ?>
                 <?php echo $cart->total_items(); ?>
             <?php else: ?>

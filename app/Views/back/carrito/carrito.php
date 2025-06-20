@@ -44,10 +44,10 @@
                     ?>
                     <!-- Inputs ocultos para mantener datos -->
                     <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][rowid]" value="<?= esc($item['rowid']) ?>">
-                    <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][name]" value="<?= esc($item['name']) ?>">
-                    <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][price]" value="<?= esc($item['price']) ?>">
+                    <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][prodNombre]" value="<?= esc($item['prodNombre']) ?>">
+                    <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][prodPrecio]" value="<?= esc($item['prodPrecio']) ?>">
                     <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][qty]" value="<?= esc($item['qty']) ?>">
-                    <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][imagen]" value="<?= esc($item['imagen']) ?>">
+                    <!-- <input type="hidden" name="cart[<?= esc($item['rowid']) ?>][imagen]" value="<?= esc($item['imagen']) ?>"> -->
 
                     <tr class="table-danger align-middle">
                         <td>

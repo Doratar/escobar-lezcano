@@ -29,14 +29,14 @@ class CarritoController extends BaseController{
     public function mostrarCarrito() //carrito que se muestra
     {
         $cart = \Config\Services::cart();
-        $cart = $cart->contents();
-        $data['cart'] = $cart;
+        $cartContents = $cart->contents();
+        $data['cart'] = $cartContents;
 
         $dato['titulo'] = 'Tu carrito';
-        echo view('front/head_view', $dato);
-        echo view('front/nav_view');
+        echo view('front/header', $dato);
+        echo view('front/navbar');
         echo view('back/carrito/carrito_parte_view', $data);
-        echo view('front/footer_view');
+        echo view('front/footer');
     }
 public function add() // Agregar productos al carrito
 {
@@ -44,10 +44,10 @@ public function add() // Agregar productos al carrito
     $cart = \Config\Services::Cart(); // Devuelve una instancia del carrito activa
 
     $cart->insert([
-        'prodId'     => $request->getPost('prodId'),
-        'qty'    => 1,
-        'prodNombre'   => $request->getPost('prodNombre'),
-        'prodPrecio'  => $request->getPost('prodPrecio'),
+        'id' => $request->getPost('prodId'),
+        'qty'=> 1,
+        'name'=> $request->getPost('prodNombre'),
+        'price'=> $request->getPost('prodPrecio'),
         //'imagen' => $request->getPost('imagen'),
     ]);
 
@@ -75,11 +75,11 @@ public function borrar_carrito()
         $request  = \Config\Services::request();
 
         $cart->update(array(
-            'id'     => $request->getPost('id'),
+            'id'     => $request->getPost('prodId'),
             'qty'    => 1,
-            'price'  => $request->getPost('precio_Vta'),
-            'name'   => $request->getPost('nombre_prod'),
-            'imagen' => $request->getPost('imagen'),
+            'price'  => $request->getPost('prodPrecio'),
+            'name'   => $request->getPost('prodNombre'),
+            // 'imagen' => $request->getPost('imagen'),
         ));
 
         return redirect()->back()->withInput();

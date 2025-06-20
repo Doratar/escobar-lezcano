@@ -7,22 +7,20 @@
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <?php if (isset($carrito) && is_array($carrito)): ?>
-                <?php foreach ($carrito as $item): ?>
+                <?php foreach ($cart as $item): ?>
                     <tr>
-                        <td><?php echo ($item['id']); ?></td>
-                        <td><?php echo htmlspecialchars($item['precio']); ?></td>
-                        <td><?php echo htmlspecialchars($item['cantidad']); ?></td>
+                        <td><?php echo $item['id']; ?></td>
+                        <td><?php echo $item['name']; ?></td>
+                        <td><?php echo ($item['price']); ?></td>
+                        <td><?php echo ($item['qty']); ?></td>
+                        <td><a href="<?php echo base_url('eliminarItem/'), $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="3">El carrito está vacío.</td>
-                </tr>
-            <?php endif; ?>
+            
         </tbody>
     </table>
 </div>
