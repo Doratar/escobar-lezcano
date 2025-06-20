@@ -10,7 +10,7 @@ class Admin implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        // si el usuario no esta logueado
+        // si el usuario esta logueado y su perfil no es administrador
         if(!(session()->get('PerfilId') == 1)){
             // entonces redirecciona a la pagina de login page
             return redirect()->to('/');

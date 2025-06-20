@@ -12,13 +12,13 @@ class VentasModel extends Model
     protected $primaryKey = 'ventasId';
     protected $allowedFields = [
         'ventasFecha',
+        'ventasTotal',
         'usuariosId',
-        'ventasTotal'
     ];
 
-    public function getVentas()
+    public function getVentas($usuarioId)
     {
-        return $this->findAll();
+        return $this->where('usuarioId', $usuarioId)->findAll();
     }
 
 }
