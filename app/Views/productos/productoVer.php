@@ -9,7 +9,7 @@
             <p><?php echo $producto['prodDescripcion']?></p>
             <h3>Precio: $ <?php echo $producto['prodPrecio']?></h3>
             <h4>Categoria <?php print_r($categorias[$producto['cateId']]['cateNombre']) ?></h4>
-            <h4>Stock dispponible: <?php echo $producto['prodStock']?></h4>
+            <h4>Stock disponible: <?php echo $producto['prodStock']?></h4>
             <form action="<?php echo base_url('/carrito_agrega') ?>" method="post">
                 <input type="hidden" id="prodId" name="prodId" value="<?php echo $producto['prodId'] ?>">
                 <input type="hidden" id="prodNombre" name="prodNombre" value="<?php echo $producto['prodNombre'] ?>">
