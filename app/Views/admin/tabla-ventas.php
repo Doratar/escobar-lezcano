@@ -22,7 +22,7 @@
                 <td><?php echo $venta['usuarioId']; ?></td>
                 <td><?php echo $venta['ventasTotal']; ?></td>
                 <td>
-                    <a href="<?php echo base_url('admin/productos/editar/' . $producto['prodId']); ?>" class="btn btn-warning">Ver Detalle</a>
+                    <a href="<?php echo base_url('admin/ventas/detalle/' . $venta['ventasId']); ?>" class="btn btn-warning">Ver Detalle</a>
             </tr>
             <?php endforeach; ?>
         </tbody>

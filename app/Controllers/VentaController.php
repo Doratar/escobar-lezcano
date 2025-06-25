@@ -68,8 +68,8 @@ class VentaController extends Controller{
                 $ventasDetalleModel->insert([
                     'ventasId' => $venta_id,
                     'prodId' => $producto['id'],
-                    'vDetalleCantidad' => $producto['qty'],
-                    'vDetallePrecio' => $producto['price']
+                    'vdetalleCantidad' => $producto['qty'],
+                    'vdetallePrecio' => $producto['price']
                 ]);
 
             // Descontar stock
