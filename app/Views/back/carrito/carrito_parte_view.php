@@ -36,7 +36,7 @@
                 <a href="<?php echo base_url('/carrito-comprar') ?>" class="btn btn-success">Completar venta</a>
             </div>
             <div class="col-md-2">
-                <a href="<?php echo base_url('borrar') ?>" class="btn btn-secondary">Vaciar carrito</a>
+                <a href="<?php echo base_url('/borrar') ?>" class="btn btn-secondary">Vaciar carrito</a>
             </div>
             <div class="col-md-2">
                 <a href="<?php echo base_url('tienda') ?>" class="btn btn-primary">Seguir comprando</a>

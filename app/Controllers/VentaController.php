@@ -23,7 +23,7 @@ class VentaController extends Controller{
 
         $productoModel = new ProductoModel();
         $ventasModel = new VentasModel();
-        $usuarioModel = new VentasDetalleModel();
+        $ventasDetalleModel = new VentasDetalleModel();
 
         $productos_validos = [];
         $productos_sin_stock = [];
@@ -41,10 +41,12 @@ class VentaController extends Controller{
                 array_push($productos_sin_stock, $items);
                 $cart_controller->eliminar_item($items['rowid']);
             }
+        }
             // Si hay productos sin stock, avisar y volver al carrito
             if (!empty($productos_sin_stock)) {
+                $nombres = array_map(fn($p) => $p['name'], $productos_sin_stock);
                 $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: <br>' 
-                    . implode(', ', $productos_sin_stock);
+                    . implode(', ', $nombres);
                 $session->setFlashdata('mensaje', $mensaje);
                 return redirect()->to(base_url('carrito'));
             }
@@ -55,9 +57,36 @@ class VentaController extends Controller{
                 return redirect()->to(base_url('carrito'));
             }
 
-        }
+            // INSERTAR CABECERA DE VENTAS
+            $venta_id = $ventasModel->insert([
+                'ventasFecha' => date('Y-m-d H:i:s'),
+                'ventasTotal' => $total,
+                'usuarioId' => session()->get('UsuarioId')             
+            ]);
+
+            foreach ($productos_validos as $producto) {
+                $ventasDetalleModel->insert([
+                    'ventasId' => $venta_id,
+                    'prodId' => $producto['id'],
+                    'vDetalleCantidad' => $producto['qty'],
+                    'vDetallePrecio' => $producto['price']
+                ]);
+
+            // Descontar stock
+            //$productoModel->actualizarStock($producto['prodId'], $producto['qty']); 
     }
 
+    // Vaciar carrito
+    $cart_controller->borrar_carrito();
+
+    $session->setFlashdata('mensaje', 'Venta registrada con éxito.');
+    return redirect()->to(base_url('carrito'));
+
+    }
+
+
+
+    
         // Función del usuario cliente para ver sus compras
     public function ver_factura($venta_id){
     // echo $venta_id; die;

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class VentasDetalleModel extends Model
 {
-    protected $table      = 'venta_detalle';
+    protected $table      = 'ventas_detalle';
     protected $primaryKey = 'vdetalleId';
 
     protected $allowedFields = [
