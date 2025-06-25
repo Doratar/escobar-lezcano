@@ -89,30 +89,30 @@ class VentaController extends Controller{
     
         // Función del usuario cliente para ver sus compras
     public function ver_factura($venta_id){
-    // echo $venta_id; die;
-    $detalle_ventas = new VentasDetalleModel();
-    $data['venta'] = $detalle_ventas->getDetalles($venta_id);
+        // echo $venta_id; die;
+        $detalle_ventas = new VentasDetalleModel();
+        $data['venta'] = $detalle_ventas->getDetalles($venta_id);
 
-    $dato['titulo'] = "Mi compra";
+        $dato['titulo'] = "Mi compra";
 
-    echo view('front/header', $dato);
-    echo view('front/nvbar');
-    echo view('back/compras/vista_compras', $data);
-    echo view('front/footer');
-}
+        echo view('front/header', $dato);
+        echo view('front/nvbar');
+        echo view('back/compras/vista_compras', $data);
+        echo view('front/footer');
+    }
 
-// Función del cliente para ver el detalle de sus facturas de compras
-public function ver_facturas_usuario($id_usuario)
-{
-    $ventas = new VentasModel();
+    // Función del cliente para ver el detalle de sus facturas de compras
+    public function ver_facturas_usuario($id_usuario)
+    {
+        $ventas = new VentasModel();
 
-    $data['ventas'] = $ventas->getVentas($id_usuario);
-    $dato['titulo'] = "Todas mis compras";
+        $data['ventas'] = $ventas->getVentas($id_usuario);
+        $dato['titulo'] = "Todas mis compras";
 
-    echo view('front/header', $dato);
-    echo view('front/navbar');
-    echo view('back/compras/ver_factura_usuario', $data);
-    echo view('front/footer');
-}
+        echo view('front/header', $dato);
+        echo view('front/navbar');
+        echo view('back/compras/ver_factura_usuario', $data);
+        echo view('front/footer');
+    }
 
 }
