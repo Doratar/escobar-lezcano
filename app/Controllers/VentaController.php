@@ -73,7 +73,7 @@ class VentaController extends Controller{
                 ]);
 
             // Descontar stock
-            //$productoModel->actualizarStock($producto['prodId'], $producto['qty']); 
+            $productoModel->actualizarStock($producto['id'], $producto['qty']); 
     }
 
     // Vaciar carrito
@@ -83,10 +83,7 @@ class VentaController extends Controller{
     return redirect()->to(base_url('carrito'));
 
     }
-
-
-
-    
+   
         // Función del usuario cliente para ver sus compras
     public function ver_factura($venta_id){
         // echo $venta_id; die;
@@ -102,16 +99,30 @@ class VentaController extends Controller{
     }
 
     // Función del cliente para ver el detalle de sus facturas de compras
-    public function ver_facturas_usuario($id_usuario)
+    public function verCompras()
     {
         $ventas = new VentasModel();
+
+
+        $id_usuario=session()->get('UsuarioId');
 
         $data['ventas'] = $ventas->getVentas($id_usuario);
         $dato['titulo'] = "Todas mis compras";
 
         echo view('front/header', $dato);
         echo view('front/navbar');
-        echo view('back/compras/ver_factura_usuario', $data);
+        echo view('cliente/compras/verCompras', $data);
+        echo view('front/footer');
+    }
+
+    public function verDetalleVenta($ventaId){
+        $detalles = new VentasDetalleModel();
+        $data['detalles'] = $detalles->getDetalle($ventaId);
+        $dato['titulo'] = "Venta detalle";
+
+        echo view('front/header', $dato);
+        echo view('front/navbar');
+        echo view('admin/ventaDetalle', $data);
         echo view('front/footer');
     }
 

@@ -47,6 +47,17 @@ class ProductoModel extends Model
         return $this->where('cateId', $categoriaId)->findAll();
     }
 
+    public function actualizarStock($producto_id, $cantidad_vendida)
+    {
+        $producto = $this->find($producto_id);
+
+        if ($producto) {
+            $nuevo_stock = max(0, $producto['prodStock'] - $cantidad_vendida);
+            return $this->update($producto_id, ['prodStock' => $nuevo_stock]);
+        }
+
+        return false;
+    }
 
     public function createProducto($data)
     {

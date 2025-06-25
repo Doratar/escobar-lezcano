@@ -15,4 +15,11 @@ class VentasDetalleModel extends Model
         'vdetalleCantidad',
         'vdetallePrecio'
     ];
+
+    public function getDetalle($ventaId){
+
+        return $this->select('*')->join('productos', 'productos.prodId = ventas_detalle.prodId')->where('ventasId', $ventaId)->findAll();
+
+        //return $this->where('ventaId', $ventaId)->findAll();
+    }
 }

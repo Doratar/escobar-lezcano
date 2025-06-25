@@ -44,6 +44,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('/logout') ?>">Mis Compras</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('/logout') ?>">Cerrar sesión</a></li>
                         <?php else: ?>
                             <li><a class="dropdown-item" href="<?php echo base_url('/registro') ?>">Registrarse</a></li>

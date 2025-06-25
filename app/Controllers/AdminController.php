@@ -7,6 +7,7 @@ Use App\Models\ProductoModel;
 Use App\Models\VentasModel;
 
 class AdminController extends Controller{
+    
     public function __construct()
     {
         helper(['form','url']);
@@ -38,7 +39,7 @@ class AdminController extends Controller{
         // TODO aca va la tabla de productos
         $data['titulo'] = 'Ventas';
         $ventasModel = new VentasModel();
-        $data['ventas'] = $ventasModel->findAll();
+        $data['ventas'] = $ventasModel->getVentasTotal();
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('admin/tabla-ventas', $data);

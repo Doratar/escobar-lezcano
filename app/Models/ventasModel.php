@@ -20,5 +20,8 @@ class VentasModel extends Model
     {
         return $this->where('usuarioId', $usuarioId)->findAll();
     }
-
+    public function getVentasTotal()
+    {
+        return $this->findAll();
+    }
 }

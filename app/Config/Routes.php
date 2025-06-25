@@ -39,6 +39,7 @@ $routes->get('admin/consultas', 'ConsultasController::consultas');
 $routes->post('admin/consultas/crear', 'ConsultasController::formValidation');
 $routes->get('admin/consultas/marcarLeido/(:num)', 'ConsultasController::marcarLeido/$1');
 $routes->get('admin/ventas', 'AdminController::ventas');
+$routes->get('admin/ventas/detalle/(:num)', 'VentaController::verDetalleVenta/$1');
 $routes->get('admin/categorias', 'AdminController::categorias');
 $routes->get('/admin/categorias/crear', 'CategoriaController::create');
 $routes->post('admin/categorias/crear', 'CategoriaController::formValidation');
@@ -67,6 +68,7 @@ $routes->post('carrito_agrega', 'CarritoController::add');
     $routes->get('/borrar', 'CarritoController::borrar_carrito');
 // Registrar la venta en las tablas
     $routes->get('/carrito-comprar', 'Ventacontroller::registrarVenta');
+    $routes->get('compras', 'VentaController:verCompras');
 // Botones de sumar y restar en la vista del carrito
     //$routes->get('carrito_suma/(:any)', 'carrito_controller::suma/$1');
     //$routes->get('carrito_resta/(:any)', 'carrito_controller::resta/$1');
