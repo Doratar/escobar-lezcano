@@ -12,6 +12,9 @@ class VentaController extends Controller{
     }
 
     public function registrarVenta(){
+        if (!session()->get('logged_in')){
+            return redirect()->to('login');
+        }
         $session = session();
         require(APPPATH . 'Controllers/CarritoController.php');
 
@@ -24,7 +27,7 @@ class VentaController extends Controller{
 
         $productos_validos = [];
         $productos_sin_stock = [];
-        $total =0;
+        $total = 0;
 
         foreach($cart_contents as $items){
             $producto = $productoModel->getProductoById($items['id']);
@@ -54,6 +57,7 @@ class VentaController extends Controller{
 
         }
     }
+
         // Función del usuario cliente para ver sus compras
     public function ver_factura($venta_id){
     // echo $venta_id; die;
