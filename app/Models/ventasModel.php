@@ -7,7 +7,7 @@ use Modules\Authentication\Models\UserAuthModel;
 
 class VentasModel extends Model
 {
-    protected $table = 'ventas';
+    protected $table = 'ventas_cabecera';
 
     protected $primaryKey = 'ventasId';
     protected $allowedFields = [
