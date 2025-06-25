@@ -83,26 +83,11 @@ class VentaController extends Controller{
     return redirect()->to(base_url('carrito'));
 
     }
-   
-        // Función del usuario cliente para ver sus compras
-    public function ver_factura($venta_id){
-        // echo $venta_id; die;
-        $detalle_ventas = new VentasDetalleModel();
-        $data['venta'] = $detalle_ventas->getDetalles($venta_id);
-
-        $dato['titulo'] = "Mi compra";
-
-        echo view('front/header', $dato);
-        echo view('front/nvbar');
-        echo view('back/compras/vista_compras', $data);
-        echo view('front/footer');
-    }
 
     // Función del cliente para ver el detalle de sus facturas de compras
     public function verCompras()
     {
         $ventas = new VentasModel();
-
 
         $id_usuario=session()->get('UsuarioId');
 

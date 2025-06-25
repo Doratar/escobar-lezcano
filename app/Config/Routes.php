@@ -68,7 +68,7 @@ $routes->post('carrito_agrega', 'CarritoController::add');
     $routes->get('/borrar', 'CarritoController::borrar_carrito');
 // Registrar la venta en las tablas
     $routes->get('/carrito-comprar', 'Ventacontroller::registrarVenta');
-    $routes->get('compras', 'VentaController:verCompras');
+    $routes->get('compras', 'VentaController::verCompras');
 // Botones de sumar y restar en la vista del carrito
     //$routes->get('carrito_suma/(:any)', 'carrito_controller::suma/$1');
     //$routes->get('carrito_resta/(:any)', 'carrito_controller::resta/$1');
