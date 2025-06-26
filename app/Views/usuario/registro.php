@@ -5,10 +5,10 @@
         <?=csrf_field();?> <!-- Token de seguridad -->
         
         <?php if(!empty (session()->getFlashdata('fail'))):?>
-        <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+            <div class="alert alert-danger"><?=session()->getFlashdata('fail');?></div>
         <?php endif?>
         <?php if(!empty (session()->getFlashdata('sucess'))):?>
-        <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+            <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
         
         <?php echo $validation->listErrors() ?>

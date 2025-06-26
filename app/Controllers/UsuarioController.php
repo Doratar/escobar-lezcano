@@ -92,13 +92,14 @@ class UsuarioController extends Controller{
             'UsuarioPass' => 'required'
         ], 
         [
-            'UsuarioMail' => [
-                'required' => 'El mail es obligatorio',
-            ],
-            'UsuarioPass' => [
-                'required' => 'La contraseña es obligatoria',
-            ]
-        ]);
+        'UsuarioMail' => [
+            'required'    => 'El mail es obligatorio',
+            'valid_email' => 'La dirección de correo electrónico no es válida.'
+        ],
+        'UsuarioPass' => [
+            'required' => 'La contraseña es obligatoria'
+        ]
+    ]);
 
         // Si la validacion falla, muestra el formulario de login con los errores
         if(!$input){
@@ -114,6 +115,11 @@ class UsuarioController extends Controller{
             $user = $model->where('UsuarioMail', $this->request->getVar('UsuarioMail'))->first();
 
             if($user){
+                // Verifica si el usuario está activo
+                if (!$user['UsuarioActivo']) {
+                    return redirect()->back()->with('fail', 'Tu cuenta está desactivada. Contactá al administrador.');
+                }
+
                 // Si exite verifica la contraseña
                 if(password_verify($this->request->getVar('UsuarioPass'), $user['UsuarioPass'])){
                     $ses_data = [

@@ -1,11 +1,4 @@
-<!-- Consigna -->
-<!-- <p>La página con información de contacto, donde se publicará el nombre del titular
-    de la empresa, la razón social, el domicilio legal, teléfonos, y otros medios de
-    contacto que se consideren necesario. Deberá facilitar un cuestionario para que
-    el potencial cliente se comunique con miembros de la empresa.</p> -->
-
-<!-- PRUEBA PARA MOSTRAR MENSAJES -->
-    <?php if(session()->getFlashdata('success')): ?>
+<?php if(session()->getFlashdata('success')): ?>
     <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
 <?php endif; ?>
 
@@ -42,51 +35,45 @@
   <!-- Formulario de contacto -->
   <div class="bg-light p-4 rounded shadow">
     <h2 class="mb-4">Deja aquí tu Consulta</h2>
-    <form action="<?php echo base_url('admin/consultas/crear') ?>" method="post">
+    <form action="<?= base_url('consultas/crear') ?>" method="post">
+    <?= csrf_field() ?>
 
-<!-- Email -->
-<?php if(!isset($usuario)): ?>
-  <div class="mb-3">
-    <label for="consultasMail" class="form-label">Correo electrónico</label>
-    <input type="email" class="form-control" id="consultasMail" name="consultasMail" placeholder="ejemplo@dominio.com" required>
-    <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
-  </div>
-<?php else: ?>
-  <div class="mb-3">
-    <label for="consultasMail" class="form-label">Correo electrónico</label>
-    <input type="email" class="form-control" id="consultasMail" name="consultasMail" value="<?php echo($usuario) ?>" required>
-    <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
-    <?php if (isset($validation) && $validation->hasError('consultasMail')): ?>
-    <div class="alert alert-danger mt-2">
-      <?php echo $validation->getError('consultasMail'); ?>
+    <!-- Email -->
+    <div class="mb-3">
+        <label for="consultasMail" class="form-label">Correo electrónico</label>
+        <input type="text" class="form-control" id="consultasMail" name="consultasMail"
+               value="<?= old('consultasMail', isset($usuario) ? $usuario : '') ?>">
+        <?php if (isset($validation) && $validation->hasError('consultasMail')): ?>
+            <div class="alert alert-danger mt-2">
+                <?= $validation->getError('consultasMail'); ?>
+            </div>
+        <?php endif; ?>
     </div>
-  <?php endif; ?>
-  </div>
-<?php endif; ?>
 
-<!-- Teléfono -->
-<div class="mb-3">
-  <label for="consultasTelefono" class="form-label">Teléfono</label>
-  <input type="tel" class="form-control" id="consultasTelefono" name="consultasTelefono" placeholder="Ej: 3794123456" pattern="[0-9]{10}" required>
-  <div class="form-text">Ingresá el número sin espacios ni guiones (10 dígitos).</div>
-</div>
-
-<!-- Consulta -->
-<if class="mb-3">
-  <label for="consultasDetalle" class="form-label">Tu consulta</label>
-  <textarea class="form-control" id="consultasDetalle" name="consultasDetalle" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
-  <?php if (isset($validation) && $validation->hasError('consultasDetalle')): ?>
-    <div class="alert alert-danger mt-2">
-      <?php echo $validation->getError('consultasDetalle'); ?>
+    <!-- Teléfono -->
+    <div class="mb-3">
+        <label for="consultasTelefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="consultasTelefono" name="consultasTelefono"
+               value="<?= old('consultasTelefono') ?>">
+        <?php if (isset($validation) && $validation->hasError('consultasTelefono')): ?>
+            <div class="alert alert-danger mt-2">
+                <?= $validation->getError('consultasTelefono'); ?>
+            </div>
+        <?php endif; ?>
     </div>
-  <?php endif; ?>
-</div>
 
+    <!-- Consulta -->
+    <div class="mb-3">
+        <label for="consultasDetalle" class="form-label">Tu consulta</label>
+        <textarea class="form-control" id="consultasDetalle" name="consultasDetalle"
+                  rows="4"><?= old('consultasDetalle') ?></textarea>
+        <?php if (isset($validation) && $validation->hasError('consultasDetalle')): ?>
+            <div class="alert alert-danger mt-2">
+                <?= $validation->getError('consultasDetalle'); ?>
+            </div>
+        <?php endif; ?>
+    </div>
 
-      <!-- Botón -->
-      <button type="submit" class="btn btn-primary">Enviar consulta</button>
-      <button type="reset" class="btn btn-secondary">Limpiar</button>
-    </form>
-  </div>
-  </section>
-</div>
+    <button type="submit" class="btn btn-primary">Enviar consulta</button>
+    <button type="reset" class="btn btn-secondary">Limpiar</button>
+</form>

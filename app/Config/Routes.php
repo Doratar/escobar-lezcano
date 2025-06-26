@@ -38,7 +38,6 @@ $routes->post('admin/productos/editar', 'ProductoController::formValidationEdita
 $routes->get('admin/productos/eliminar/(:num)', 'ProductoController::eliminarProducto/$1');
 $routes->get('admin/productos/activar/(:num)', 'ProductoController::activarProducto/$1');
 $routes->get('admin/consultas', 'ConsultasController::consultas');
-$routes->post('admin/consultas/crear', 'ConsultasController::formValidation');
 $routes->get('admin/consultas/marcarLeido/(:num)', 'ConsultasController::marcarLeido/$1');
 $routes->get('admin/ventas', 'AdminController::ventas');
 $routes->get('admin/ventas/detalle/(:num)', 'VentaController::verDetalleVenta/$1');
@@ -52,6 +51,10 @@ $routes->post('admin/categorias/editar', 'CategoriaController::formValidationEdi
 $routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'admin']);
 $routes->get('admin/usuarios/eliminar/(:num)', 'UsuarioController::eliminarUsuario/$1');
 $routes->get('admin/usuarios/activar/(:num)', 'UsuarioController::activarUsuario/$1');
+
+//Visitante
+
+$routes->post('consultas/crear', 'ConsultasController::formValidation');
 
 //Carrito
 $routes->get('carrito', 'CarritoController::mostrarCarrito');

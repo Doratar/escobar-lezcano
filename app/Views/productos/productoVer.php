@@ -17,8 +17,7 @@
                 
                 <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
             </form>
-
-            <button class="btn btn-success">Comprar Ahora</button>
+            <a href="<?= base_url('carrito') ?>" class="btn btn-success">Comprar Ahora</a>
         </div>
     </div>
 </div>
