@@ -25,7 +25,9 @@ class UsuarioController extends Controller{
             'UsuarioApellido' => 'required|min_length[3]|max_length[25]',
             'UsuarioMail' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usuarios.UsuarioMail]',
             'UsuarioPass' => 'required|min_length[3]|max_length[10]',
-            'UsuarioFechaNac' => 'required'
+            'UsuarioConfirmarPass' => 'required|matches[UsuarioPass]',
+            'UsuarioFechaNac' => 'required',
+            'Acepto' => 'required'
         ], 
         [
             'UsuarioNombre' => [
@@ -46,10 +48,15 @@ class UsuarioController extends Controller{
             ],
             'UsuarioPass' => [
                 'required' =>'La Contraseña es obligatoria',
-                'min_length'=>'La Contraseñaa debe tener al menos 3 caracteres',
+                'min_length'=>'La Contraseña debe tener al menos 3 caracteres',
                 'max_length'=>'La Contraseña no puede tener más de 10 caracteres'
             ],
-            'UsuarioFechaNac' => ['required'=>'La fecha de nacimiento es obligatoria']
+            'UsuarioConfirmarPass' => [
+                'required' =>'La confirmacion de Contraseña es obligatoria',
+                'matches'=>'Las Contraseñas deben ser iguales'
+            ],
+            'UsuarioFechaNac' => ['required'=>'La fecha de nacimiento es obligatoria'],
+            'Acepto' => ['required'=>'Debe aceptar los Terminos y Condiciones']
         ]);
         
 

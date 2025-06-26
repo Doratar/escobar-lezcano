@@ -7,8 +7,8 @@
         <?php if(!empty (session()->getFlashdata('fail'))):?>
             <div class="alert alert-danger"><?=session()->getFlashdata('fail');?></div>
         <?php endif?>
-        <?php if(!empty (session()->getFlashdata('sucess'))):?>
-            <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+        <?php if(!empty (session()->getFlashdata('success'))):?>
+            <div class="alert alert-success"><?=session()->getFlashdata('success');?></div>
         <?php endif?>
         
         <?php echo $validation->listErrors() ?>
@@ -24,7 +24,6 @@
         </div>
         
         <div class="mb-3">
-            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
             <label for="UsuarioMail" class="form-label">Ingresa su mail: </label>
             <input id="UsuarioMail" type="mail" class="form-control" placeholder="Ingrese mail" aria-label="UsuarioMail" name="UsuarioMail">
         </div>
@@ -36,7 +35,8 @@
 
         <div class="mb-3">
             <label for="UsuarioConfirmarPass">Confirmar contraseña: </label>
-            <input type="password" class="form-control" id="UsuarioConfirmarPass" placeholder="Contraseña" aria-label="UsuarioConfirmarPass">
+            <input type="password" class="form-control" id="UsuarioConfirmarPass" name="UsuarioConfirmarPass" placeholder="Contraseña">
+
         </div>
 
         <div class="mb-3">
@@ -45,7 +45,7 @@
         </div>
 
         <div class="mb-3">
-            <input type="checkbox" class="form-check-input" id="Acepto" aria-label="Acepto">
+            <input type="checkbox" class="form-check-input" id="Acepto" name="Acepto">
             <label for="Acepto">Leí y acepto los terminos y condiciones</label>
         </div>
 
