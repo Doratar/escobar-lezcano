@@ -7,4 +7,5 @@
     <?php endif?>
 
     <h1>Venta registrada con éxito</h1>
+    <a href="<?php echo base_url('cliente/compras/verCompra/detalle/'), $venta_id ?>">Ver compra</a>
 </div>

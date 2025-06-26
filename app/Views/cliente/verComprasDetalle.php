@@ -1,5 +1,6 @@
+
 <div class="container">
-    <h1>Detalle de venta</h1>
+    <h1>Detalle de Compra</h1>
     <table class="table">
         <thead>
             <tr>

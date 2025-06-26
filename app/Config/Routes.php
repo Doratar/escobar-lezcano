@@ -25,6 +25,8 @@ $routes->get('logout', 'UsuarioController::logout');
 
 // Cliente
 $routes->get('cliente', 'ClienteController::index', ['filter'=>'auth']);
+$routes->get('cliente/compras/verCompras', 'VentaController::verCompras');
+$routes->get('cliente/compras/verCompras/detalle/(:num)', 'VentaController::verDetalleCompra/$1');
 
 // Admin
 $routes->get('admin', 'AdminController::index', ['filter'=>'admin']);

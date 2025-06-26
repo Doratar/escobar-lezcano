@@ -96,10 +96,23 @@ class VentaController extends Controller{
 
         echo view('front/header', $dato);
         echo view('front/navbar');
-        echo view('cliente/compras/verCompras', $data);
+        echo view('cliente/verCompras', $data);
         echo view('front/footer');
     }
 
+    // funcion para que el cliente pueda ver el detalle de su compra
+    public function verDetalleCompra($ventaId) {
+        $detalles = new VentasDetalleModel();
+        $data['detalles'] = $detalles->getDetalle($ventaId);
+        $dato['titulo'] = "Mi compra";
+
+        echo view('front/header', $dato);
+        echo view('front/navbar');
+        echo view('cliente/verComprasDetalle', $data);
+        echo view('front/footer');
+    }
+
+    //funcion para que el administrador pueda ver el detalle de venta de un compra en particular
     public function verDetalleVenta($ventaId){
         $detalles = new VentasDetalleModel();
         $data['detalles'] = $detalles->getDetalle($ventaId);
