@@ -39,7 +39,7 @@ class AdminController extends Controller{
         // TODO aca va la tabla de productos
         $data['titulo'] = 'Ventas';
         $ventasModel = new VentasModel();
-        $data['ventas'] = $ventasModel->getVentasTotal();
+        $data['ventas'] = $ventasModel->getVentas();
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('admin/tabla-ventas', $data);

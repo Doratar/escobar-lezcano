@@ -10,7 +10,8 @@
             <tr>
                 <th>ID</th>
                 <th>Fecha</th>
-                <th>Cliente</th>
+                <th>Cliente Nombre</th>
+                <th>Cliente Apellido</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -18,8 +19,9 @@
             <?php foreach ($ventas as $venta): ?>
             <tr>
                 <td><?php echo $venta['ventasId']; ?></td>
-                <td><?php echo $venta['ventasFecha']; ?></td>
-                <td><?php echo $venta['usuarioId']; ?></td>
+                <td><?php echo $venta['ventasFecha']; ?></td>          
+                <td><?php echo $venta['UsuarioNombre']; ?></td>
+                <td><?php echo $venta['UsuarioApellido']; ?></td>
                 <td><?php echo $venta['ventasTotal']; ?></td>
                 <td>
                     <a href="<?php echo base_url('admin/ventas/detalle/' . $venta['ventasId']); ?>" class="btn btn-warning">Ver Detalle</a>

@@ -119,7 +119,7 @@ class VentaController extends Controller{
         $dato['titulo'] = "Venta detalle";
 
         echo view('front/header', $dato);
-        echo view('front/navbar');
+        echo view('admin/navbar');
         echo view('admin/ventaDetalle', $data);
         echo view('front/footer');
     }
