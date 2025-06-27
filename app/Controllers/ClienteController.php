@@ -13,7 +13,7 @@ class ClienteController extends Controller{
         $data['titulo'] = 'Inicio';
         $data['usuario'] = session()->get('usuario');
         echo view('front/header', $data);
-        echo view('cliente/cliente-navbar');
+        echo view('front/navbar');
         echo view('front/carrousel');
         echo view('front/footer');
     }
