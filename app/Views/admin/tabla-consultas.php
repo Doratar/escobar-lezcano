@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container table-responsive">
     <div class="row">
         <div class="col-md-6">
             <h2>Tabla de Consultas</h2>
         </div>
         
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped align-middle">
         <thead>
             <tr>
                 <th>ID</th>
@@ -27,7 +27,7 @@
                 <?php if ($consulta['consultasAtendido'] == 'NO'): ?>
                     <td>
                         <!-- <button class="btn btn-success">Marcar Leido</button> -->
-                         <a href="<?php echo base_url('admin/consultas/marcarLeido/'), $consulta['consultasId'] ?>" class="btn btn-success">Marcar Leido</a>
+                         <a href="<?php echo base_url('admin/consultas/marcarLeido/'). $consulta['consultasId'] ?>" class="btn btn-success">Marcar Leido</a>
                     </td>
                 <?php else: ?>
                 <td>
@@ -37,12 +37,10 @@
                 <?php endif; ?>
             </tr>
             <?php endforeach; ?>
-            
-
         </tbody>
     </table>
     <!-- Paginador -->
-<div class="d-flex justify-content-center">
-    <?= $pager->links() ?>
-</div>
+    <div class="d-flex justify-content-center">
+        <?= $pager->links() ?>
+    </div>
 </div>

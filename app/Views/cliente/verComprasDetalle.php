@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container table-responsive">
     <h1>Detalle de Compra</h1>
     <table class="table">
         <thead>

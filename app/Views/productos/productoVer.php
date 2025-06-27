@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container table-responsive">
     <div class="row">
         <div class="col-md-3 justify-content-center align-items-center">
              <img class="img-fluid" src="<?= base_url('assets/uploads/') . $producto['prodImagenURL']; ?>" alt="imagen-del-producto">

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container table-responsive">
     <div class="row">
         <div class="col-md-6">
             <h2>Ventas</h2>
