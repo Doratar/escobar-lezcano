@@ -22,7 +22,10 @@ class ConsultasController extends Controller{
         // TODO aca va la tabla de consultas
         $data['titulo'] = 'Consultas';
         $consultasModel = new ConsultasModel();
-        $data['consultas'] = $consultasModel->getConsultas();
+        //$data['consultas'] = $consultasModel->getConsultas();
+        $data['consultas'] = $consultasModel->paginate(5); // 5 registros por página
+        $data['pager'] = $consultasModel->pager;
+
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('admin/tabla-consultas', $data);

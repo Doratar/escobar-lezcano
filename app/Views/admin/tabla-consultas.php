@@ -37,6 +37,12 @@
                 <?php endif; ?>
             </tr>
             <?php endforeach; ?>
+            
+
         </tbody>
     </table>
+    <!-- Paginador -->
+<div class="d-flex justify-content-center">
+    <?= $pager->links() ?>
+</div>
 </div>
