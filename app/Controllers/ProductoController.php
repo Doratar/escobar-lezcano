@@ -192,4 +192,15 @@ class ProductoController extends Controller{
         $this->ProductoModel->update($id, ['prodActivo'=> TRUE]);
         return redirect()->to('admin/productos');
     }
+
+    public function buscarProducto() {
+        $parametro = $this->request->getVar('busqueda');
+        $data['titulo'] = 'Catalogo de Productos';
+        $data['productos'] = $this->ProductoModel->buscarProducto($parametro);
+        return
+        view('front/header', $data)
+        .view('front/navbar')
+        .view('productos/productoCatalogo', $data)
+        .view('front/footer');
+    }
 }

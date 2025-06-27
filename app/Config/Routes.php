@@ -53,6 +53,9 @@ $routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'auth:a
 $routes->get('admin/usuarios/eliminar/(:num)', 'UsuarioController::eliminarUsuario/$1', ['filter' => 'auth:admin']);
 $routes->get('admin/usuarios/activar/(:num)', 'UsuarioController::activarUsuario/$1', ['filter' => 'auth:admin']);
 
+// Buscar producto
+$routes->post('buscarProducto', 'ProductoController::buscarProducto');
+
 //Carrito
 $routes->get('carrito', 'CarritoController::mostrarCarrito');
 $routes->post('carrito_agrega', 'CarritoController::add');

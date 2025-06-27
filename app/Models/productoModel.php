@@ -72,4 +72,8 @@ class ProductoModel extends Model
     public function eliminarProducto($id) {
         return $this->update($id, ['prodActivo'=> FALSE]);
     }
+
+    public function buscarProducto($nombre) {
+        return $this->like('prodNombre', $nombre)->findAll();
+    }
 }
