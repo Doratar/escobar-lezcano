@@ -1,4 +1,12 @@
 <div class="container">
+    <?php if(!empty(session()->getFlashdata('fail'))): ?>
+        <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
+    <?php endif ?>
+
+    <?php if(!empty(session()->getFlashdata('success'))): ?>
+        <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
+    <?php endif ?>
+    
     <h1>Tu carrito</h1>
     <?php if (sizeof($cart) > 0): ?>
         <table class="table">

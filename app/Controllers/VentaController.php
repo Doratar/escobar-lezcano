@@ -47,13 +47,13 @@ class VentaController extends Controller{
                 $nombres = array_map(fn($p) => $p['name'], $productos_sin_stock);
                 $mensaje = 'Los siguientes productos no tienen stock suficiente y fueron eliminados del carrito: <br>' 
                     . implode(', ', $nombres);
-                $session->setFlashdata('mensaje', $mensaje);
+                $session->setFlashdata('fail', $mensaje);
                 return redirect()->to(base_url('carrito'));
             }
 
             // Si no hay productos válidos, no se registra la venta
             if (empty($productos_validos)) {
-                $session->setFlashdata('mensaje', 'No hay productos válidos para registrar la venta.');
+                $session->setFlashdata('fail', 'No hay productos válidos para registrar la venta.');
                 return redirect()->to(base_url('carrito'));
             }
 
@@ -80,7 +80,7 @@ class VentaController extends Controller{
     $cart_controller->borrar_carrito();
 
     $session->setFlashdata('mensaje', 'Venta registrada con éxito.');
-    return redirect()->to(base_url('carrito'));
+    return redirect()->to(base_url('compra/' . $venta_id));
 
     }
 

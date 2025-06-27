@@ -59,13 +59,4 @@ $routes->post('carrito_agrega', 'CarritoController::add');
 $routes->get('carrito_eliminar/(:any)', 'CarritoController::eliminar_item/$1');
 $routes->get('/borrar', 'CarritoController::borrar_carrito');
 $routes->get('/carrito-comprar', 'Ventacontroller::registrarVenta', ['filter' => 'auth:user']);
-
-// Muestra todos los productos del catálogo
-    //$routes->get('/todos_p', 'carritoController::catalogo', ['filter' => 'auth']);
-// Carga la vista carrito_parte_view
-    //$routes->get('/muestro', 'carrito_controller::muestra', ['filter' => 'auth']);
-// Actualiza los datos del carrito
-    //$routes->get('/carrito_actualiza', 'carrito_controller::actualiza_carrito', ['filter' => 'auth']);
-// Botones de sumar y restar en la vista del carrito
-    //$routes->get('carrito_suma/(:any)', 'carrito_controller::suma/$1');
-    //$routes->get('carrito_resta/(:any)', 'carrito_controller::resta/$1');
+$routes->get('compra/(:num)', 'CarritoController::mostrarCompra/$1', ['filter' => 'auth:user']);

@@ -38,6 +38,19 @@ class CarritoController extends BaseController{
         echo view('back/carrito/carrito_parte_view', $data);
         echo view('front/footer');
     }
+    public function mostrarCompra($venta_id)
+    {
+        $cart = \Config\Services::cart();
+        $data['cart'] = $cart->contents();
+        $data['venta_id'] = $venta_id;
+
+        $dato['titulo'] = 'Tu carrito';
+        echo view('front/header', $dato);
+        echo view('front/navbar');
+        echo view('cliente/graciasCompra', $data);
+        echo view('front/footer');
+    }
+
 public function add() // Agregar productos al carrito
 {
     $request = \Config\Services::request(); // Trae todo lo relacionado con la solicitud HTTP
