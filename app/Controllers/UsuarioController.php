@@ -148,7 +148,7 @@ class UsuarioController extends Controller{
                         return redirect()->to('admin');
                     } elseif ($user['PerfilId'] == 2) {
                         // Si el usuario es cliente, redirige al panel del cliente
-                        return redirect()->to('cliente');
+                        return redirect()->to('/');
                     }
                     // return redirect()->to('/'); // Redirigir a la página de inicio
                 } else {
