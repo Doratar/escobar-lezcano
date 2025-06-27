@@ -2,12 +2,14 @@
     <h2>Bienvenido a la Tienda</h2>
     <p>Aquí encontrarás todos nuestros productos.</p>
     <form action="<?php echo base_url('buscarProducto') ?>" method="POST">
-        <div class="row">
-            <div class="col-3 offset-2">
-                <label class="col-sm-2 col-form-label" for="busqueda">Buscar:</label>
-                <input class="form-control" type="text" id="busqueda" name="busqueda">
+            <div class="row offset-2">
+                <div class="col-auto">
+                    <label class="col-sm-2 col-form-label" for="busqueda">Buscar:</label>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="text" id="busqueda" name="busqueda">
+                </div>
             </div>
-        </div>
     </form>
 </div>
 
