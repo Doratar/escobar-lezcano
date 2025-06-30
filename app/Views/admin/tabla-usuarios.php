@@ -3,7 +3,11 @@
         <div class="col-md-6">
             <h2>Tabla de Usuarios</h2>
         </div>
-        
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <a href="<?php echo base_url('/admin/usuario/crear') ?>" class="btn btn-success d-flex align-items-center gap-2">
+                <i class="bi bi-plus-circle"></i> Agregar Usuario
+            </a>
+        </div>
     </div>
     <table class="table table-striped">
         <thead>
