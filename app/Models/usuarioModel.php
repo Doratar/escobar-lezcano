@@ -17,19 +17,21 @@ class UsuarioModel extends Model
         'UsuarioPass',
         'UsuarioFechaNac',
         'UsuarioActivo',
-        'PerfilId' // Asegúrate de que este campo exista en tu tabla
+        'PerfilId'
     ];
 
     public function getUsuarios()
     {
         return $this->findAll();
     }
-public function getUsuariosConPerfil()
-{
-    return $this->select('*') 
+
+    public function getUsuariosConPerfil($idUsuarioActual)
+    {
+        return $this->select('*') 
                 ->join('perfiles', 'usuarios.PerfilId = perfiles.PerfilId')
+                ->where('usuarios.UsuarioId !=', $idUsuarioActual)
                 ->findAll();
-}
+    }
 
     public function getUsuarioById($id)
     {
@@ -40,6 +42,7 @@ public function getUsuariosConPerfil()
     {
         return $this->insert($data);
     }
+
     public function eliminarUsuario($id) {
         return $this->update($id, ['UsuarioActivo'=> FALSE]);
     }

@@ -58,10 +58,11 @@ class AdminController extends Controller{
     }
 
     public function usuarios(){
-        // TODO aca va la tabla de usuarios
+        $session = session();
+        $idUsuarioActual = $session->get('UsuarioId');
         $data['titulo'] = 'Usuarios';
         $usuarioModel = new usuarioModel();
-        $data['usuarios'] = $usuarioModel->getUsuariosConPerfil();
+        $data['usuarios'] = $usuarioModel->getUsuariosConPerfil($idUsuarioActual);
         echo view('front/header', $data);
         echo view('admin/navbar');
         echo view('admin/tabla-usuarios', $data);

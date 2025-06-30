@@ -74,6 +74,6 @@ class ProductoModel extends Model
     }
 
     public function buscarProducto($nombre) {
-        return $this->like('prodNombre', $nombre)->findAll();
+        return $this->like('prodNombre', $nombre)->where('prodActivo', 1)->findAll();
     }
 }

@@ -162,7 +162,7 @@ class UsuarioController extends Controller{
             }
         } 
     }
-// Funcion para dar de baja logica de los productos
+    // Funcion para dar de baja logica de los productos
     public function eliminarUsuario($id) {
         $this->UsuarioModel->eliminarUsuario($id);
         return redirect()->to('admin/usuarios');

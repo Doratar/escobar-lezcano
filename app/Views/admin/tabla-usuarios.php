@@ -36,7 +36,7 @@
                     <?php else: ?>
                         <a href="<?php echo base_url('admin/usuarios/activar/' . $usuario['UsuarioId']); ?>" class="btn btn-success">Activar</a>
                     <?php endif?>
-            </tr>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
