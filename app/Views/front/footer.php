@@ -27,6 +27,38 @@
     </div>
   </div>
 </footer>
+<!-- jQuery si aún no está incluido -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script para actualizar el perfil vía AJAX -->
+<script>
+$(document).ready(function(){
+    $('.perfil-select').on('change', function(){
+        const usuarioId = $(this).data('usuario-id');
+        const perfilId = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('usuarios/actualizar-perfil') ?>',
+            type: 'POST',
+            data: {
+                usuarioId: usuarioId,
+                perfilId: perfilId
+            },
+            success: function(response){
+                if(response.status === 'ok'){
+                    console.log('Perfil actualizado');
+                    // Aquí podés mostrar un toast visual si querés
+                } else {
+                    alert('Error al actualizar el perfil');
+                }
+            },
+            error: function(){
+                alert('Error de conexión');
+            }
+        });
+    });
+});
+</script>
 
 <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- Bootstrap & Iconos -->
