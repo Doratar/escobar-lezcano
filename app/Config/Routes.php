@@ -68,3 +68,5 @@ $routes->get('carrito_eliminar/(:any)', 'CarritoController::eliminar_item/$1');
 $routes->get('/borrar', 'CarritoController::borrar_carrito');
 $routes->get('/carrito-comprar', 'Ventacontroller::registrarVenta', ['filter' => 'auth:user']);
 $routes->get('compra/(:num)', 'CarritoController::mostrarCompra/$1', ['filter' => 'auth:user']);
+$routes->get('carrito_suma/(:any)', 'CarritoController::suma/$1');
+$routes->get('carrito_resta/(:any)', 'CarritoController::resta/$1');
