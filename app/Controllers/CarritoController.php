@@ -126,7 +126,7 @@ public function suma($rowid)
             'qty'   => $item['qty'] + 1
         ]);
     }
-    return redirect()->to('muestro');
+    return redirect()->to('carrito');
 }
 
 public function resta($rowid)
@@ -145,7 +145,7 @@ public function resta($rowid)
             $cart->remove($rowid);
         }
     }
-    return redirect()->to('muestro');
+    return redirect()->to('carrito');
 }
     public function index(){
         $data['titulo'] = 'Inicio';

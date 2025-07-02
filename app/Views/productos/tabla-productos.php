@@ -4,8 +4,11 @@
             <h2>Tabla de Productos</h2>
         </div>
         <div class="col-md-6 d-flex justify-content-end align-items-center">
-            <button class="btn btn-success"><a href="<?php echo base_url('/admin/productos/crear')?>">Agregar producto +</a></button>
+            <a href="<?php echo base_url('/admin/productos/crear') ?>" class="btn btn-success d-flex align-items-center gap-2">
+                <i class="bi bi-plus-circle"></i> Agregar Producto
+            </a>
         </div>
+
     </div>
     <table class="table table-striped">
         <thead>

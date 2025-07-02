@@ -29,6 +29,12 @@
                         <td><?php echo ($item['price']); ?></td>
                         <td><?php echo ($item['qty']); ?></td>
                         <td><?php echo ($item['qty'] * $item['price']) ?></td>
+                        <td>
+                            <a class="btn btn-sm btn-success" href="<?= base_url('carrito_suma/' . $item['rowid']) ?>">+</a>
+                            <?= number_format($item['qty']) ?>
+                            <a class="btn btn-sm btn-danger" href="<?= base_url('carrito_resta/' . $item['rowid']) ?>">-</a>
+                        </td>
+                        <td>$ <?= number_format($item['subtotal'], 2) ?></td>
                         <td><a href="<?php echo base_url('carrito_eliminar/'), $item['rowid'] ?>" class="btn btn-danger"><i
                                     class="bi bi-trash"></i></a></td>
                     </tr>

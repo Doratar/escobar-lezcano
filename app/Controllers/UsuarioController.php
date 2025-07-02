@@ -18,7 +18,44 @@ class UsuarioController extends Controller{
         echo view('usuario/registro', ['validation' => $this->validator]);
         echo view('front/footer');
     }
-    
+    public function actualizarPerfilUsuario()
+    {
+        $usuarioId = $this->request->getPost('usuarioId');
+        $perfilId = $this->request->getPost('perfilId');
+
+        $usuarioModel = new UsuarioModel();
+        $usuarioModel->update($usuarioId, ['PerfilId' => $perfilId]);
+
+        return $this->response->setJSON(['status' => 'ok']);
+    }
+
+    public function crear()
+    {
+        $data = [];
+        return
+            view('front/header.php', ['titulo' => 'Alta usuario'])
+            . view('admin/navbar.php')
+            . view('usuario/usuarioAlta.php', $data)
+            . view('front/footer.php');
+    }
+
+    public function guardar()
+    {
+        $usuarioModel = new UsuarioModel();
+
+        $data = [
+            'UsuarioNombre' => $this->request->getPost('nombre'),
+            'UsuarioMail' => $this->request->getPost('email'),
+            'UsuarioPass' => password_hash($this->request->getPost('clave'), PASSWORD_DEFAULT),
+            'PerfilId' => $this->request->getPost('perfil_id')
+        ];
+
+        $usuarioModel->createUsuario($data);
+
+        return redirect()->to('/admin/usuarios')->with('success', 'Usuario creado exitosamente.');
+    }
+
+
     public function formValidation(){
         $input =$this->validate([
             'UsuarioNombre' => 'required|min_length[3]',
@@ -148,7 +185,7 @@ class UsuarioController extends Controller{
                         return redirect()->to('admin');
                     } elseif ($user['PerfilId'] == 2) {
                         // Si el usuario es cliente, redirige al panel del cliente
-                        return redirect()->to('cliente');
+                        return redirect()->to('/');
                     }
                     // return redirect()->to('/'); // Redirigir a la página de inicio
                 } else {
@@ -162,7 +199,7 @@ class UsuarioController extends Controller{
             }
         } 
     }
-// Funcion para dar de baja logica de los productos
+    // Funcion para dar de baja logica de los productos
     public function eliminarUsuario($id) {
         $this->UsuarioModel->eliminarUsuario($id);
         return redirect()->to('admin/usuarios');

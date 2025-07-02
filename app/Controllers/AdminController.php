@@ -5,6 +5,7 @@ use \App\Models\CategoriaModel;
 Use CodeIgniter\Controller;
 Use App\Models\ProductoModel;
 Use App\Models\VentasModel;
+Use App\Models\PerfilModel;
 
 class AdminController extends Controller{
     
@@ -57,16 +58,23 @@ class AdminController extends Controller{
         echo view('front/footer');
     }
 
-    public function usuarios(){
-        // TODO aca va la tabla de usuarios
-        $data['titulo'] = 'Usuarios';
-        $usuarioModel = new usuarioModel();
-        $data['usuarios'] = $usuarioModel->getUsuariosConPerfil();
-        echo view('front/header', $data);
-        echo view('admin/navbar');
-        echo view('admin/tabla-usuarios', $data);
-        echo view('front/footer');
-    }
+    public function usuarios()
+{
+    $idUsuarioActual = session()->get('UsuarioId');
+    $data['titulo'] = 'Usuarios';
+
+    $usuarioModel = new UsuarioModel();
+    $perfilModel = new PerfilModel();
+
+    $data['usuarios'] = $usuarioModel->getUsuariosConPerfil($idUsuarioActual);
+    $data['perfiles'] = $perfilModel->orderBy('PerfilDescripcion')->findAll();
+
+    echo view('front/header', $data);
+    echo view('admin/navbar');
+    echo view('admin/tabla-usuarios', $data);
+    echo view('front/footer');
+}
+
 
     protected function logout() {
         $session = session();

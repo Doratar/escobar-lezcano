@@ -50,8 +50,13 @@ $routes->post('admin/categorias/crear', 'CategoriaController::formValidation', [
 $routes->get('admin/categorias/editar/(:num)', 'CategoriaController::edit/$1', ['filter'=>'auth:admin']);
 $routes->post('admin/categorias/editar', 'CategoriaController::formValidationEditar', ['filter'=>'auth:admin']);
 $routes->get('admin/usuarios', 'AdminController::usuarios', ['filter' => 'auth:admin']);
+$routes->get('admin/usuarios/crear', 'UsuarioController::crear', ['filter' => 'auth:admin']);
+$routes->post('admin/usuarios/guardar', 'UsuarioController::guardar', ['filter' => 'auth:admin']);
+
 $routes->get('admin/usuarios/eliminar/(:num)', 'UsuarioController::eliminarUsuario/$1', ['filter' => 'auth:admin']);
 $routes->get('admin/usuarios/activar/(:num)', 'UsuarioController::activarUsuario/$1', ['filter' => 'auth:admin']);
+
+$routes->post('usuarios/actualizar-perfil', 'UsuarioController::actualizarPerfilUsuario');
 
 // Buscar producto
 $routes->post('buscarProducto', 'ProductoController::buscarProducto');
@@ -63,3 +68,5 @@ $routes->get('carrito_eliminar/(:any)', 'CarritoController::eliminar_item/$1');
 $routes->get('/borrar', 'CarritoController::borrar_carrito');
 $routes->get('/carrito-comprar', 'Ventacontroller::registrarVenta', ['filter' => 'auth:user']);
 $routes->get('compra/(:num)', 'CarritoController::mostrarCompra/$1', ['filter' => 'auth:user']);
+$routes->get('carrito_suma/(:any)', 'CarritoController::suma/$1');
+$routes->get('carrito_resta/(:any)', 'CarritoController::resta/$1');
