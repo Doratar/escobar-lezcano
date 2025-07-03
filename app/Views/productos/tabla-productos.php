@@ -10,7 +10,7 @@
         </div>
 
     </div>
-    <table class="table table-striped">
+    <table id="tablaProductos" class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>

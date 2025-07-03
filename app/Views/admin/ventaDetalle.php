@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Detalle de venta</h1>
-    <table class="table">
+    <table id="tablaVentasDetalle" class="table">
         <thead>
             <tr>
                 <th>Producto Id</th>

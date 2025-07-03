@@ -27,8 +27,6 @@
     </div>
   </div>
 </footer>
-<!-- jQuery si aún no está incluido -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Script para actualizar el perfil vía AJAX -->
 <script>
@@ -60,10 +58,33 @@ $(document).ready(function(){
 });
 </script>
 
+<!-- jQuery local -->
+<script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+
+<!-- DataTables JS local -->
+<script src="<?= base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/dataTables.bootstrap5.min.js') ?>"></script>
+
+<!-- Inicialización -->
+<script>
+  $(document).ready(function() {
+    const tablas = ['#tablaVentas', '#tablaVentasDetalle', '#tablaUsuarios', '#tablaConsultas', '#tablaCategorias', '#tablaProductos'];
+    const opciones = {
+      responsive: true,
+      language: {
+        url: '<?= base_url('assets/js/i18n/es-ES.json') ?>'
+      }
+    };
+
+    tablas.forEach(function(selector) {
+      if ($(selector).length) {
+        $(selector).DataTable(opciones);
+      }
+    });
+  });
+</script>
+
 <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- Bootstrap & Iconos -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
+
 </body>
 </html>

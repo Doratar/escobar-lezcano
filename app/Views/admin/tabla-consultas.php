@@ -5,7 +5,7 @@
         </div>
         
     </div>
-    <table class="table table-striped align-middle">
+    <table id="tablaConsultas" class="table table-striped align-middle">
         <thead>
             <tr>
                 <th>ID</th>
@@ -39,8 +39,11 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <!-- Paginador -->
-    <div class="d-flex justify-content-center">
-        <?= $pager->links() ?>
-    </div>
+    <!-- Paginador x-->
+    <?php /*
+<div class="d-flex justify-content-center">
+    <?= $pager->links() ?>
+</div>
+*/ ?>
+
 </div>

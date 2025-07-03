@@ -5,7 +5,7 @@
         </div>
 
     </div>
-    <table class="table table-striped">
+    <table id="tablaVentas" class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -13,6 +13,7 @@
                 <th>Cliente Nombre</th>
                 <th>Cliente Apellido</th>
                 <th>Total</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +25,8 @@
                 <td><?php echo $venta['UsuarioApellido']; ?></td>
                 <td><?php echo $venta['ventasTotal']; ?></td>
                 <td>
-                    <a href="<?php echo base_url('admin/ventas/detalle/' . $venta['ventasId']); ?>" class="btn btn-warning">Ver Detalle</a>
+                    <a href="<?php echo base_url('admin/ventas/detalle/' . $venta['ventasId']); ?>" class="btn btn-warning">Ver Detalle</a>        
+                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>

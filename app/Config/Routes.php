@@ -18,7 +18,7 @@ $routes->get('verProducto/(:num)', 'ProductoController::verProducto/$1');
 $routes->post('consultas/crear', 'ConsultasController::formValidation');
 
 // Registro de un nuevo usuario
-$routes->get('registro', 'UsuarioController::create', ['filter'=>'auth']);//filtro sin parametro, solo valida que haya iniciado sesion
+$routes->get('registro', 'UsuarioController::create');
 $routes->post('registrar', 'UsuarioController::formValidation');
 
 // Login de un usuario
