@@ -9,7 +9,7 @@
             </a>
         </div>
     </div>
-    <table class="table table-striped">
+    <table id="tablaUsuarios"class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
