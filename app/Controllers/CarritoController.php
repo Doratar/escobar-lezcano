@@ -19,9 +19,10 @@ class CarritoController extends BaseController{
     {
         $data['titulo'] = 'Catalogo de Productos';
         $data['productos'] = $this->ProductoModel->getProductosActivos();
+        $data['cart'] = \Config\Services::cart();
         return
         view('front/header.php', $data)
-        .view('front/navbar.php')
+        .view('front/navbar.php',$data)
         .view('productos/productoCatalogo', $data)
         .view('front/footer.php');
     }

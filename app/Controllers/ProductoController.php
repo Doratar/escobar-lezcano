@@ -17,9 +17,10 @@ class ProductoController extends Controller{
     public function catalogo(){
         $data['titulo'] = 'Catalogo de Productos';
         $data['productos'] = $this->ProductoModel->getProductosActivos();
+        $data['cart'] = \Config\Services::cart();
         return
         view('front/header', $data)
-        .view('front/navbar')
+        .view('front/navbar',$data)
         .view('productos/productoCatalogo', $data)
         .view('front/footer');
     }
@@ -171,12 +172,15 @@ class ProductoController extends Controller{
     public function verProducto($id) {
         $data['titulo'] = 'Ver Producto';
         $data['producto'] = $this->ProductoModel->getProductoById($id);
+
         $categorias = new CategoriaModel(); 
         $data['categorias'] = $categorias->getCategorias();
 
+        $data['cart'] = \Config\Services::cart();
+
         return
         view('front/header', $data)
-        .view('front/navbar')
+        .view('front/navbar',$data)
         .view('productos/productoVer', $data)
         .view('front/footer');
     }

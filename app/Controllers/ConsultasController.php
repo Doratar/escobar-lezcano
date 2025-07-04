@@ -12,8 +12,9 @@ class ConsultasController extends Controller{
     public function index(){
         $data['titulo'] = 'Consultas';
         $data['usuario'] = session()->get('UsuarioMail');
+        $data['cart'] = \Config\Services::cart();
         echo view('front/header', $data);
-        echo view('front/navbar');
+        echo view('front/navbar',$data);
         echo view('front/contacto', $data);
         echo view('front/footer');
     }
