@@ -22,4 +22,14 @@ class VentasDetalleModel extends Model
 
         //return $this->where('ventaId', $ventaId)->findAll();
     }
+
+    public function getMasVendidos($limit){
+        return $this->select('productos.prodId, productos.prodNombre, productos.prodDescripcion, productos.prodPrecio, productos.prodImagenURL, SUM(ventas_detalle.vdetalleCantidad) AS total_vendido', false)
+                ->join('productos', 'productos.prodId = ventas_detalle.prodId')
+                ->groupBy('ventas_detalle.prodId')
+                ->orderBy('total_vendido', 'DESC')
+                ->limit($limit)
+                ->findAll();
+
+    }
 }

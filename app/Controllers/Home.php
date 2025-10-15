@@ -2,15 +2,29 @@
 
 namespace App\Controllers;
 
+use App\Models\CategoriaModel;
+use App\Models\ProductoModel;
+use App\Models\VentasDetalleModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
+        $productos = new ProductoModel();
+        $categorias = new CategoriaModel();
+        $venta_detale = new VentasDetalleModel();
+
+        $data['ultimos'] = $productos->ultimosAgregados(3);
+        $data['titulo'] = 'Home';
+        $data['categorias'] = $categorias->findAll();
+        $data['mas_vendido'] = $venta_detale->getMasVendidos(3);
+        $data['novedades'] = $productos->ultimosAgregados(3);
+
         return 
         view('front/header.php', ['titulo' => 'Home'])
         .view('front/navbar.php')
         .view('front/carrousel.php')
-        .view('front/principal.php')
+        .view('front/principal.php', $data)
         .view('front/footer.php');
     }
 

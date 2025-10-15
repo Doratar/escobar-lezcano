@@ -76,4 +76,9 @@ class ProductoModel extends Model
     public function buscarProducto($nombre) {
         return $this->like('prodNombre', $nombre)->where('prodActivo', 1)->findAll();
     }
+
+    public function ultimosAgregados($cantidad){
+        return $this->where('prodActivo', 1)->orderBy('prodId')->findAll($cantidad);
+    }
+    
 }

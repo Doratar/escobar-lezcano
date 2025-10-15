@@ -10,7 +10,7 @@ class  CategoriaModel extends Model
     // ...
     protected $table = 'categorias';
     protected $primaryKey = 'cateId';
-    protected $allowedFields = ['cateNombre'];
+    protected $allowedFields = ['cateNombre', 'cateImagenUrl'];
 
     public function getCategorias()
     {
