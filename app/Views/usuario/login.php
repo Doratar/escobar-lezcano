@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="mx-auto w-50">
     <h1>Iniciar sesión</h1>
     <?php $validation = \Config\Services::validation(); ?>
     <form method="post" action="<?php echo base_url('/login')?>">
@@ -24,4 +25,5 @@
 
         <input type="submit" class="btn btn-primary" value="Iniciar Sesion">
     </form>
+    </div>
 </div>
