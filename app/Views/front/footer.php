@@ -68,7 +68,7 @@ $(document).ready(function(){
 <!-- Inicialización -->
 <script>
   $(document).ready(function() {
-    const tablas = ['#tablaVentas', '#tablaVentasDetalle', '#tablaUsuarios', '#tablaConsultas', '#tablaCategorias', '#tablaProductos'];
+    const tablas = ['#tablaVentas', '#tablaVentasDetalle', '#tablaUsuarios', '#tablaConsultas', '#tablaCategorias', '#tablaProductos','#tablaCompras','#tablaComprasDetalle'];
     const opciones = {
       responsive: true,
       language: {

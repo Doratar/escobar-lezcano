@@ -36,7 +36,7 @@
                             <i class="bi bi-person-fill"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?php echo base_url('/registro') ?>">Hola <?php echo session()->get('UsuarioNombre') ?></a></li>
+                            <li><a class="dropdown-item" href="#">Hola <?php echo session()->get('UsuarioNombre') ?></a></li>
                             <!-- <li><a class="dropdown-item" href="#">Nuetra misión</a></li> -->
                             <li>
                                 <hr class="dropdown-divider">
