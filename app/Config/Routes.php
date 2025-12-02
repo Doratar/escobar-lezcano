@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\UsuarioController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -10,12 +11,15 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('nosotros', 'Home::nosotros');
 $routes->get('tienda', 'CarritoController::catalogo');
+$routes->get('tienda/marca/(:num)', 'CarritoController::catalogo');
+$routes->get('tienda/', 'CarritoController::catalogo');
 $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('contacto', 'ConsultasController::index');
 $routes->get('terminos', 'Home::terminos');
 $routes->get('producto', 'Home::producto');
 $routes->get('verProducto/(:num)', 'ProductoController::verProducto/$1');
 $routes->post('consultas/crear', 'ConsultasController::formValidation');
+$routes->get('perfil/(:num)', 'UsuarioController::miPerfil/$1');
 
 // Registro de un nuevo usuario
 $routes->get('registro', 'UsuarioController::create');
