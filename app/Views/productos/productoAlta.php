@@ -105,7 +105,8 @@
           <input type="file" class="form-control" name="prodImagenUrl" value="<?php echo $producto['prodImagenUrl'] ?>"
             id="prodImagenUrl" placeholder="Archivo imagen" aria-label="URL de la imagen" accept="image/*">
         <?php else: ?>
-          <input type="file" class="form-control" name="prodImagenUrl" id="prodImagenUrl" placeholder="Archivo imagen"
+          <input type="file" class="form-control" name="pr
+          odImagenUrl" id="prodImagenUrl" placeholder="Archivo imagen"
             aria-label="URL de la imagen" accept="image/*">
         <?php endif; ?>
       </div>
