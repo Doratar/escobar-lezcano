@@ -12,11 +12,6 @@ class  CategoriaModel extends Model
     protected $primaryKey = 'cateId';
     protected $allowedFields = ['cateNombre', 'cateImagenUrl'];
 
-    public function getCategorias()
-    {
-        return $this->findAll();
-    }
-
     public function getCategoriaById($id)
     {
         return $this->find($id);
@@ -24,5 +19,9 @@ class  CategoriaModel extends Model
     public function updateCategoria($id, $data)
     {
         return $this->update($id, $data);
+    }
+
+    public function getCategorias() {
+        return $this->where('cateImagenUrl !=', null)->findAll();
     }
 }

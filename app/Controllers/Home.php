@@ -16,7 +16,7 @@ class Home extends BaseController
 
         $data['ultimos'] = $productos->ultimosAgregados(3);
         $data['titulo'] = 'Home';
-        $data['categorias'] = $categorias->findAll();
+        $data['categorias'] = $categorias->getCategorias();
         $data['mas_vendido'] = $venta_detale->getMasVendidos(3);
         $data['novedades'] = $productos->ultimosAgregados(3);
 
