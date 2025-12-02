@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+use App\Models\ProductoModel;
 Use App\Models\UsuarioModel;
 Use CodeIgniter\Controller;
 
@@ -215,5 +216,13 @@ class UsuarioController extends Controller{
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('/login'));
+    }
+
+    public function miPerfil($id){
+        $usuarios = new UsuarioModel();
+
+        $data['usuario'] = $usuarios->getUsuarioById($id);
+
+        return view('head');
     }
 }
