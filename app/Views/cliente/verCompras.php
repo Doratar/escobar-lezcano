@@ -10,8 +10,8 @@
             <tr>
                 <th>ID</th>
                 <th>Fecha</th>
-                
                 <th>Total</th>
+                <th>Ver</th>
             </tr>
         </thead>
         <tbody>
