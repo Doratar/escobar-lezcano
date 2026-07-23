@@ -17,7 +17,9 @@ class UsuarioModel extends Model
         'UsuarioPass',
         'UsuarioFechaNac',
         'UsuarioActivo',
-        'PerfilId'
+        'PerfilId',
+        'UsuarioDni',
+        'UsuarioDomicilio'
     ];
 
     public function getUsuarios()

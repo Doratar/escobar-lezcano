@@ -17,6 +17,7 @@ class VentasModel extends Model
 
     public function getBuilderVentas_cabecera()
     {
+        // TODO arreglar esto no s que hace
         // Conecta a la base de datos usando el helper de configuración de CodeIgniter
         $db = \Config\Database::connect();
 
@@ -36,6 +37,7 @@ class VentasModel extends Model
     // Esta función devuelve las ventas según si se pasa o no un $id_usuario
     public function getVentas($id_usuario = null)
     {
+        // TODO arreglar esto no sé que hace
         // Si no se pasa un ID de usuario (es null)
         if ($id_usuario === null) {
             // Llama a la función que devuelve todas las ventas

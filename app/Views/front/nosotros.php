@@ -38,6 +38,6 @@
         </ul>
       </div>
     </div>
-  
+  <!-- TODO agregar fotos -->
 </section>
 </div>
